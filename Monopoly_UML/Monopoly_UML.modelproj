@@ -18,6 +18,20 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
   <ItemGroup>
     <Folder Include="ModelDefinition\" />
+    <Content Include="Designmodel.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Designmodel.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Designmodel.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Domeinmodel.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Domeinmodel.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Domeinmodel.classdiagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\Monopoly_UML.uml">
       <SubType>Content</SubType>
     </Content>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="c2709f3c-12fb-4b17-a60a-fb675a73771b" name="Domeinmodel" linkedPackageId="ff4f26ba-71c9-4b5f-988c-8df7b50a710c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="d130fd72-4772-41cf-a131-188839ab7461">
+      <profileInstance Id="54b10ca5-8b46-49c7-b1c6-f524d13839e9" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="dbe9f6e6-b17e-4e13-a768-8dab099ebda7">
+      <profileInstance Id="dace11c2-9c8a-43d1-b648-6b45145a72d1" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9231b58d-e4c3-4c65-b93d-948e1c2d8947" name="Spel" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d7767049-acae-4fc6-ab04-ad960f3a1be9" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="400e8810-8094-4971-b7f4-ebf3c541a868" name="Spelvak" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4f8c14c1-15c8-4d35-b28f-b3be722918fd" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2657303c-7a26-47ec-89c9-275906145876" name="Straat" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="397309f5-f5fd-47ff-b2fa-3d7b1f171a6e" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="008ab9d4-e157-4f18-a4bd-c80c697d6880" name="Speler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4655ec00-d7ba-4953-b58a-b614069a2179" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8656ef95-a822-4457-b2cd-07ba5f9abbcd" name="Kanskaart" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="06028732-b079-4e52-85fb-f9709909a426" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5bacea6e-4202-4b28-91bf-4371fea9366a" name="AlgemeenFondsKaart" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="83360787-bda2-48ad-b070-8124c23249cb" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="ff4f26ba-71c9-4b5f-988c-8df7b50a710c" name="Monopoly_UML">
+    <elementDefinition Id="cb38883e-43b8-40fd-b6ca-a86bc712a6cd" />
+  </package>
+</logicalClassDesignerModel>
