@@ -21,11 +21,6 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="400e8810-8094-4971-b7f4-ebf3c541a868" name="Spelvak" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="4f8c14c1-15c8-4d35-b28f-b3be722918fd" />
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
       <class Id="2657303c-7a26-47ec-89c9-275906145876" name="Straat" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="397309f5-f5fd-47ff-b2fa-3d7b1f171a6e" />
       </class>
@@ -43,6 +38,11 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="5bacea6e-4202-4b28-91bf-4371fea9366a" name="AlgemeenFondsKaart" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="83360787-bda2-48ad-b070-8124c23249cb" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="95cac52b-dfed-451a-b5c3-704f108a8162" name="Stad" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e0ff70cc-8be1-4803-b4d5-e8ff9b2c529d" />
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>
