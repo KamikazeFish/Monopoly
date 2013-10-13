@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="cb38883e-43b8-40fd-b6ca-a86bc712a6cd"
   name="Monopoly_UML" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -86,6 +86,478 @@
       <class
         Id="e0ff70cc-8be1-4803-b4d5-e8ff9b2c529d"
         name="Stad"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="389091aa-3571-4505-9d96-82da3ae055bb"
+        name="Speler"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="4de81452-8df0-4887-ba9b-ab6dbf1b6366"
+            isDerived="false"
+            sourceEndRoleName="Speler"
+            targetEndRoleName="Huis kopen"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="d1d2fed4-efe7-446c-b750-5a1175626356"
+              LastKnownName="Huis kopen"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9e236bad-9f96-4830-abda-6eb071d03c22"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="75c66e18-b95e-4f76-aa37-b9415f75ce57"
+                  name="Huis kopen"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="bfcf7cac-2c38-4fb2-bd92-1a8c18093658"
+            isDerived="false"
+            sourceEndRoleName="Speler"
+            targetEndRoleName="Komt op vak &quot;Ga naar de gevangenis&quot;"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="aaa9a192-63ac-4386-8439-cb9936925367"
+              LastKnownName="Komt op vak &quot;Ga naar de gevangenis&quot;"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="93e8a3ca-d5a4-4d6e-b34b-428793afc087"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8be924fa-56ac-4af3-8af1-cd16aa5e9bc0"
+                  name="Komt op vak &quot;Ga naar de gevangenis&quot;"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="1c0c7cc4-6bfc-4a8b-8ce6-88a6403140ef"
+            isDerived="false"
+            sourceEndRoleName="Speler"
+            targetEndRoleName="Komt op een straat van een andere speler"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="4a4a4f34-9a10-4a87-ad48-7f4c932b039d"
+              LastKnownName="Komt op een straat van een andere speler"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2a53110a-1adc-4ad7-b8cd-5dda6271a663"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="57958335-83e6-4084-8475-a8b7485e6a9d"
+                  name="Komt op een straat van een andere speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f7b64ad4-e366-4aab-9d27-b0731c79fbcf"
+            isDerived="false"
+            sourceEndRoleName="Speler"
+            targetEndRoleName="Komt op het vak &quot;Kans&quot;"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="429f73ac-9283-4d88-9856-ebc2d685ae14"
+              LastKnownName="Komt op het vak &quot;Kans&quot;"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7126b213-26c7-4d1f-a8c6-4bb0ac95b571"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d5d25287-069b-408f-babe-128910f416ee"
+                  name="Komt op het vak &quot;Kans&quot;"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="2bc55da7-cf4c-400a-ab33-7de5cb4d79b2"
+            isDerived="false"
+            sourceEndRoleName="Speler"
+            targetEndRoleName="Komt op een straat die van niemand is"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="811fda5a-8cf7-43b8-92ee-93a0b153cead"
+              LastKnownName="Komt op een straat die van niemand is"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="12a9438b-b41f-4d47-bd78-a06b6449ee6c"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="eefa97c2-5616-48ae-a16f-1e8a10a4b5b4"
+                  name="Komt op een straat die van niemand is"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a9498590-fd2c-4ee2-8547-6edeb8299ac9"
+            isDerived="false"
+            sourceEndRoleName="Speler"
+            targetEndRoleName="Komt op of over &quot;Start&quot;"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="3f7728fb-d966-4805-a9d6-bcd1e22186f6"
+              LastKnownName="Komt op of over &quot;Start&quot;"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="314bc46b-bdc9-4768-b804-bdda4d340123"
+                  name="Speler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7a49f432-7bc9-4347-aef5-eb1b4c090504"
+                  name="Komt op of over &quot;Start&quot;"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="1d46ec6e-8758-44b4-87d4-aca23c3053e4"
+        name="Monopoly Spel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="9406b42e-5e88-4a65-8fc3-3673ef3391c0"
+        name="Subsystem1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="7b2bcc6a-14de-4ea8-a1e9-89fac3675ead"
+        name="Artifact1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d1d2fed4-efe7-446c-b750-5a1175626356"
+        name="Huis kopen"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="62fa733b-38d1-4db5-9090-4dd3f89a8a64"
+            isDerived="false"
+            sourceEndRoleName="Huis kopen"
+            targetEndRoleName="Bank"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="5e58ac9e-39ca-46c9-ae28-de0ac4d9f882"
+              LastKnownName="Bank"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="731dc7e4-20f3-48af-83ba-e429f873a8eb"
+                  name="Huis kopen"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="eb4ceee9-4c14-413b-9c13-c3b98e880c54"
+                  name="Bank"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker
+            Id="e023a706-95da-4eaf-ace1-fcf14a1059e8"
+            LastKnownName="Monopoly"
+            LastKnownLocation="Monopoly_UML.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="e023a706-95da-4eaf-ace1-fcf14a1059e8"
+        name="Monopoly"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="aaa9a192-63ac-4386-8439-cb9936925367"
+        name="Komt op vak &quot;Ga naar de gevangenis&quot;"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="e023a706-95da-4eaf-ace1-fcf14a1059e8"
+            LastKnownName="Monopoly"
+            LastKnownLocation="Monopoly_UML.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="4a4a4f34-9a10-4a87-ad48-7f4c932b039d"
+        name="Komt op een straat van een andere speler"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="e023a706-95da-4eaf-ace1-fcf14a1059e8"
+            LastKnownName="Monopoly"
+            LastKnownLocation="Monopoly_UML.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="429f73ac-9283-4d88-9856-ebc2d685ae14"
+        name="Komt op het vak &quot;Kans&quot;"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="e023a706-95da-4eaf-ace1-fcf14a1059e8"
+            LastKnownName="Monopoly"
+            LastKnownLocation="Monopoly_UML.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="811fda5a-8cf7-43b8-92ee-93a0b153cead"
+        name="Komt op een straat die van niemand is"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="e023a706-95da-4eaf-ace1-fcf14a1059e8"
+            LastKnownName="Monopoly"
+            LastKnownLocation="Monopoly_UML.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="5e58ac9e-39ca-46c9-ae28-de0ac4d9f882"
+        name="Bank"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3f7728fb-d966-4805-a9d6-bcd1e22186f6"
+        name="Komt op of over &quot;Start&quot;"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="4c5b030f-7772-4939-941f-7d86e719f560"
+            isDerived="false"
+            sourceEndRoleName="Komt op of over &quot;Start&quot;"
+            targetEndRoleName="Bank"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="5e58ac9e-39ca-46c9-ae28-de0ac4d9f882"
+              LastKnownName="Bank"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="da4b5f29-5608-4eb3-b52a-fdc10ac13c43"
+                  name="Komt op of over &quot;Start&quot;"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4daa84a9-0b10-4366-b656-a82313a9d7a9"
+                  name="Bank"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker
+            Id="e023a706-95da-4eaf-ace1-fcf14a1059e8"
+            LastKnownName="Monopoly"
+            LastKnownLocation="Monopoly_UML.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a36f3bea-2ce3-47d7-9b77-d88de0af6d99"
+        name="Vak"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="95edc05b-6020-4035-90f0-96261821f4f1"
+        name="Class2"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8320440e-d273-4d4b-875f-2fcab4b45714"
+        name="Biljet"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />

@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="035c2796-01ac-4c63-9bdf-a13921ef263a" name="UMLUseCaseDiagram1" linkedPackageId="99b6effd-7870-4c85-b224-ee9c796ffbd4" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="87541d8b-a3e3-46bb-8890-6ecc08bbcd54">
+      <profileInstance Id="96283972-60bb-4e2a-8c58-cd3dab3637ed" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="f8c5e195-d8cc-42b1-b02f-7f6e8b7db0eb">
+      <profileInstance Id="b9ec249f-cd29-4061-a8c4-ae4f3151c7ed" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="9235a2a9-4568-4ee1-b25d-5f5296b0e364" name="Speler" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="389091aa-3571-4505-9d96-82da3ae055bb" />
+        <targetEnds>
+          <association Id="7e0d099f-e4ec-4090-b5cd-0e73ed7078a3" isDerived="false" sourceEndRoleName="Speler" targetEndRoleName="Huis kopen" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="9bf18a4a-0b99-463a-b0a5-0a36ec3ca0ed" LastKnownName="Huis kopen" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="45c5a12c-ba50-42cd-a859-655984fb8eb1" name="Speler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9e236bad-9f96-4830-abda-6eb071d03c22" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4f6ef6a3-4ecd-4222-bfbf-69d23b7298b3" name="Huis kopen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="75c66e18-b95e-4f76-aa37-b9415f75ce57" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4de81452-8df0-4887-ba9b-ab6dbf1b6366" />
+          </association>
+          <association Id="7d0fe088-2615-4399-9994-2e18442af25d" isDerived="false" sourceEndRoleName="Speler" targetEndRoleName="Komt op vak &quot;Ga naar de gevangenis&quot;" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="7d86659f-d8ee-4b31-b189-b3dea8a88f31" LastKnownName="Komt op vak &quot;Ga naar de gevangenis&quot;" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="938557af-7967-4f64-b20c-dd1b9b5f9943" name="Speler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="93e8a3ca-d5a4-4d6e-b34b-428793afc087" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="81612929-928f-4218-81b5-568063db0a9f" name="Komt op vak &quot;Ga naar de gevangenis&quot;" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8be924fa-56ac-4af3-8af1-cd16aa5e9bc0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="bfcf7cac-2c38-4fb2-bd92-1a8c18093658" />
+          </association>
+          <association Id="ad03d81e-8b85-411a-9578-be5884dc44d6" isDerived="false" sourceEndRoleName="Speler" targetEndRoleName="Komt op een straat van een andere speler" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1abf2b13-70a8-4e00-865a-8515e8623ffc" LastKnownName="Komt op een straat van een andere speler" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="640f7f35-e095-414e-885a-4f3007e21fca" name="Speler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2a53110a-1adc-4ad7-b8cd-5dda6271a663" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="042844fa-5ff5-4eb2-9d7f-5209207ec8e0" name="Komt op een straat van een andere speler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="57958335-83e6-4084-8475-a8b7485e6a9d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1c0c7cc4-6bfc-4a8b-8ce6-88a6403140ef" />
+          </association>
+          <association Id="b7196f85-319f-425c-8233-719f94c5be24" isDerived="false" sourceEndRoleName="Speler" targetEndRoleName="Komt op het vak &quot;Kans&quot;" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="10225c6c-3a72-4dff-a825-64dc05cacfae" LastKnownName="Komt op het vak &quot;Kans&quot;" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="42683542-3d74-485f-aeea-8ff37cd6c30d" name="Speler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7126b213-26c7-4d1f-a8c6-4bb0ac95b571" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d4d76a7f-8980-4206-b160-9fba6936dd7a" name="Komt op het vak &quot;Kans&quot;" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d5d25287-069b-408f-babe-128910f416ee" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f7b64ad4-e366-4aab-9d27-b0731c79fbcf" />
+          </association>
+          <association Id="91773e94-9709-4920-9283-d8e9ac42e8a5" isDerived="false" sourceEndRoleName="Speler" targetEndRoleName="Komt op een straat die van niemand is" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="85a9b629-9992-4817-83fd-ed2d7149cf13" LastKnownName="Komt op een straat die van niemand is" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6722d972-8f36-4314-b8bb-0ea66d8cf5fe" name="Speler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="12a9438b-b41f-4d47-bd78-a06b6449ee6c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d800403b-124d-488c-8b51-f51687acc3ce" name="Komt op een straat die van niemand is" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="eefa97c2-5616-48ae-a16f-1e8a10a4b5b4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2bc55da7-cf4c-400a-ab33-7de5cb4d79b2" />
+          </association>
+          <association Id="42bad038-ad1f-45c4-b1ef-5185919ff5c2" isDerived="false" sourceEndRoleName="Speler" targetEndRoleName="Komt op of over &quot;Start&quot;" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="dab129ad-e3a0-4e72-8bd9-e11b1bee488d" LastKnownName="Komt op of over &quot;Start&quot;" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1211f11f-28bc-45bb-b925-fa92b316a16d" name="Speler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="314bc46b-bdc9-4768-b804-bdda4d340123" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7ab68d0e-054f-4330-a589-3b776bd799ac" name="Komt op of over &quot;Start&quot;" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7a49f432-7bc9-4347-aef5-eb1b4c090504" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a9498590-fd2c-4ee2-8547-6edeb8299ac9" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9bf18a4a-0b99-463a-b0a5-0a36ec3ca0ed" name="Huis kopen" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d1d2fed4-efe7-446c-b750-5a1175626356" />
+        <targetEnds>
+          <association Id="53007593-543d-4651-a74d-21277dfac3ca" isDerived="false" sourceEndRoleName="Huis kopen" targetEndRoleName="Bank" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="29265d27-ded9-4a99-9602-1fea32974caf" LastKnownName="Bank" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="43edcd60-e676-40ef-8d86-37d694021727" name="Huis kopen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="731dc7e4-20f3-48af-83ba-e429f873a8eb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="07890b55-0095-49b9-9a1b-f7c1a19faf8c" name="Bank" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="eb4ceee9-4c14-413b-9c13-c3b98e880c54" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="62fa733b-38d1-4db5-9090-4dd3f89a8a64" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="80cbe0ff-0342-4ed4-b128-c4780863e2b3" LastKnownName="Monopoly" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="80cbe0ff-0342-4ed4-b128-c4780863e2b3" name="Monopoly" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e023a706-95da-4eaf-ace1-fcf14a1059e8" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="7d86659f-d8ee-4b31-b189-b3dea8a88f31" name="Komt op vak &quot;Ga naar de gevangenis&quot;" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="aaa9a192-63ac-4386-8439-cb9936925367" />
+        <subjects>
+          <subsystemMoniker Id="80cbe0ff-0342-4ed4-b128-c4780863e2b3" LastKnownName="Monopoly" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1abf2b13-70a8-4e00-865a-8515e8623ffc" name="Komt op een straat van een andere speler" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4a4a4f34-9a10-4a87-ad48-7f4c932b039d" />
+        <subjects>
+          <subsystemMoniker Id="80cbe0ff-0342-4ed4-b128-c4780863e2b3" LastKnownName="Monopoly" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="10225c6c-3a72-4dff-a825-64dc05cacfae" name="Komt op het vak &quot;Kans&quot;" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="429f73ac-9283-4d88-9856-ebc2d685ae14" />
+        <subjects>
+          <subsystemMoniker Id="80cbe0ff-0342-4ed4-b128-c4780863e2b3" LastKnownName="Monopoly" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="85a9b629-9992-4817-83fd-ed2d7149cf13" name="Komt op een straat die van niemand is" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="811fda5a-8cf7-43b8-92ee-93a0b153cead" />
+        <subjects>
+          <subsystemMoniker Id="80cbe0ff-0342-4ed4-b128-c4780863e2b3" LastKnownName="Monopoly" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="29265d27-ded9-4a99-9602-1fea32974caf" name="Bank" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5e58ac9e-39ca-46c9-ae28-de0ac4d9f882" />
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="dab129ad-e3a0-4e72-8bd9-e11b1bee488d" name="Komt op of over &quot;Start&quot;" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3f7728fb-d966-4805-a9d6-bcd1e22186f6" />
+        <targetEnds>
+          <association Id="8ce7c94c-6032-437b-b726-e3dcf3001354" isDerived="false" sourceEndRoleName="Komt op of over &quot;Start&quot;" targetEndRoleName="Bank" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="29265d27-ded9-4a99-9602-1fea32974caf" LastKnownName="Bank" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="da6ba734-9d81-409b-8e98-1ec5356b7850" name="Komt op of over &quot;Start&quot;" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="da4b5f29-5608-4eb3-b52a-fdc10ac13c43" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ee8971e2-60f8-437b-8f5a-8eff8219ec89" name="Bank" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4daa84a9-0b10-4366-b656-a82313a9d7a9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4c5b030f-7772-4939-941f-7d86e719f560" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="80cbe0ff-0342-4ed4-b128-c4780863e2b3" LastKnownName="Monopoly" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="99b6effd-7870-4c85-b224-ee9c796ffbd4" name="Monopoly_UML">
+    <elementDefinition Id="cb38883e-43b8-40fd-b6ca-a86bc712a6cd" />
+  </package>
+</useCaseModelRoot>
