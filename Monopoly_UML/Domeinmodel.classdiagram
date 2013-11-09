@@ -41,6 +41,49 @@
         <elementDefinition Id="8320440e-d273-4d4b-875f-2fcab4b45714" />
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ba38a94b-0c5a-4b0c-b936-90f7fa568601" name="DobbelSteen" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7de5e41a-2145-4a67-9e53-21bfb5276ea4" />
+        <ownedAttributesInternal>
+          <property Id="752c5d0b-84b4-45aa-9f31-8f178013ed74" name="laatsteWaarde" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="87a4d07b-bf9d-4def-8903-e366c25d5163" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="1164e118-34d7-44c9-9b8a-8a580966097d" name="Gooi" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e1875350-6d8e-4eca-a317-8481be51f7ba" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9add4b80-c949-4650-ae46-3c8b5216fd59" direction="Return" isUnique="false">
+                  <elementDefinition Id="60cb2461-39e3-448a-81bf-45afa40c2d57" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9056dfc9-170b-400b-ad9a-78cfde15d9f4" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b7fc4cb8-5372-4751-9a30-e4f5a1e094c6" name="LaatsteWaarde" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e042743a-0e30-453d-90ee-378d0d966460" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="53512d96-fddb-4155-9ea8-f65505465fcd" direction="Return" isUnique="false">
+                  <elementDefinition Id="a0c0c765-43ee-45b9-933c-6f401cb1e9e4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9056dfc9-170b-400b-ad9a-78cfde15d9f4" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="9056dfc9-170b-400b-ad9a-78cfde15d9f4" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="b5e63b29-0157-42c5-8eab-766567fc612a" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="ff4f26ba-71c9-4b5f-988c-8df7b50a710c" name="Monopoly_UML">
     <elementDefinition Id="cb38883e-43b8-40fd-b6ca-a86bc712a6cd" />
