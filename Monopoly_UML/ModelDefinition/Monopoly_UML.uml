@@ -747,84 +747,10 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="a865ee7d-21bb-4309-abc2-41cc5c14e7f0"
+            Id="36caa892-9a21-4ebd-9672-999bba2f786f"
             isDerived="false"
-            sourceEndRoleName=""
-            targetEndRoleName=""
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="83360787-bda2-48ad-b070-8124c23249cb"
-              LastKnownName="AlgemeenFondsKaarten"
-              LastKnownLocation="Monopoly_UML.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="a1490979-31dd-4164-a917-e9c4472199d9"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="aaff06e1-65aa-4499-877f-e6364fae6892"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="86447287-9b6c-4d96-a3b1-634374eac289"
-            isDerived="false"
-            sourceEndRoleName=""
-            targetEndRoleName=""
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="06028732-b079-4e52-85fb-f9709909a426"
-              LastKnownName="Kanskaarten"
-              LastKnownLocation="Monopoly_UML.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="e3c2c14a-1269-4381-8589-fe835b627c61"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="580a1f1d-34ab-49c4-ae88-d3ebfb36c2ab"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="b1098ae3-25bd-4616-8f1e-d46ed4c46166"
-            isDerived="false"
-            sourceEndRoleName=""
-            targetEndRoleName=""
+            sourceEndRoleName="MonopolyModel"
+            targetEndRoleName="DobbelSteen"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -834,7 +760,8 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="2569b828-d63b-4a97-8f73-6cb8bf070a84"
+                  Id="0c4a470d-3189-4cc8-8dd3-580061e1817e"
+                  name="MonopolyModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -846,57 +773,8 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="03d497f5-9391-4b3a-bf3f-1f99dc79cc45"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="89a1c92e-7262-448f-acb0-991c25ee4731"
-                      name="Lower"
-                      value="2" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="9acadd7f-5428-4557-9b93-3c88d9300597"
-                      name="Upper"
-                      value="2" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="41b8ec52-2a2d-4d2e-9dab-95dcba12fd7e"
-            isDerived="false"
-            sourceEndRoleName=""
-            targetEndRoleName=""
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="2f4e9bb4-194d-416f-9732-3cc89be087cd"
-              LastKnownName="Vakjes"
-              LastKnownLocation="Monopoly_UML.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="5ccaad37-e8f1-496c-bf10-36ff7cac5c11"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="7fe29a72-4f97-40d6-a331-655fe5dbe935"
+                  Id="e95f9d6d-b482-45b1-975a-f64b5fdecbf6"
+                  name="DobbelSteen"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"

@@ -130,79 +130,21 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="097b1061-0d4a-40a8-8c2a-e483781b813e" />
           </association>
-          <association Id="7649e6a9-71b3-48a8-bf2b-2e8b125567b5" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
-            <classMoniker Id="5bacea6e-4202-4b28-91bf-4371fea9366a" LastKnownName="AlgemeenFondsKaarten" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="62976234-2911-46d1-a960-1f5ae34f6d85" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="a1490979-31dd-4164-a917-e9c4472199d9" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="f5237c4e-2db4-48a8-9110-515bb29f3d3d" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="aaff06e1-65aa-4499-877f-e6364fae6892" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="a865ee7d-21bb-4309-abc2-41cc5c14e7f0" />
-          </association>
-          <association Id="19484f11-8093-4ab2-9c4d-a5aaadcfe753" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
-            <classMoniker Id="8656ef95-a822-4457-b2cd-07ba5f9abbcd" LastKnownName="Kanskaarten" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="f81a624e-81e8-43a4-a4a7-98884879afc2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="e3c2c14a-1269-4381-8589-fe835b627c61" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="cc33b43c-4e26-4d0e-b7ee-d85c550b055d" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="580a1f1d-34ab-49c4-ae88-d3ebfb36c2ab" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="86447287-9b6c-4d96-a3b1-634374eac289" />
-          </association>
-          <association Id="1e4f2837-3274-4cb6-a094-3236b951decd" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+          <association Id="f5d5f76d-6048-4832-9d10-d1b847a2741e" isDerived="false" sourceEndRoleName="MonopolyModel" targetEndRoleName="DobbelSteen" isLeaf="false" isAbstract="false">
             <classMoniker Id="ba38a94b-0c5a-4b0c-b936-90f7fa568601" LastKnownName="DobbelSteen" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="c02da9d1-2af7-4b5e-bc52-a08dfd01ab98" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="2569b828-d63b-4a97-8f73-6cb8bf070a84" />
+                <memberEnd Id="01ac8d41-23e3-4f31-8539-501a2f186e57" name="MonopolyModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0c4a470d-3189-4cc8-8dd3-580061e1817e" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="342f8452-154c-4f5c-869c-2662ddcd8d86" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <lowerValueInternal>
-                    <literalString Id="69e518e6-9988-4eb0-a195-49a6ba2f61df" name="Lower" value="2">
-                      <elementDefinition Id="89a1c92e-7262-448f-acb0-991c25ee4731" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="d7de88dd-06eb-49af-b26c-55cd7343e1cf" name="Upper" value="2">
-                      <elementDefinition Id="9acadd7f-5428-4557-9b93-3c88d9300597" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="03d497f5-9391-4b3a-bf3f-1f99dc79cc45" />
+                <memberEnd Id="47cec181-84b5-4afc-bdde-f0b78246b156" name="DobbelSteen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e95f9d6d-b482-45b1-975a-f64b5fdecbf6" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="b1098ae3-25bd-4616-8f1e-d46ed4c46166" />
-          </association>
-          <association Id="ed1eaf1b-ea82-4638-96c1-4ddbd9fd5f0c" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
-            <classMoniker Id="b7e8a989-44fd-4e13-bd77-28d00ff0632f" LastKnownName="Vakjes" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="a92432ff-2dca-412d-9179-4066b56c00b2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="5ccaad37-e8f1-496c-bf10-36ff7cac5c11" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="6d0b8cef-0ba5-4bb1-85d6-8d518082c61c" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="7fe29a72-4f97-40d6-a331-655fe5dbe935" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="41b8ec52-2a2d-4d2e-9dab-95dcba12fd7e" />
+            <elementDefinition Id="36caa892-9a21-4ebd-9672-999bba2f786f" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>
