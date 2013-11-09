@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="cb38883e-43b8-40fd-b6ca-a86bc712a6cd"
   name="Monopoly_UML" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -36,24 +36,8 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
-        Id="d7767049-acae-4fc6-ab04-ad960f3a1be9"
-        name="Spel"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
         Id="4f8c14c1-15c8-4d35-b28f-b3be722918fd"
         name="Spelvak"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="397309f5-f5fd-47ff-b2fa-3d7b1f171a6e"
-        name="Straat"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
@@ -64,31 +48,84 @@
         name="Speler"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="14a72483-a6f2-42ce-909e-088fd6fed8f2"
+            name="naam"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="b84e1708-a037-4d5f-9dc6-5f8cc0550fa0"
+                LastKnownName="string"
+                LastKnownLocation="Monopoly_UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="44cf1393-d66c-420c-991f-6daa10c38373"
+            name="geld"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="b5e63b29-0157-42c5-8eab-766567fc612a"
+                LastKnownName="int"
+                LastKnownLocation="Monopoly_UML.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
         Id="06028732-b079-4e52-85fb-f9709909a426"
-        name="Kanskaart"
+        name="Kanskaarten"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="93fe3a0a-366c-4078-86f5-bbb6422b5645"
+            isSubstitutable="false">
+            <classMoniker
+              Id="8ed00262-358f-4030-b638-f46201bad06c"
+              LastKnownName="Kaarten"
+              LastKnownLocation="Monopoly_UML.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
         Id="83360787-bda2-48ad-b070-8124c23249cb"
-        name="AlgemeenFondsKaart"
+        name="AlgemeenFondsKaarten"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="e0ff70cc-8be1-4803-b4d5-e8ff9b2c529d"
-        name="Stad"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="e037fc04-5326-4cc2-81df-b24fa37076ab"
+            isSubstitutable="false">
+            <classMoniker
+              Id="8ed00262-358f-4030-b638-f46201bad06c"
+              LastKnownName="Kaarten"
+              LastKnownLocation="Monopoly_UML.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <actor
@@ -540,24 +577,8 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
-        Id="a36f3bea-2ce3-47d7-9b77-d88de0af6d99"
-        name="Vak"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
         Id="95edc05b-6020-4035-90f0-96261821f4f1"
         name="Class2"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="8320440e-d273-4d4b-875f-2fcab4b45714"
-        name="Biljet"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
@@ -639,6 +660,662 @@
       <undefinedType
         Id="b5e63b29-0157-42c5-8eab-766567fc612a"
         name="int" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0b6ef581-4780-40d5-9a2a-fae65e39b2e8"
+        name="MonopolyController"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4cd051c1-7f2a-42ef-b5b3-061fb9bf4d18"
+        name="MonopolyView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="fa7bc981-3c03-4863-8e9e-0f63db199b5c"
+            name="Draw"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a8bcb6e9-29b6-47b7-a7b6-b4ca909a8b4c"
+        name="MonopolyModel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="097b1061-0d4a-40a8-8c2a-e483781b813e"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="4655ec00-d7ba-4953-b58a-b614069a2179"
+              LastKnownName="Speler"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5b88489a-23be-4698-afda-97c8b66c5a9a"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2984ff3a-3695-450e-a805-ff2ea1f49d0c"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="30fd0f0f-b335-48fd-a97b-6bf406ae60a7"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="c0ffdafb-7bc1-4ac2-bb43-8d21db90db3f"
+                      name="Upper"
+                      value="4" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a865ee7d-21bb-4309-abc2-41cc5c14e7f0"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="83360787-bda2-48ad-b070-8124c23249cb"
+              LastKnownName="AlgemeenFondsKaarten"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a1490979-31dd-4164-a917-e9c4472199d9"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="aaff06e1-65aa-4499-877f-e6364fae6892"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="86447287-9b6c-4d96-a3b1-634374eac289"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="06028732-b079-4e52-85fb-f9709909a426"
+              LastKnownName="Kanskaarten"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e3c2c14a-1269-4381-8589-fe835b627c61"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="580a1f1d-34ab-49c4-ae88-d3ebfb36c2ab"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="b1098ae3-25bd-4616-8f1e-d46ed4c46166"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7de5e41a-2145-4a67-9e53-21bfb5276ea4"
+              LastKnownName="DobbelSteen"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2569b828-d63b-4a97-8f73-6cb8bf070a84"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="03d497f5-9391-4b3a-bf3f-1f99dc79cc45"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="89a1c92e-7262-448f-acb0-991c25ee4731"
+                      name="Lower"
+                      value="2" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="9acadd7f-5428-4557-9b93-3c88d9300597"
+                      name="Upper"
+                      value="2" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="41b8ec52-2a2d-4d2e-9dab-95dcba12fd7e"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="2f4e9bb4-194d-416f-9732-3cc89be087cd"
+              LastKnownName="Vakjes"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5ccaad37-e8f1-496c-bf10-36ff7cac5c11"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7fe29a72-4f97-40d6-a331-655fe5dbe935"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="b5e54372-27a7-4cb8-a47a-340aec2c7b41"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="16e699f1-9a41-4703-b815-766a38cf151b"
+        name="List&lt;Speler&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="b84e1708-a037-4d5f-9dc6-5f8cc0550fa0"
+        name="string" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8ed00262-358f-4030-b638-f46201bad06c"
+        name="Kaarten"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="f747b8da-709c-438d-9920-c7fabd62c031"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="96aba673-20db-49f4-8db5-b18129af3bee"
+              LastKnownName="Kaart"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fec27e5b-5951-430e-be79-266efa9b7723"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0fb30cee-da95-4a2d-91c6-50161042af10"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="1480fcfb-dc42-4067-9c5f-0b381b25a2e4"
+                      name="Lower"
+                      value="16" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="43c7d4cd-5ba8-443e-9804-458fdcc59daa"
+                      name="Upper"
+                      value="16" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="96aba673-20db-49f4-8db5-b18129af3bee"
+        name="Kaart"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="19413b2c-8b2f-4c6c-91e6-b6ad9c7731ca"
+            name="naam"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="b84e1708-a037-4d5f-9dc6-5f8cc0550fa0"
+                LastKnownName="string"
+                LastKnownLocation="Monopoly_UML.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1bcd4ce1-0d30-4e77-9c63-2835b0d7a62b"
+        name="BetaalOntvangKaart"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="9d37f6eb-7699-498e-99c5-f29c8f1c7b54"
+            isSubstitutable="false">
+            <classMoniker
+              Id="96aba673-20db-49f4-8db5-b18129af3bee"
+              LastKnownName="Kaart"
+              LastKnownLocation="Monopoly_UML.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="22c1e036-f71f-4c3d-8061-517e808665b7"
+            name="bedrag"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="b5e63b29-0157-42c5-8eab-766567fc612a"
+                LastKnownName="int"
+                LastKnownLocation="Monopoly_UML.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="18368c1c-2b71-4938-8baa-4e44e37a1b8b"
+        name="BetaalOntvangPerHuisHotelKaart"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="8f9cef49-da73-4d98-8a14-5d54c1eae27a"
+            isSubstitutable="false">
+            <classMoniker
+              Id="96aba673-20db-49f4-8db5-b18129af3bee"
+              LastKnownName="Kaart"
+              LastKnownLocation="Monopoly_UML.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="9a097986-3b6f-41cf-bc57-6b441b229981"
+            name="bedragPerHuis"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="b5e63b29-0157-42c5-8eab-766567fc612a"
+                LastKnownName="int"
+                LastKnownLocation="Monopoly_UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c9c52456-55b6-498e-b1a4-8a6e3a861030"
+            name="bedragPerHotel"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="b5e63b29-0157-42c5-8eab-766567fc612a"
+                LastKnownName="int"
+                LastKnownLocation="Monopoly_UML.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2f4e9bb4-194d-416f-9732-3cc89be087cd"
+        name="Vakjes"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="8d4f1bb2-ad4a-4cdf-9918-5eee66934ff5"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="0d6936e0-de83-4df2-a35e-0d6a3dc9579e"
+              LastKnownName="Vakje"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6e527c90-c45f-498e-afa0-bcdac2ad75f8"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="58781722-9b08-4503-8f0a-e41506dec81b"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0d6936e0-de83-4df2-a35e-0d6a3dc9579e"
+        name="Vakje"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="847c74ea-1e20-44ed-be5d-819054bf26a1"
+            name="naam"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="b84e1708-a037-4d5f-9dc6-5f8cc0550fa0"
+                LastKnownName="string"
+                LastKnownLocation="Monopoly_UML.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="15537e69-30d2-4c6d-b595-ab5fe4d7e346"
+        name="MonopolySpel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="66174069-3c72-41a3-a85a-c835dfb9d419"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="a8bcb6e9-29b6-47b7-a7b6-b4ca909a8b4c"
+              LastKnownName="MonopolyModel"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="22f05b70-1131-4230-a1ed-672d3c317b5e"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a263a1f0-43ed-42e0-adf4-01f2c9b96cbd"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="2b48176e-51c1-4d0c-a444-aa07c8b1b630"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="4cd051c1-7f2a-42ef-b5b3-061fb9bf4d18"
+              LastKnownName="MonopolyView"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b092a1d7-0b1b-4ed3-87e6-ad7e1d3780a3"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="47452cf0-8538-4017-9627-2d0fd83fcf0e"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="ade8e7a0-afea-427c-9973-79f4c52d13a0"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="0b6ef581-4780-40d5-9a2a-fae65e39b2e8"
+              LastKnownName="MonopolyController"
+              LastKnownLocation="Monopoly_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="902ab06e-aa8d-4ffb-9541-61169c3855f4"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dbb3e0e6-b9c1-4987-a291-850366032236"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
