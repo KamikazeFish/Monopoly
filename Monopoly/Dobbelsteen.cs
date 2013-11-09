@@ -15,7 +15,7 @@ namespace Monopoly
         Random rnd;
         private int laatsteWaarde;
 
-        Dobbelsteen()
+        public Dobbelsteen()
         {
             rnd = new Random();
 
