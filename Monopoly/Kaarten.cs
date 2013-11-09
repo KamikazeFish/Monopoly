@@ -6,31 +6,16 @@ using System.Text;
 
 namespace Monopoly
 {
-    // De teksten van de kanskaarten, in de versie voor Nederland met de oorspronkelijke bedragen in guldens:
+ 
+    // de basisklasse voor AlgemeenFondsKaarten en KansKaarten
     //
-    // Boete voor te snel rijden ƒ 15
-    // Betaal schoolgeld ƒ 150
-    // Ga verder naar Barteljorisstraat. Indien u langs "Start" komt, ontvangt u ƒ 200
-    // Reis naar station "West" en indien u langs "Start" komt, ontvangt u ƒ 200
-    // Ga verder naar "Start"
-    // Ga drie plaatsen terug
-    // Ga direct naar de gevangenis. Ga niet langs "Start". U ontvangt geen ƒ 200
-    // Ga verder naar de Herestraat. Indien u langs "Start" komt ontvangt u ƒ 200
-    // De bank betaalt u ƒ 50 dividend
-    // Verlaat de gevangenis zonder te betalen
-    // Repareer uw huizen. Betaal voor elk huis ƒ 25, betaal voor elk hotel ƒ 100
-    // U wordt aangeslagen voor straatgeld. ƒ 40 per huis, ƒ 115 per hotel
-    // Uw bouwverzekering vervalt, u ontvangt ƒ 150
-    // Aangehouden wegens dronkenschap ƒ 20 boete
-    // Ga verder naar Kalverstraat
-    // U hebt een kruiswoordpuzzel gewonnen en ontvangt ƒ 100
-
     public class Kaarten
     {
         private List<Kaart> kaarten;
 
         public Kaarten()
         {
+            kaarten = new List<Kaart>();
         }
 
         public void VoegToe(Kaart krt)
@@ -40,13 +25,92 @@ namespace Monopoly
 
     }
 
+  
+    // Kanskaarten: een van de twee stapels kaarten in het spel.
+    //
     public class KansKaarten : Kaarten
     {
+        // De teksten van de kanskaarten, in de versie voor Nederland met de oorspronkelijke bedragen in guldens:
+        //
+        // Boete voor te snel rijden ƒ 15
+        // Betaal schoolgeld ƒ 150
+        // Ga verder naar Barteljorisstraat. Indien u langs "Start" komt, ontvangt u ƒ 200
+        // Reis naar station "West" en indien u langs "Start" komt, ontvangt u ƒ 200
+        // Ga verder naar "Start"
+        // Ga drie plaatsen terug
+        // Ga direct naar de gevangenis. Ga niet langs "Start". U ontvangt geen ƒ 200
+        // Ga verder naar de Herestraat. Indien u langs "Start" komt ontvangt u ƒ 200
+        // De bank betaalt u ƒ 50 dividend
+        // Verlaat de gevangenis zonder te betalen
+        // Repareer uw huizen. Betaal voor elk huis ƒ 25, betaal voor elk hotel ƒ 100
+        // U wordt aangeslagen voor straatgeld. ƒ 40 per huis, ƒ 115 per hotel
+        // Uw bouwverzekering vervalt, u ontvangt ƒ 150
+        // Aangehouden wegens dronkenschap ƒ 20 boete
+        // Ga verder naar Kalverstraat
+        // U hebt een kruiswoordpuzzel gewonnen en ontvangt ƒ 100
+
         public KansKaarten()
         {
             VoegToe(new BetaalOntvangKaart("Boete voor te snel rijden ƒ 15", -15));
             VoegToe(new BetaalOntvangKaart("Betaal schoolgeld ƒ 150", -150));
+            // Ga verder naar Barteljorisstraat. Indien u langs "Start" komt, ontvangt u ƒ 200
+            // Reis naar station "West" en indien u langs "Start" komt, ontvangt u ƒ 200
+            // Ga verder naar "Start"
+            // Ga drie plaatsen terug
+            // Ga direct naar de gevangenis. Ga niet langs "Start". U ontvangt geen ƒ 200
+            // Ga verder naar de Herestraat. Indien u langs "Start" komt ontvangt u ƒ 200
+            VoegToe(new BetaalOntvangKaart("De bank betaalt u ƒ 50 dividend", +50));
+            // Verlaat de gevangenis zonder te betalen
+            VoegToe(new BetaalOntvangPerHuisHotel("Repareer uw huizen. Betaal voor elk huis ƒ 25, betaal voor elk hotel ƒ 100", -25, -100));
+            VoegToe(new BetaalOntvangPerHuisHotel("U wordt aangeslagen voor straatgeld. ƒ 40 per huis, ƒ 115 per hotel", -40, -115));
+            VoegToe(new BetaalOntvangKaart("Uw bouwverzekering vervalt, u ontvangt ƒ 150", +150));
+            VoegToe(new BetaalOntvangKaart("Aangehouden wegens dronkenschap ƒ 20 boete", -20));
+            // Ga verder naar Kalverstraat
+            VoegToe(new BetaalOntvangKaart("U hebt een kruiswoordpuzzel gewonnen en ontvangt ƒ 100", +100));
 
+        }
+    }
+
+
+    public class AlgemeenFondsKaarten : Kaarten
+    {
+        // De teksten van de Algemeen Fonds-kaarten, in de versie voor Nederland met de oorspronkelijke bedragen in guldens:
+        //
+        // U erft ƒ 100
+        // U ontvangt rente van 7% preferente aandelen ƒ 25
+        // Een vergissing van de bank in uw voordeel, u ontvangt ƒ 200
+        // Ga terug naar Dorpsstraat (Ons Dorp)
+        // Ga direct naar de gevangenis. Ga niet door "Start", u ontvangt geen ƒ 200
+        // U bent jarig en ontvangt van iedere speler ƒ 10
+        // U hebt de tweede prijs in een schoonheidswedstrijd gewonnen en ontvangt ƒ 10
+        // Betaal uw doktersrekening ƒ 50
+        // Betaal uw verzekeringspremie ƒ 50
+        // Door verkoop van effecten ontvangt u ƒ 50
+        // Verlaat de gevangenis zonder betalen
+        // Restitutie inkomstenbelasting, u ontvangt ƒ 20
+        // Lijfrente vervalt, u ontvangt ƒ 100
+        // Betaal het hospitaal ƒ 100
+        // Ga verder naar "Start"
+        // Betaal ƒ 10 boete of neem een Kanskaart
+        //
+        public AlgemeenFondsKaarten()
+        {
+            VoegToe(new BetaalOntvangKaart("U erft ƒ 100", +100));
+            VoegToe(new BetaalOntvangKaart("U ontvangt rente van 7% preferente aandelen ƒ 25", +25));
+            VoegToe(new BetaalOntvangKaart("Een vergissing van de bank in uw voordeel, u ontvangt ƒ 200", +200));
+            // Ga terug naar Dorpsstraat (Ons Dorp)
+            // Ga direct naar de gevangenis. Ga niet door "Start", u ontvangt geen ƒ 200
+            // U bent jarig en ontvangt van iedere speler ƒ 10
+            VoegToe(new BetaalOntvangKaart("U hebt de tweede prijs in een schoonheidswedstrijd gewonnen en ontvangt ƒ 10", +10));
+            VoegToe(new BetaalOntvangKaart("Betaal uw doktersrekening ƒ 50", -50));
+            VoegToe(new BetaalOntvangKaart("Betaal uw verzekeringspremie ƒ 50", -50));
+            VoegToe(new BetaalOntvangKaart("Door verkoop van effecten ontvangt u ƒ 50", +50));
+            // Verlaat de gevangenis zonder betalen
+            VoegToe(new BetaalOntvangKaart("Restitutie inkomstenbelasting, u ontvangt ƒ 20", +20));
+            VoegToe(new BetaalOntvangKaart("Lijfrente vervalt, u ontvangt ƒ 100", +100));
+            VoegToe(new BetaalOntvangKaart("Betaal het hospitaal ƒ 100", +100));
+            // Ga verder naar "Start"
+            // Betaal ƒ 10 boete of neem een Kanskaart
         }
     }
 }
