@@ -66,6 +66,7 @@
       <DependentUpon>Sandbox_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Vakje.cs" />
+    <Compile Include="Vakjes.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
