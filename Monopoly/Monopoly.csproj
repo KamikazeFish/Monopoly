@@ -65,6 +65,7 @@
     <Compile Include="Sandbox_Form.Designer.cs">
       <DependentUpon>Sandbox_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Speler.cs" />
     <Compile Include="Vakje.cs" />
     <Compile Include="Vakjes.cs" />
     <EmbeddedResource Include="Form1.resx">
