@@ -88,11 +88,65 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="e91e2246-5671-477b-800a-dbf3321ef31a" name="MonopolyController" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="0b6ef581-4780-40d5-9a2a-fae65e39b2e8" />
+        <targetEnds>
+          <association Id="62ef543c-d2fe-4751-8fdb-a4608112f2ea" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="75ce53ae-ac3d-4a4a-9d72-496e2865b32b" LastKnownName="MonopolyModel" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8bf792a6-8821-41a2-a00d-ba0045055728" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="35a10083-04d7-414b-8450-9b7b0a0eeb94" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b259d11f-b397-48ce-b3f6-8513eb057674" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="644c3538-275f-4dbc-bb3b-89be166ffad0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="db5d9a9d-3b16-4d2f-a6d4-019a4c6a5675" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="a29926ba-d9ee-4049-84b8-96aac2424f0c" name="StartNewSpel" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d6605b41-3de2-413f-9a36-b8864c732249" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="69d4d453-0209-419d-a2a5-248a7b21c4ed" direction="Return" isUnique="false">
+                  <elementDefinition Id="f148157f-34fb-4b09-99e0-1c57f89341be" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="5d4bf600-7e7b-4681-91cb-23076454490e" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0dd281b2-e05f-44af-ad34-5a76ed5bfac9" name="GooiVoorSpeler" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="baff6abb-c3a8-41f4-80b7-76da0b1dd89c" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
       <class Id="a8029a42-24d4-46d1-83e5-fd1529bb1276" name="MonopolyView" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="4cd051c1-7f2a-42ef-b5b3-061fb9bf4d18" />
+        <targetEnds>
+          <association Id="5de55b6a-6f60-4b50-a0c6-1408e44bda1f" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e91e2246-5671-477b-800a-dbf3321ef31a" LastKnownName="MonopolyController" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bcb49bf6-d658-4bca-9443-f1cd354d2843" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="fd1e79fb-d7e5-4310-845d-de29436cfe8e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9834a07f-99f5-46ca-834a-35ceb082b64d" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fa323f85-a7a6-4fe1-a3b8-d3a48ba72466" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2adc0b4d-fe5e-442c-9300-355f106840ec" />
+          </association>
+        </targetEnds>
         <ownedOperationsInternal>
           <operation Id="c29d0747-3cd6-4b29-9a14-5b9736446b85" name="Draw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="fa7bc981-3c03-4863-8e9e-0f63db199b5c" />
@@ -146,12 +200,55 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="36caa892-9a21-4ebd-9672-999bba2f786f" />
           </association>
+          <association Id="f63e40b2-202c-4aea-a3a0-b7cf4d6fa375" isDerived="false" sourceEndRoleName="" targetEndRoleName="AlgemeenFondsKaarten" isLeaf="false" isAbstract="false">
+            <classMoniker Id="5bacea6e-4202-4b28-91bf-4371fea9366a" LastKnownName="AlgemeenFondsKaarten" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="98c53bf7-8d4a-4816-b790-4bf0d60b3a83" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5566ebe8-b28e-42e4-8d01-cfb14f61c87d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6a90fe4a-36d5-49af-8cdb-03834fe15d19" name="AlgemeenFondsKaarten" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="dfaef3e9-74f1-49d4-a56f-8f87ff60f2d4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="79bd9673-595d-4f2e-a779-a61b1884b0e7" />
+          </association>
+          <association Id="6aa51cbc-c86b-4683-b520-3893df2830d7" isDerived="false" sourceEndRoleName="" targetEndRoleName="Kanskaarten" isLeaf="false" isAbstract="false">
+            <classMoniker Id="8656ef95-a822-4457-b2cd-07ba5f9abbcd" LastKnownName="Kanskaarten" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9faccaac-3b36-45ad-b371-67da6f486810" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="588d45ef-37a2-4bbb-8c3b-b9db3bc8f476" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8f4cc11b-84db-481b-85a1-f494e410d2ce" name="Kanskaarten" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2f913a30-a9ac-42d9-8dbb-561f31618c1e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c8a2f78e-1b52-49df-a002-5b8a3cc3f4f5" />
+          </association>
+          <association Id="4a538780-055c-4db2-9ea5-ef750e6119d3" isDerived="false" sourceEndRoleName="" targetEndRoleName="Vakjes" isLeaf="false" isAbstract="false">
+            <classMoniker Id="b7e8a989-44fd-4e13-bd77-28d00ff0632f" LastKnownName="Vakjes" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a5652863-e164-4f64-80a2-996ec854f42c" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1f4e3727-704d-4c9e-902d-8bb32fd49f53" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="46461c38-61a4-48ea-a275-12d4097b4b1c" name="Vakjes" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a06c5bf5-52e4-408b-bfc0-8d9b76f5c7c2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4c255596-57cf-44aa-98e9-289574b2f434" />
+          </association>
         </targetEnds>
-        <ownedAttributesInternal>
-          <property Id="74a76c8d-cca9-4e2e-9098-11cf8ac84a6f" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="b5e54372-27a7-4cb8-a47a-340aec2c7b41" />
-          </property>
-        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
@@ -290,61 +387,11 @@
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="c2d4c552-4b37-417f-b482-d642cbe648db" name="MonopolySpel" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="15537e69-30d2-4c6d-b595-ab5fe4d7e346" />
-        <targetEnds>
-          <association Id="b6910593-eb0b-443a-afad-76977cb98287" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
-            <classMoniker Id="75ce53ae-ac3d-4a4a-9d72-496e2865b32b" LastKnownName="MonopolyModel" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="44b5c946-7ab5-43dc-aaab-af49496d71cc" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="22f05b70-1131-4230-a1ed-672d3c317b5e" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="4eff6b24-abac-444e-ae46-7f0bcc1d2b5c" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="a263a1f0-43ed-42e0-adf4-01f2c9b96cbd" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="66174069-3c72-41a3-a85a-c835dfb9d419" />
-          </association>
-          <association Id="fef2ea1d-57de-4b5d-8d82-20997082b1e2" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
-            <classMoniker Id="a8029a42-24d4-46d1-83e5-fd1529bb1276" LastKnownName="MonopolyView" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="3b1d8482-0903-4b96-b0e3-1f590f9885d2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="b092a1d7-0b1b-4ed3-87e6-ad7e1d3780a3" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="a64a1742-104b-4009-a676-b7150095bcdb" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="47452cf0-8538-4017-9627-2d0fd83fcf0e" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="2b48176e-51c1-4d0c-a444-aa07c8b1b630" />
-          </association>
-          <association Id="bc781864-6946-46d0-995e-9554a21b62d6" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
-            <classMoniker Id="e91e2246-5671-477b-800a-dbf3321ef31a" LastKnownName="MonopolyController" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="0da5f4a3-4ac5-481d-a7b4-807aec8eba4c" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="902ab06e-aa8d-4ffb-9541-61169c3855f4" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="14281626-da85-4595-9a89-f11c179cdc5e" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="dbb3e0e6-b9c1-4987-a291-850366032236" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="ade8e7a0-afea-427c-9973-79f4c52d13a0" />
-          </association>
-        </targetEnds>
-      </class>
-    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="5d4bf600-7e7b-4681-91cb-23076454490e" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c1ff6e32-ac51-4b4e-a9e7-e6df26a13558" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="ff4f26ba-71c9-4b5f-988c-8df7b50a710c" name="Monopoly_UML">
     <elementDefinition Id="cb38883e-43b8-40fd-b6ca-a86bc712a6cd" />

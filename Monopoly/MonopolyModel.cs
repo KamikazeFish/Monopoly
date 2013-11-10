@@ -12,14 +12,23 @@ namespace Monopoly
     class MonopolyModel
     {
         private Dobbelsteen steen1;
+
         private Dobbelsteen steen2;
-        private Vakjes bordVakjes;
+
+        private Vakjes bordVakjes;              // een aparte klasse die alle vakjes beheert.
+
+        private List<Speler> spelers;           // een lijst van alle spelers
 
         public MonopolyModel()
         {
             steen1 = new Dobbelsteen();
             steen2 = new Dobbelsteen();
             bordVakjes = new Vakjes();
+        }
+
+        public List<Speler> Spelers
+        {
+            get { return spelers; }
         }
     }
 }

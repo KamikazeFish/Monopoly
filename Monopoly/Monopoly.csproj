@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="Kaart.cs" />
     <Compile Include="Kaarten.cs" />
+    <Compile Include="MonopolyController.cs" />
     <Compile Include="MonopolyModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
