@@ -3,6 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+// 1> Knopjes:
+//
+// - koop vakje
+// - koop huis op: <dropdown>
+// - gooi
+// - einde beurt.
+// 
+// 2> Kaartje: 
+// - we gaan de vakjes naar subklasses uitsplitsen.
+// 
+// 3> Designbeslissingen:
+// - De controller krijgt alle logica en eventuele foutmeldingen en vragen.
+// - 
+
 namespace Monopoly
 {
     // in deze klasse gaan we de business logic implementeren..
