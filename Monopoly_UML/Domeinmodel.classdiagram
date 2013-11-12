@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="c2709f3c-12fb-4b17-a60a-fb675a73771b" name="Domeinmodel" linkedPackageId="ff4f26ba-71c9-4b5f-988c-8df7b50a710c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="c2709f3c-12fb-4b17-a60a-fb675a73771b" name="Domeinmodel" linkedPackageId="ff4f26ba-71c9-4b5f-988c-8df7b50a710c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="008ab9d4-e157-4f18-a4bd-c80c697d6880" name="Speler" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -260,31 +260,21 @@
       <class Id="e3418d1f-dad5-4a1f-891c-42590010b8b1" name="Kaarten" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="8ed00262-358f-4030-b638-f46201bad06c" />
         <targetEnds>
-          <association Id="7efd905b-13eb-4637-9d99-a05465227d92" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+          <association Id="8edcd303-2348-4c2b-82b9-8454c4c442c6" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
             <classMoniker Id="c813450c-8c18-4c02-8313-e276555f96a2" LastKnownName="Kaart" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="3a45297f-9741-42b2-bab2-3ec7aafd40fc" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="fec27e5b-5951-430e-be79-266efa9b7723" />
+                <memberEnd Id="46fa8882-74d4-440a-ac41-59e1cfece6f3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f26307bd-2784-46e6-afd3-f0aa74c1786b" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="18828f22-6d0e-4a67-b64d-86c7740deec6" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <lowerValueInternal>
-                    <literalString Id="6a811691-98c6-45c5-bc10-ba8b0b2934fe" name="Lower" value="16">
-                      <elementDefinition Id="1480fcfb-dc42-4067-9c5f-0b381b25a2e4" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="3b39d2ed-5bc1-403a-b468-b63c95cbcc96" name="Upper" value="16">
-                      <elementDefinition Id="43c7d4cd-5ba8-443e-9804-458fdcc59daa" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="0fb30cee-da95-4a2d-91c6-50161042af10" />
+                <memberEnd Id="7351124e-6db0-4457-aeeb-31e296a3cac6" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="6da34681-3397-4b45-bc9e-b18fc934ff9f" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="f747b8da-709c-438d-9920-c7fabd62c031" />
+            <elementDefinition Id="38fdfdba-9bae-4f9c-8d8a-381b5b96d334" />
           </association>
         </targetEnds>
       </class>
@@ -355,21 +345,21 @@
       <class Id="b7e8a989-44fd-4e13-bd77-28d00ff0632f" name="Vakjes" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="2f4e9bb4-194d-416f-9732-3cc89be087cd" />
         <targetEnds>
-          <association Id="bec180b3-c8b2-4a5f-9eb6-96f749c50308" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+          <association Id="48530d9b-3f9d-47be-b31d-301cb160596e" isDerived="false" sourceEndRoleName="Vakjes" targetEndRoleName="Vakje" isLeaf="false" isAbstract="false">
             <classMoniker Id="6874c42d-8e31-4753-a642-83cf8d34eff1" LastKnownName="Vakje" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="cd1b34f9-d350-4e51-89d4-57525f19c84b" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="6e527c90-c45f-498e-afa0-bcdac2ad75f8" />
+                <memberEnd Id="3311fa76-0029-4911-a8a5-942600fb7d69" name="Vakjes" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3e5e0e77-b696-4b92-892f-651e4fe2457f" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="1cdfefae-b4f9-478d-b7ef-cf9cc468dd8c" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="58781722-9b08-4503-8f0a-e41506dec81b" />
+                <memberEnd Id="0200d9dd-097e-4df9-833b-159297b40a5f" name="Vakje" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="5dc8aea7-25b8-4a21-a85d-d458f7ea36f6" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="8d4f1bb2-ad4a-4cdf-9918-5eee66934ff5" />
+            <elementDefinition Id="6741e99e-98e5-44b2-9ad0-2bc28df29029" />
           </association>
         </targetEnds>
       </class>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="cb38883e-43b8-40fd-b6ca-a86bc712a6cd"
   name="Monopoly_UML" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -1034,7 +1034,7 @@
         isActiveClass="false">
         <targetEnds>
           <association
-            Id="f747b8da-709c-438d-9920-c7fabd62c031"
+            Id="38fdfdba-9bae-4f9c-8d8a-381b5b96d334"
             isDerived="false"
             sourceEndRoleName=""
             targetEndRoleName=""
@@ -1047,39 +1047,26 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="fec27e5b-5951-430e-be79-266efa9b7723"
+                  Id="f26307bd-2784-46e6-afd3-f0aa74c1786b"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="None"
+                  aggregation="Composite"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="0fb30cee-da95-4a2d-91c6-50161042af10"
+                  Id="6da34681-3397-4b45-bc9e-b18fc934ff9f"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="1480fcfb-dc42-4067-9c5f-0b381b25a2e4"
-                      name="Lower"
-                      value="16" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="43c7d4cd-5ba8-443e-9804-458fdcc59daa"
-                      name="Upper"
-                      value="16" />
-                  </upperValueInternal>
-                </memberEnd>
+                  isComposite="true" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -1220,10 +1207,10 @@
         isActiveClass="false">
         <targetEnds>
           <association
-            Id="8d4f1bb2-ad4a-4cdf-9918-5eee66934ff5"
+            Id="6741e99e-98e5-44b2-9ad0-2bc28df29029"
             isDerived="false"
-            sourceEndRoleName=""
-            targetEndRoleName=""
+            sourceEndRoleName="Vakjes"
+            targetEndRoleName="Vakje"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -1233,26 +1220,28 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="6e527c90-c45f-498e-afa0-bcdac2ad75f8"
+                  Id="3e5e0e77-b696-4b92-892f-651e4fe2457f"
+                  name="Vakjes"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="None"
+                  aggregation="Composite"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="58781722-9b08-4503-8f0a-e41506dec81b"
+                  Id="5dc8aea7-25b8-4a21-a85d-d458f7ea36f6"
+                  name="Vakje"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="true" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
