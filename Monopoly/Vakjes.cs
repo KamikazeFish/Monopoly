@@ -60,6 +60,20 @@ namespace Monopoly
         {
             bord.Add(vk);
         }
+
+        // overload operator []
+        public Vakje this[int i]
+        {
+            get
+            {
+                return bord[i];
+            }
+            set
+            {
+                bord[i] = value;
+            }
+        }
+
     }
 
 }
