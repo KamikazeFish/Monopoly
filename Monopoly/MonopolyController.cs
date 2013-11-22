@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 // 1> Knopjes:
 //
@@ -23,8 +24,15 @@ namespace Monopoly
     //
     class MonopolyController
     {
-        // enkele defnities
+        // enkele definities
         private const int beginSaldo = 10000;
+        private List<Color> beschikbareKleuren = new List<Color>
+        {
+            Color.Blue,
+            Color.Red,
+            Color.Green,
+            Color.Yellow
+        };
 
         MonopolyModel model;
 
@@ -41,11 +49,17 @@ namespace Monopoly
             // todo: een dialoog die de aantallen en namen vraagt.
             //
             model.Spelers.Clear();
-            model.Spelers.Add(new Speler("Pieter", beginSaldo));
-            model.Spelers.Add(new Speler("Ilja", beginSaldo));
+            model.Spelers.Add(new Speler("Pieter", beginSaldo, this.PickColor()));
+            model.Spelers.Add(new Speler("Ilja", beginSaldo, this.PickColor()));
 
         }
 
-       
+        private Color PickColor()
+        {
+            Random rnd = new Random();
+            Color kleur = this.beschikbareKleuren[rnd.Next(0, this.beschikbareKleuren.Count - 1)];
+            this.beschikbareKleuren.Remove(kleur);
+            return kleur;
+        }
     }
 }

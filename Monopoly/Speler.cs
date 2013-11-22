@@ -8,14 +8,16 @@ namespace Monopoly
     public class Speler
     {
         private string naam;        // hoe heet deze speler?
-        private int saldo;          // heveel geld heeft deze speler?
-        private int positie;
+        private int saldo;          // hoeveel geld heeft deze speler?
+        private int positie;        // wat is de huidige positie van de speler
+        private System.Drawing.Color kleur;
 
-        public Speler(string naam, int saldo, int positie = 0)
+        public Speler(string naam, int saldo, System.Drawing.Color kleur, int positie = 0)
         {
             this.naam = naam;
             this.saldo = saldo;
             this.positie = positie;
+            this.kleur = kleur;
         }
 
         public string Naam
