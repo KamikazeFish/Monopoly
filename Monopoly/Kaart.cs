@@ -46,4 +46,16 @@ namespace Monopoly
         }
     }
 
+    public class GaNaarKaart : Kaart
+    {
+        private bool gaLangsStart;
+        private Vakje vakje;
+
+        public GaNaarKaart(string tekst, Vakje vakje, bool gaLangsStart) : base(tekst)
+        {
+            this.vakje = vakje;
+            this.gaLangsStart = gaLangsStart;
+        }
+    }
+
 }
