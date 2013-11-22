@@ -24,7 +24,6 @@ namespace Monopoly
         }
 
     }
-
   
     // Kanskaarten: een van de twee stapels kaarten in het spel.
     //

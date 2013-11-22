@@ -78,7 +78,7 @@ namespace Monopoly
             this.loopTerug = loopTerug;
         }
 
-        // In de uitvoer methode wordt de huidige positie meegegeven waarmee met de positieVerschuiving het Vakje beredeneerd kan worden.
+        // In de uitvoer methode wordt de huidige positie meegegeven waarmee met de aantalVakjes het Vakje beredeneerd kan worden.
     }
 
     public class VerlaatDeGevangenisKaart : Kaart
