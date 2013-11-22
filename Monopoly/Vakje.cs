@@ -85,4 +85,9 @@ namespace Monopoly
 
     }
 
+    /*public class Straat : Vakje
+    {
+
+    }*/
+
 }

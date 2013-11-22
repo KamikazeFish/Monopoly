@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actie.cs" />
     <Compile Include="Dobbelsteen.cs" />
     <Compile Include="MonopolySpel.cs">
       <SubType>Form</SubType>
