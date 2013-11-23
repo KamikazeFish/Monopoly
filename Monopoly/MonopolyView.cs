@@ -76,6 +76,17 @@ namespace Monopoly
                 e.Graphics.DrawRectangle(vakjePen, vakjeOmtrek);
                 e.Graphics.SetClip(vakjeOmtrek);
 
+                // maak de kleurborder
+                Rectangle vakjeKleur = new Rectangle(
+                    rand.Left + x * (breedteVakje + margeVakje),
+                    rand.Top + y * (hoogteVakje + margeVakje),
+                    breedteVakje,
+                    hoogteVakje/4);
+                Brush vakjeKleurBrush = new SolidBrush(model.Vakjes[index].Kleur);
+                e.Graphics.FillRectangle(vakjeKleurBrush, vakjeKleur);
+                e.Graphics.DrawRectangle(vakjePen, vakjeKleur);
+
+
                 // teken de naam
                 StringFormat sf = new StringFormat();
                 sf.LineAlignment = StringAlignment.Center;

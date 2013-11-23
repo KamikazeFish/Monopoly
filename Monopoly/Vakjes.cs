@@ -16,9 +16,9 @@ namespace Monopoly
         {
             bord = new List<Vakje>();
             Add(new Vakje(Vakje.VakType.START, "Start", "", Color.White));
-            Add(new Vakje(Vakje.VakType.STRAAT, "Dorpsstraat", "Ons Dorp", Color.FromArgb(153,51,153)));
+            Add(new Vakje(Vakje.VakType.STRAAT, "Dorpsstraat", "Ons Dorp", Color.FromArgb(0,0,153)));
             Add(new Vakje(Vakje.VakType.ALGEMEENFONDS, "Algemeen fonds", "",Color.White));
-            Add(new Vakje(Vakje.VakType.STRAAT, "Brink", "Ons Dorp", Color.FromArgb(153, 51, 153)));
+            Add(new Vakje(Vakje.VakType.STRAAT, "Brink", "Ons Dorp", Color.FromArgb(0, 0, 153)));
             Add(new Vakje(Vakje.VakType.BELASTING, "Inkomstenbelasting", "", Color.White));
             Add(new Vakje(Vakje.VakType.STATION, "Station Zuid", "", Color.White));
             Add(new Vakje(Vakje.VakType.STRAAT, "Steenstraat", "Arnhem", Color.FromArgb(170, 204, 255)));
