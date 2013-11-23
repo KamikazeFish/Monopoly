@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace Monopoly
 {
@@ -66,12 +67,14 @@ namespace Monopoly
         private VakType tp;
         private string straatNaam;
         private string stadNaam;
+        private System.Drawing.Color kleur;
 
-        public Vakje(VakType tp, string straatNaam, string stadNaam)
+        public Vakje(VakType tp, string straatNaam, string stadNaam, Color kleur)
         {
             this.tp = tp;
             this.straatNaam = straatNaam;
             this.stadNaam = stadNaam;
+            this.kleur = kleur;
         }
 
         public string StraatNaam
@@ -81,6 +84,10 @@ namespace Monopoly
         public string StadNaam
         {
             get { return stadNaam; }
+        }
+        public Color Kleur
+        {
+            get { return kleur; }
         }
 
     }
