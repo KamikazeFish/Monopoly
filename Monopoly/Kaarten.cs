@@ -23,6 +23,25 @@ namespace Monopoly
             kaarten.Add(krt);
         }
 
+        // schud alle kaarten door elkaar, anders krijgen we
+        // iedere keer dezelfde volgorde.
+        public void SchudKaarten()
+        {
+            Random rnd = new Random();
+            List<Kaart> kaartenGeschud = new List<Kaart>();
+
+            // trek een willekeurige kaart uit kaarten, en stop die
+            // in kaartenGeschud totdat kaarten leeg is.
+            while (kaarten.Count > 0)
+            {
+                int index = rnd.Next( kaarten.Count );
+                kaartenGeschud.Add( kaarten[index] );
+                kaarten.RemoveAt(index);
+            }
+
+            kaarten = kaartenGeschud;
+        }
+
     }
   
     // Kanskaarten: een van de twee stapels kaarten in het spel.
@@ -66,6 +85,8 @@ namespace Monopoly
             VoegToe(new BetaalOntvangKaart("Aangehouden wegens dronkenschap ƒ 20 boete", -20));
             VoegToe(new GaNaarKaart("Ga verder naar de Heerestraat. Indien u langs 'Start' komt ontvangt u ƒ 200", new Vakje(Vakje.VakType.STRAAT, "Heerestraat", "Haarlem"), true));
             VoegToe(new BetaalOntvangKaart("U hebt een kruiswoordpuzzel gewonnen en ontvangt ƒ 100", +100));
+
+            SchudKaarten();
         }
     }
 
@@ -109,6 +130,8 @@ namespace Monopoly
             VoegToe(new BetaalOntvangKaart("Betaal het hospitaal ƒ 100", +100));
             VoegToe(new GaNaarKaart("Ga verder naar 'Start'", new Vakje(Vakje.VakType.START, "Start", ""), true));
              // Betaal ƒ 10 boete of neem een Kanskaart
+
+            SchudKaarten();
         }
     }
 }

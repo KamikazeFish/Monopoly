@@ -19,12 +19,18 @@ namespace Monopoly
 
         private List<Speler> spelers;           // een lijst van alle spelers
 
+        private AlgemeenFondsKaarten algemeenFondsKaarten;
+
+        private KansKaarten kansKaarten;
+
         public MonopolyModel()
         {
             steen1 = new Dobbelsteen();
             steen2 = new Dobbelsteen();
             bordVakjes = new Vakjes();
             spelers = new List<Speler>();
+            algemeenFondsKaarten = new AlgemeenFondsKaarten();
+            kansKaarten = new KansKaarten();
         }
 
         public List<Speler> Spelers
