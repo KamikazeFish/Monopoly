@@ -83,7 +83,7 @@ namespace Monopoly
             VoegToe(new BetaalOntvangPerHuisHotel("U wordt aangeslagen voor straatgeld. ƒ 40 per huis, ƒ 115 per hotel", -40, -115));
             VoegToe(new BetaalOntvangKaart("Uw bouwverzekering vervalt, u ontvangt ƒ 150", +150));
             VoegToe(new BetaalOntvangKaart("Aangehouden wegens dronkenschap ƒ 20 boete", -20));
-            VoegToe(new GaNaarKaart("Ga verder naar de Heerestraat. Indien u langs 'Start' komt ontvangt u ƒ 200", new Vakje(Vakje.VakType.STRAAT, "Heerestraat", "Haarlem"), true));
+            VoegToe(new GaNaarKaart("Ga verder naar Kalverstraat", new Vakje(Vakje.VakType.STRAAT, "Kalverstraat", "Amsterdam"), true));
             VoegToe(new BetaalOntvangKaart("U hebt een kruiswoordpuzzel gewonnen en ontvangt ƒ 100", +100));
 
             SchudKaarten();
