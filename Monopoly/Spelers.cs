@@ -12,6 +12,7 @@ namespace Monopoly
 
         public Spelers()
         {
+            this.spelers = new List<Speler>();
             this.currentIndex = 0;
         }
 
@@ -31,12 +32,25 @@ namespace Monopoly
         public void Shuffle()
         {
             Random rnd = new Random();
-            this.spelers.OrderBy(item => rnd.Next());
+            List<Speler> tempSpelers = new List<Speler>();
+            tempSpelers.AddRange(this.spelers);
+            this.spelers.Clear();
+
+            int n = tempSpelers.Count;
+            for (int i = 0; i < n; i++)
+			{
+                Speler speler = tempSpelers[rnd.Next(0, tempSpelers.Count)];
+                tempSpelers.Remove(speler);
+                this.spelers.Add(speler);
+			}
         }
 
         public void Add(Speler speler) 
         {
-            this.spelers.Add(speler);
+            if (speler != null)
+            {
+                this.spelers.Add(speler);
+            }
         }
 
         public void Remove(Speler speler)

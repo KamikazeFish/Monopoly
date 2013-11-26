@@ -59,6 +59,8 @@ namespace Monopoly
         public MonopolyController(MonopolyModel model)
         {
             this.model = model;
+
+            
         }
 
         // business logic

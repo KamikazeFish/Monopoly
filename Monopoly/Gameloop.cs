@@ -8,23 +8,37 @@ namespace Monopoly
     public class Gameloop
     {
         private MonopolyController controller;
+        private MonopolyModel model;
+
         private bool stop;
         private List<Actie> acties = new List<Actie>();
 
-        public Gameloop()
+        public Gameloop(MonopolyModel model)
         {
-            this.controller = new MonopolyController(new MonopolyModel());
+            this.model = model;
+            this.controller = new MonopolyController(model);
             this.stop = false;
 
+            this.stop = true; // !!TIJDELIJK, anders nu een infinite loop
+
+            this.defaultActies();
             this.Loop();
         }
 
         private void Loop()
         {
-            Actie actie = this.acties.First();
+            Actie actie = this.acties.Last(); // acties van achter naar voren
             this.acties.Remove(actie);
 
             this.executeActie(actie);
+
+            // drawBoard
+
+            if (this.acties.Count == 0)
+            {
+                this.model.Spelers.Next(); // volgende speler aan de beurt laten
+                this.defaultActies();      // standaard acties inladen
+            }
 
             // alle acties uitvoeren
 
@@ -41,7 +55,7 @@ namespace Monopoly
 
         public void executeActie(Actie actie) 
         {
-
+            actie.VoerUit(this.model);
         }
 
         public void removeActie(Actie actie)
@@ -54,9 +68,12 @@ namespace Monopoly
             this.acties.Clear();
 
             this.acties.AddRange(new List<Actie> { 
-                new GooiActie()
-               
+                new GooiActie(),
+                // acties van het vakje wordt hiertussen aan de acties toegevoegd
+                new KoopHuisActie()
             });
+
+            this.acties.Reverse();
         }
 
 

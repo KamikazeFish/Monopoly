@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="DobbelsteenTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpelersTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Monopoly\Monopoly.csproj">
