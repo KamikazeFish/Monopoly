@@ -16,7 +16,27 @@ using System.Drawing;
 // 
 // 3> Designbeslissingen:
 // - De controller krijgt alle logica en eventuele foutmeldingen en vragen.
-// - 
+// -
+
+// Gamestates
+// 1. Speler komt aan beurt
+// 2. Speler gooit
+// 3. Speler wordt verzet --> actie: speler verzetten
+// 4. Speler komt op een vakje --> actie van vakje wordt afgehandeld
+// 5. Speler kan huizen kopen
+//
+// Alternatief: in de gevangenis
+// 1a. Speler komt aan beurt
+// 2a. Speler gooit
+// 3a. Speler gooit dubbel --> 
+//        (quote wikipedia: Door dubbel te gooien. Hij speelt dan meteen het aantal ogen van de worp. Hierna mag hij nog een keer gooien (zoals normaal bij een dubbele worp).)
+// 4a. Normale flow vanaf 4
+// 
+// 3b. Speler gooit niet dubbel
+// 4b. Check of speler al 3 beurten in de gevangenis zit --> Als dat zo is verplicht betalen
+//
+// 4c. Speler betaald of levert de verlaat de gevangenis kaart in.
+
 
 namespace Monopoly
 {
@@ -43,7 +63,7 @@ namespace Monopoly
 
         // business logic
 
-        void StartNewSpel()
+        public void StartNewSpel()
         {
             // voorlopig voegen we hardcoded twee spelers toe...
             // todo: een dialoog die de aantallen en namen vraagt.

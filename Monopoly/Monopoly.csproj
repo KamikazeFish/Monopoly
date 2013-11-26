@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Actie.cs" />
     <Compile Include="Dobbelsteen.cs" />
+    <Compile Include="Gameloop.cs" />
     <Compile Include="MonopolySpel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +65,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Speler.cs" />
+    <Compile Include="Spelers.cs" />
     <Compile Include="Vakje.cs" />
     <Compile Include="Vakjes.cs" />
     <EmbeddedResource Include="MonopolySpel.resx">

@@ -17,7 +17,8 @@ namespace Monopoly
 
         private Vakjes bordVakjes;              // een aparte klasse die alle vakjes beheert.
 
-        private List<Speler> spelers;           // een lijst van alle spelers
+        private Spelers spelers;           // een lijst van alle spelers
+        private Speler actieveSpeler;
 
         private AlgemeenFondsKaarten algemeenFondsKaarten;
 
@@ -28,12 +29,12 @@ namespace Monopoly
             steen1 = new Dobbelsteen();
             steen2 = new Dobbelsteen();
             bordVakjes = new Vakjes();
-            spelers = new List<Speler>();
+            spelers = new Spelers();
             algemeenFondsKaarten = new AlgemeenFondsKaarten();
             kansKaarten = new KansKaarten();
         }
 
-        public List<Speler> Spelers
+        public Spelers Spelers
         {
             get { return spelers; }
         }
@@ -41,5 +42,7 @@ namespace Monopoly
         {
             get { return bordVakjes; }
         }
+
+        public Speler ActieveSpeler { get { return actieveSpeler; } set { this.actieveSpeler = value; } }
     }
 }
