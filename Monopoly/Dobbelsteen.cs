@@ -14,10 +14,12 @@ namespace Monopoly
     {
         Random rnd;
         private int laatsteWaarde;
+        private static int seed = System.Environment.TickCount;
 
         public Dobbelsteen()
         {
-            rnd = new Random();
+            rnd = new Random(seed);
+            seed += 94367;
 
             // gooi 1x voor initialisatie, anders
             // kan een gebruiker er eentje aanmaken en direct
