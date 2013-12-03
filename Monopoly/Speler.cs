@@ -29,5 +29,15 @@ namespace Monopoly
         {
             get { return saldo; }
         }
+
+        public System.Drawing.Color Kleur
+        {
+            get { return kleur; }
+        }
+
+        public override string ToString()
+        {
+            return Naam + " " + "( ƒ" + Saldo + " )";
+        }
     }
 }

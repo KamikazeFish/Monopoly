@@ -16,6 +16,11 @@ namespace Monopoly
             this.currentIndex = 0;
         }
 
+        public int GetAantalSpelers()
+        {
+            return spelers.Count;
+        }
+
         public Speler GetCurrent()
         {
             return this.spelers[this.currentIndex];
@@ -74,5 +79,20 @@ namespace Monopoly
                 this.currentIndex = 0;
             }
         }
+
+        // overload operator []
+
+        public Speler this[int i]
+        {
+            get
+            {
+                return spelers[i];
+            }
+            set
+            {
+                spelers[i] = value;
+            }
+        }
+
     }
 }

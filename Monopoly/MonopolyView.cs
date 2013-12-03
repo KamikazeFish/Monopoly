@@ -40,27 +40,22 @@ namespace Monopoly
             }
         }
 
-        public void DoPaint(PaintEventArgs e, MonopolyModel model)
+        // paint alle vakjes van het bord
+
+        private void DoPaintVakjes(PaintEventArgs e, MonopolyModel model, Rectangle rand)
         {
-            Pen vakjePen = new Pen( Color.Black, 1.0f) ;
+            Pen vakjePen = new Pen(Color.Black, 1.0f);
             SolidBrush vakjeBrush = new SolidBrush(Color.White);
             Font naamFont = new Font("Arial Narrow", (float)naamHoogte);
             SolidBrush tekstBrush = new SolidBrush(Color.Black);
 
 
-            Rectangle rand = new Rectangle( 
-                e.ClipRectangle.Left + margeLinks, 
-                e.ClipRectangle.Top + margeBoven, 
-                e.ClipRectangle.Width - margeLinks - margeRechts, 
-                e.ClipRectangle.Height - margeBoven - margeOnder 
-                );
-
             // teken alle vakjes
 
-            int breedteVakje = (rand.Width - 10 * margeVakje ) / 11;
-            int hoogteVakje = (rand.Height - 10 * margeVakje ) / 11;
+            int breedteVakje = (rand.Width - 10 * margeVakje) / 11;
+            int hoogteVakje = (rand.Height - 10 * margeVakje) / 11;
 
-            int x=0, y=0;
+            int x = 0, y = 0;
 
             for (int index = 0; index < 40; index++)
             {
@@ -81,7 +76,7 @@ namespace Monopoly
                     rand.Left + x * (breedteVakje + margeVakje),
                     rand.Top + y * (hoogteVakje + margeVakje),
                     breedteVakje,
-                    hoogteVakje/4);
+                    hoogteVakje / 4);
                 Brush vakjeKleurBrush = new SolidBrush(model.Vakjes[index].Kleur);
                 e.Graphics.FillRectangle(vakjeKleurBrush, vakjeKleur);
                 e.Graphics.DrawRectangle(vakjePen, vakjeKleur);
@@ -91,9 +86,9 @@ namespace Monopoly
                 StringFormat sf = new StringFormat();
                 sf.LineAlignment = StringAlignment.Center;
                 sf.Alignment = StringAlignment.Center;
-                
-                
-                RectangleF naamLayout = new RectangleF(vakjeOmtrek.Left, vakjeOmtrek.Top + naamOffset, vakjeOmtrek.Width, naamHoogte*2);
+
+
+                RectangleF naamLayout = new RectangleF(vakjeOmtrek.Left, vakjeOmtrek.Top + naamOffset, vakjeOmtrek.Width, naamHoogte * 2);
                 string naamTekst = model.Vakjes[index].StraatNaam;
                 e.Graphics.DrawString(naamTekst, naamFont, tekstBrush, naamLayout, sf);
 
@@ -108,6 +103,53 @@ namespace Monopoly
                 e.Graphics.ResetClip();
             }
 
+        }
+
+        private void DoPaintSpelers(PaintEventArgs e, MonopolyModel model, Rectangle rect)
+        {
+            Font spelerFont = new Font("Arial Narrow", 15.0f);
+            SolidBrush spelerBrush = new SolidBrush(Color.Black);
+            Pen zwartePen = new Pen(Color.Black, 1.0f);
+
+            StringFormat sf = new StringFormat();
+            sf.LineAlignment = StringAlignment.Near;
+            sf.Alignment = StringAlignment.Near;
+
+            int ypos = rect.Top + rect.Height / 2;
+            int xpos = rect.Left + rect.Width / 2;
+
+            for (int speler = 0; speler < model.Spelers.GetAantalSpelers(); ++speler)
+            {
+                RectangleF naamRect = new RectangleF(xpos, ypos, rect.Width, 20);
+                RectangleF pionRect = new RectangleF(xpos - 30, ypos, 20, 20);
+                e.Graphics.DrawString(model.Spelers[speler].ToString(), spelerFont, spelerBrush, naamRect, sf);
+
+                e.Graphics.FillEllipse(new SolidBrush(model.Spelers[speler].Kleur), pionRect);
+                e.Graphics.DrawEllipse(zwartePen, pionRect);
+
+                // step up speler positie
+                ypos -= 25;
+            }
+        }
+
+        public void DoPaint(PaintEventArgs e, MonopolyModel model)
+        {
+            Pen vakjePen = new Pen( Color.Black, 1.0f) ;
+            SolidBrush vakjeBrush = new SolidBrush(Color.White);
+            Font naamFont = new Font("Arial Narrow", (float)naamHoogte);
+            SolidBrush tekstBrush = new SolidBrush(Color.Black);
+
+
+            Rectangle rand = new Rectangle( 
+                e.ClipRectangle.Left + margeLinks, 
+                e.ClipRectangle.Top + margeBoven, 
+                e.ClipRectangle.Width - margeLinks - margeRechts, 
+                e.ClipRectangle.Height - margeBoven - margeOnder 
+                );
+
+            DoPaintVakjes(e, model, rand);
+
+            DoPaintSpelers(e, model, rand);
         }
     }
 

@@ -12,15 +12,20 @@ namespace Monopoly
     public partial class MonopolySpel : Form
     {
         public MonopolyModel model;
+        private MonopolyController controller;
         private Gameloop gameloop;
 
         public MonopolySpel()
         {
             model = new MonopolyModel();
+            controller = new MonopolyController(model);
+            controller.StartNewSpel();                      // todo: fix this
 
             InitializeComponent();
 
             this.gameloop = new Gameloop(model);
+
+
         }
 
         private void OnPaint(object sender, PaintEventArgs e)
