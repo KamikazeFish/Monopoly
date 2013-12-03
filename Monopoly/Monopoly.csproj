@@ -90,6 +90,14 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Dice1.bmp" />
+    <EmbeddedResource Include="Resources\Dice2.bmp" />
+    <EmbeddedResource Include="Resources\Dice3.bmp" />
+    <EmbeddedResource Include="Resources\Dice4.bmp" />
+    <EmbeddedResource Include="Resources\Dice5.bmp" />
+    <EmbeddedResource Include="Resources\Dice6.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

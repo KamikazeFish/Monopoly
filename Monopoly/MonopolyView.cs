@@ -105,6 +105,9 @@ namespace Monopoly
 
         }
 
+
+        // paint alle spelers.
+
         private void DoPaintSpelers(PaintEventArgs e, MonopolyModel model, Rectangle rect)
         {
             Font spelerFont = new Font("Arial Narrow", 15.0f);
@@ -127,10 +130,37 @@ namespace Monopoly
                 e.Graphics.FillEllipse(new SolidBrush(model.Spelers[speler].Kleur), pionRect);
                 e.Graphics.DrawEllipse(zwartePen, pionRect);
 
+
                 // step up speler positie
                 ypos -= 25;
             }
         }
+
+        private void DoPaintDobbelstenen(PaintEventArgs e, MonopolyModel model, Rectangle rect)
+        {
+            Pen dblPen = new Pen(Color.Black, 1.0f);
+
+            string naamSteen1 = "Monopoly.Resources.Dice" + model.Steen1.LaatsteWaarde + ".bmp";
+            string naamSteen2 = "Monopoly.Resources.Dice" + model.Steen2.LaatsteWaarde + ".bmp";
+
+            Bitmap bmp1 = new Bitmap(System.Reflection.Assembly.GetEntryAssembly().GetManifestResourceStream(naamSteen1));
+            Bitmap bmp2 = new Bitmap(System.Reflection.Assembly.GetEntryAssembly().GetManifestResourceStream(naamSteen2));
+
+            Point dbl1 = new Point(
+                rect.Left + rect.Width / 2 - 50 - bmp1.Width,
+                rect.Top + rect.Height / 2 + 90
+                );
+            Point dbl2 = new Point(
+                rect.Left + rect.Width / 2 + 50 - bmp2.Width,
+                rect.Top + rect.Height / 2 + 90
+                );
+
+            e.Graphics.DrawImage(bmp1, dbl1);
+            e.Graphics.DrawImage(bmp2, dbl2);
+
+            
+        }
+
 
         public void DoPaint(PaintEventArgs e, MonopolyModel model)
         {
@@ -150,6 +180,8 @@ namespace Monopoly
             DoPaintVakjes(e, model, rand);
 
             DoPaintSpelers(e, model, rand);
+
+            DoPaintDobbelstenen(e, model, rand);
         }
     }
 

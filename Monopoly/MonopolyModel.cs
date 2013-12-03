@@ -42,6 +42,14 @@ namespace Monopoly
         {
             get { return bordVakjes; }
         }
+        public Dobbelsteen Steen1
+        {
+            get { return steen1; }
+        }
+        public Dobbelsteen Steen2
+        {
+            get { return steen2; }
+        }
 
         public Speler ActieveSpeler { get { return actieveSpeler; } set { this.actieveSpeler = value; } }
     }
