@@ -12,15 +12,12 @@ namespace Monopoly
     // - LaatsteWaarde retourneert de worp.
     public class Dobbelsteen
     {
-        Random rnd;
+        static Random rnd = new Random();
         private int laatsteWaarde;
-        private static int seed = System.Environment.TickCount;
 
         public Dobbelsteen()
         {
-            rnd = new Random(seed);
-            seed += 94367;
-
+ 
             // gooi 1x voor initialisatie, anders
             // kan een gebruiker er eentje aanmaken en direct
             // LaatsteWaarde aanspreken
@@ -29,7 +26,7 @@ namespace Monopoly
 
         public int Gooi()
         {
-            laatsteWaarde = rnd.Next(1, 6);
+            laatsteWaarde = rnd.Next(1, 7);
             return LaatsteWaarde;
         }
 
