@@ -62,6 +62,11 @@ namespace Monopoly
             bord.Add(vk);
         }
 
+        public int GetAantalVakjes()
+        {
+            return bord.Count;
+        }
+
         // overload operator []
         public Vakje this[int i]
         {

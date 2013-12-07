@@ -55,7 +55,6 @@
 
         #endregion
 
-        private Monopoly.MonopolyView view;
     }
 }
 

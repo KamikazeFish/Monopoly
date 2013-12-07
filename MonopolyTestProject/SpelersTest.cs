@@ -94,16 +94,16 @@ namespace MonopolyTestProject
             bool hebbenDezelfdeVolgorde = true;
             for (int i = 0; i < 4; i++)
             {
-                Speler speler = spelers.GetCurrent();
-                Speler geschuddeSpeler = geschuddeSpelers.GetCurrent();
+                Speler speler = spelers.HuidigeSpeler;
+                Speler geschuddeSpeler = geschuddeSpelers.HuidigeSpeler;
 
                 if (speler.Naam != geschuddeSpeler.Naam)
                 {
                     hebbenDezelfdeVolgorde = false;
                     break;
                 }
-                spelers.Next();
-                geschuddeSpelers.Next();
+                spelers.Volgende();
+                geschuddeSpelers.Volgende();
             }
 
             Assert.IsFalse(hebbenDezelfdeVolgorde, "De spelers zijn niet goed geschud");

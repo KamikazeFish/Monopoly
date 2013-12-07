@@ -55,12 +55,12 @@ namespace Monopoly
         };
 
         MonopolyModel model;
+        MonopolyView view;
 
-        public MonopolyController(MonopolyModel model)
+        public MonopolyController(MonopolyModel model, MonopolyView view)
         {
             this.model = model;
-
-            
+            this.view = view;
         }
 
         // business logic
@@ -74,6 +74,26 @@ namespace Monopoly
             model.Spelers.Add(new Speler("Pieter", beginSaldo, this.PickColor()));
             model.Spelers.Add(new Speler("Ilja", beginSaldo, this.PickColor()));
 
+        }
+
+        public void HuidigeSpelerkliktOpGooi()
+        {
+            // 1> gooi de stenen
+            model.Steen1.Gooi();
+            model.Steen2.Gooi();
+
+
+            // gooi de stenen
+            int gegooidTotaal = model.Steen1.LaatsteWaarde + model.Steen2.LaatsteWaarde;
+
+            // verschuif de speler
+            model.VerplaatsHuidigeSpeler(gegooidTotaal);
+
+            // haal de actie van het huidige vakje op.
+            model.Vakjes[ model.Spelers.HuidigeSpeler.Positie ].LandingsActie.VoerUit(model);
+
+            // todo geef het view een schop
+            //view.Refresh();
         }
 
         private Color PickColor()

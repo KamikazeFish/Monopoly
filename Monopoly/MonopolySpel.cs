@@ -12,12 +12,13 @@ namespace Monopoly
     public partial class MonopolySpel : Form
     {
         public MonopolyModel model;
+        private MonopolyView view;
         private MonopolyController controller;
 
         public MonopolySpel()
         {
             model = new MonopolyModel();
-            controller = new MonopolyController(model);
+            controller = new MonopolyController(model, view);
             controller.StartNewSpel();                      // todo: fix this
 
             InitializeComponent();

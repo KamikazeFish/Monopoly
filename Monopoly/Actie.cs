@@ -33,6 +33,19 @@ namespace Monopoly
         }
     }
 
+    public class LegeActie : Actie
+    {
+        public LegeActie(string tekst = "")
+            : base(tekst)
+        {
+        }
+
+        public override void VoerUit(MonopolyModel model)
+        {
+            // niks te doen
+        }
+    }
+
     public class GooiActie : Actie
     {
         public GooiActie(string tekst = "De volgende speler mag gooien") : base(tekst)

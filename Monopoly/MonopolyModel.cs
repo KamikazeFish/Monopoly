@@ -18,7 +18,6 @@ namespace Monopoly
         private Vakjes bordVakjes;              // een aparte klasse die alle vakjes beheert.
 
         private Spelers spelers;           // een lijst van alle spelers
-        private Speler actieveSpeler;
 
         private AlgemeenFondsKaarten algemeenFondsKaarten;
 
@@ -34,10 +33,6 @@ namespace Monopoly
             kansKaarten = new KansKaarten();
         }
 
-        public Spelers Spelers
-        {
-            get { return spelers; }
-        }
         public Vakjes Vakjes
         {
             get { return bordVakjes; }
@@ -51,6 +46,25 @@ namespace Monopoly
             get { return steen2; }
         }
 
-        public Speler ActieveSpeler { get { return actieveSpeler; } set { this.actieveSpeler = value; } }
+        // spelers code
+
+        public Spelers Spelers
+        {
+            get { return spelers; }
+        }
+
+        public void VerplaatsHuidigeSpeler(int verschil)
+        {
+            spelers.HuidigeSpeler.Positie += verschil;
+            while (spelers.HuidigeSpeler.Positie < 0)
+            {
+                spelers.HuidigeSpeler.Positie += Vakjes.GetAantalVakjes();
+            }
+            while (spelers.HuidigeSpeler.Positie >= Vakjes.GetAantalVakjes())
+            {
+                spelers.HuidigeSpeler.Positie -= Vakjes.GetAantalVakjes();
+            }
+
+        }
     }
 }

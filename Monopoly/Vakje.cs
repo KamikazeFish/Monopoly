@@ -68,6 +68,7 @@ namespace Monopoly
         private string straatNaam;
         private string stadNaam;
         private System.Drawing.Color kleur;
+        private Actie landingsActie;
 
         public Vakje(VakType tp, string straatNaam, string stadNaam, Color kleur)
         {
@@ -75,6 +76,7 @@ namespace Monopoly
             this.straatNaam = straatNaam;
             this.stadNaam = stadNaam;
             this.kleur = kleur;
+            this.landingsActie = null;
         }
 
         public string StraatNaam
@@ -89,7 +91,17 @@ namespace Monopoly
         {
             get { return kleur; }
         }
-
+        public Actie LandingsActie
+        {
+            get
+            {
+                if (landingsActie == null)
+                {
+                    return new LegeActie();
+                }
+                return landingsActie;
+            }
+        }
     }
 
     /*public class Straat : Vakje

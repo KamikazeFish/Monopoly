@@ -35,6 +35,13 @@ namespace Monopoly
             get { return kleur; }
         }
 
+        public int Positie
+        {
+            get { return positie; }
+            set { positie = value; }
+        }
+
+
         public override string ToString()
         {
             return Naam + " " + "( ƒ" + Saldo + " )";

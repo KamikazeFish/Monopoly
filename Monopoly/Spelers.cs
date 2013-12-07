@@ -8,12 +8,12 @@ namespace Monopoly
     public class Spelers
     {
         private List<Speler> spelers;
-        private int currentIndex;
+        private int spelerIndex;
 
         public Spelers()
         {
             this.spelers = new List<Speler>();
-            this.currentIndex = 0;
+            this.spelerIndex = 0;
         }
 
         public int GetAantalSpelers()
@@ -21,14 +21,23 @@ namespace Monopoly
             return spelers.Count;
         }
 
-        public Speler GetCurrent()
+        public Speler HuidigeSpeler
         {
-            return this.spelers[this.currentIndex];
+            get
+            {
+                if (spelerIndex >= spelers.Count)
+                    return null;
+                return this.spelers[this.spelerIndex];
+            }
         }
 
-        public void Next()
+        public void Volgende()
         {
-            this.NextIndex();
+            spelerIndex++;
+            if (this.spelerIndex > (this.spelers.Count - 1) )
+            {
+                this.spelerIndex = 0;
+            }
         }
 
         /**
@@ -50,11 +59,11 @@ namespace Monopoly
 			}
         }
 
-        public void Add(Speler speler) 
+        public void Add(Speler nieuweSpeler) 
         {
-            if (speler != null)
+            if (nieuweSpeler != null)
             {
-                this.spelers.Add(speler);
+                this.spelers.Add(nieuweSpeler);
             }
         }
 
@@ -69,15 +78,6 @@ namespace Monopoly
         public void Clear()
         {
             this.spelers.Clear();
-        }
-
-        private void NextIndex()
-        {
-            this.currentIndex++;
-            if (this.currentIndex > (this.spelers.Count - 1) )
-            {
-                this.currentIndex = 0;
-            }
         }
 
         // overload operator []
