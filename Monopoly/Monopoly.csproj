@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="Actie.cs" />
     <Compile Include="Dobbelsteen.cs" />
-    <Compile Include="Gameloop.cs" />
     <Compile Include="MonopolySpel.cs">
       <SubType>Form</SubType>
     </Compile>

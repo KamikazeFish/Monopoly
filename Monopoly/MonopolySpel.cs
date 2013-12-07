@@ -13,7 +13,6 @@ namespace Monopoly
     {
         public MonopolyModel model;
         private MonopolyController controller;
-        private Gameloop gameloop;
 
         public MonopolySpel()
         {
@@ -22,8 +21,6 @@ namespace Monopoly
             controller.StartNewSpel();                      // todo: fix this
 
             InitializeComponent();
-
-            this.gameloop = new Gameloop(model);
 
 
         }
