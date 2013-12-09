@@ -45,7 +45,7 @@ namespace Monopoly
     class MonopolyController
     {
         // enkele definities
-        private const int beginSaldo = 10000;
+        private const int beginSaldo = 1500;
         private List<Color> beschikbareKleuren = new List<Color>
         {
             Color.Blue,
