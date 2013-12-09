@@ -137,11 +137,19 @@ namespace Monopoly
                 Speler huidigeSpeler = model.Spelers[speler];
 
                 RectangleF naamRect = new RectangleF(xpos, ypos, rand.Width, 20);
+                RectangleF aandebeurtRect = new RectangleF(xpos - 90, ypos, 40, 20);
                 RectangleF pionRect = new RectangleF(xpos - 30, ypos, 20, 20);
+
+                // teken tekst van speler
                 e.Graphics.DrawString(huidigeSpeler.ToString(), spelerFont, spelerBrush, naamRect, sf);
 
+                // teken rondje voor pion
                 e.Graphics.FillEllipse(new SolidBrush(huidigeSpeler.Kleur), pionRect);
-                e.Graphics.DrawEllipse(zwartePen, pionRect);
+
+                // teken pijltje indien aan de beurt
+
+                if (huidigeSpeler == model.Spelers.HuidigeSpeler)
+                    e.Graphics.DrawString("=>", spelerFont, spelerBrush, aandebeurtRect, sf);
 
                 // paint pionnetje van speler
                 Rectangle vakjeSpeler = GetRectangleVoorVakje(rand, huidigeSpeler.Positie);

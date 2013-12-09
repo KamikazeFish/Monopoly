@@ -114,6 +114,14 @@ namespace Monopoly
 
         public void HuidigeSpelerKliktOpEindeBeurt()
         {
+            // verhoog spelerindex
+            model.Spelers.Volgende();
+
+            // reset 'speler mag gooien'
+            model.HuidigeSpelerMagGooien = true;
+
+            // ververs het view
+            view.Refresh();
         }
 
         private Color PickColor()

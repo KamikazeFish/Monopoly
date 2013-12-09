@@ -34,6 +34,7 @@ namespace Monopoly
         // zet alle knoppen aan of uit
         private void EnableDisable()
         {
+            // mag de huidige speler nog (of nogmaals) gooien?
             buttonGooi.Enabled = model.HuidigeSpelerMagGooien;
         }
 
