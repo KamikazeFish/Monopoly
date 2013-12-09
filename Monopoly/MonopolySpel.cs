@@ -17,18 +17,48 @@ namespace Monopoly
 
         public MonopolySpel()
         {
-            model = new MonopolyModel();
-            controller = new MonopolyController(model, view);
-            controller.StartNewSpel();                      // todo: fix this
 
             InitializeComponent();
 
+            model = new MonopolyModel();
+            controller = new MonopolyController(model, view);
+            controller.StartNewSpel();                      // todo: fix this
 
         }
 
         private void OnPaint(object sender, PaintEventArgs e)
         {
            view.DoPaint(e, model);
+        }
+
+        // zet alle knoppen aan of uit
+        private void EnableDisable()
+        {
+            buttonGooi.Enabled = model.HuidigeSpelerMagGooien;
+        }
+
+        private void buttonGooi_Click(object sender, EventArgs e)
+        {
+            controller.HuidigeSpelerkliktOpGooi();
+            EnableDisable();
+        }
+
+        private void buttonKoopHuidigeVakje_Click(object sender, EventArgs e)
+        {
+            controller.HuidigeSpelerKliktOpKoopHuidigVakje();
+            EnableDisable();
+        }
+
+        private void buttonKoopHuisHotel_Click(object sender, EventArgs e)
+        {
+            controller.HuidigeSpelerKliktOpKoopHuisHotel();
+            EnableDisable();
+        }
+
+        private void buttonEindeBeurt_Click(object sender, EventArgs e)
+        {
+            controller.HuidigeSpelerKliktOpEindeBeurt();
+            EnableDisable();
         }
 
 

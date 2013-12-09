@@ -74,6 +74,8 @@ namespace Monopoly
             model.Spelers.Add(new Speler("Pieter", beginSaldo, this.PickColor()));
             model.Spelers.Add(new Speler("Ilja", beginSaldo, this.PickColor()));
 
+            model.HuidigeSpelerMagGooien = true;
+
         }
 
         public void HuidigeSpelerkliktOpGooi()
@@ -82,8 +84,7 @@ namespace Monopoly
             model.Steen1.Gooi();
             model.Steen2.Gooi();
 
-
-            // gooi de stenen
+            // hoeveel is er gegooid?
             int gegooidTotaal = model.Steen1.LaatsteWaarde + model.Steen2.LaatsteWaarde;
 
             // verschuif de speler
@@ -92,8 +93,27 @@ namespace Monopoly
             // haal de actie van het huidige vakje op.
             model.Vakjes[ model.Spelers.HuidigeSpeler.Positie ].LandingsActie.VoerUit(model);
 
-            // todo geef het view een schop
-            //view.Refresh();
+            // huidige speler mag opnieuw gooien indien hij duubbel gooide
+            if (model.Steen1.LaatsteWaarde != model.Steen2.LaatsteWaarde)
+            {
+                model.HuidigeSpelerMagGooien = false;
+            }
+
+            // geef het view een schop
+            view.Refresh();
+
+        }
+
+        public void HuidigeSpelerKliktOpKoopHuidigVakje()
+        {
+        }
+
+        public void HuidigeSpelerKliktOpKoopHuisHotel()
+        {
+        }
+
+        public void HuidigeSpelerKliktOpEindeBeurt()
+        {
         }
 
         private Color PickColor()

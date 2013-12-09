@@ -15,6 +15,8 @@ namespace Monopoly
 
         private Dobbelsteen steen2;
 
+        private bool huidigeSpelerMagGooien;    // true als de huidige speler nog mag gooien, anders false
+
         private Vakjes bordVakjes;              // een aparte klasse die alle vakjes beheert.
 
         private Spelers spelers;           // een lijst van alle spelers
@@ -27,6 +29,7 @@ namespace Monopoly
         {
             steen1 = new Dobbelsteen();
             steen2 = new Dobbelsteen();
+            huidigeSpelerMagGooien = true;
             bordVakjes = new Vakjes();
             spelers = new Spelers();
             algemeenFondsKaarten = new AlgemeenFondsKaarten();
@@ -44,6 +47,11 @@ namespace Monopoly
         public Dobbelsteen Steen2
         {
             get { return steen2; }
+        }
+        public bool HuidigeSpelerMagGooien 
+        {
+            get {return huidigeSpelerMagGooien;}
+            set { huidigeSpelerMagGooien = value; }
         }
 
         // spelers code
@@ -64,7 +72,7 @@ namespace Monopoly
             {
                 spelers.HuidigeSpeler.Positie -= Vakjes.GetAantalVakjes();
             }
-
         }
+
     }
 }

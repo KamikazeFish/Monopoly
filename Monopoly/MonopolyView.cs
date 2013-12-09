@@ -17,10 +17,11 @@ namespace Monopoly
         private const int naamOffset  = 10;
         private const int stadOffset  = 20;
         private const int naamHoogte  = 8;
+        private const int pionGrootte = 20;
 
         // vertaal spelvak-index naar x en y positie
         // van een vakje.
-        public void GetXYByIndex(int index, ref int x, ref int y)
+        private void GetXYByIndex(int index, ref int x, ref int y)
         {
             if (index >= 30)
             {
@@ -40,6 +41,22 @@ namespace Monopoly
             }
         }
 
+        private Rectangle GetRectangleVoorVakje(Rectangle rand, int index)
+        {
+            int x = 0;
+            int y = 0;
+            GetXYByIndex(index, ref x, ref y);
+            int breedteVakje = (rand.Width - 10 * margeVakje) / 11;
+            int hoogteVakje = (rand.Height - 10 * margeVakje) / 11;
+
+            Rectangle vakjeOmtrek = new Rectangle(
+                rand.Left + x * (breedteVakje + margeVakje),
+                rand.Top + y * (hoogteVakje + margeVakje),
+                breedteVakje,
+                hoogteVakje);
+            return vakjeOmtrek;
+        }
+
         // paint alle vakjes van het bord
 
         private void DoPaintVakjes(PaintEventArgs e, MonopolyModel model, Rectangle rand)
@@ -51,20 +68,12 @@ namespace Monopoly
 
 
             // teken alle vakjes
-
-            int breedteVakje = (rand.Width - 10 * margeVakje) / 11;
-            int hoogteVakje = (rand.Height - 10 * margeVakje) / 11;
-
             int x = 0, y = 0;
 
             for (int index = 0; index < 40; index++)
             {
                 GetXYByIndex(index, ref x, ref y);
-                Rectangle vakjeOmtrek = new Rectangle(
-                    rand.Left + x * (breedteVakje + margeVakje),
-                    rand.Top + y * (hoogteVakje + margeVakje),
-                    breedteVakje,
-                    hoogteVakje);
+                Rectangle vakjeOmtrek = GetRectangleVoorVakje(rand, index);
 
                 // vul het vakje in
                 e.Graphics.FillRectangle(vakjeBrush, vakjeOmtrek);
@@ -73,10 +82,10 @@ namespace Monopoly
 
                 // maak de kleurborder
                 Rectangle vakjeKleur = new Rectangle(
-                    rand.Left + x * (breedteVakje + margeVakje),
-                    rand.Top + y * (hoogteVakje + margeVakje),
-                    breedteVakje,
-                    hoogteVakje / 4);
+                    rand.Left + x * (vakjeOmtrek.Width + margeVakje),
+                    rand.Top + y * (vakjeOmtrek.Height + margeVakje),
+                    vakjeOmtrek.Width,
+                    vakjeOmtrek.Height / 4);
                 Brush vakjeKleurBrush = new SolidBrush(model.Vakjes[index].Kleur);
                 e.Graphics.FillRectangle(vakjeKleurBrush, vakjeKleur);
                 e.Graphics.DrawRectangle(vakjePen, vakjeKleur);
@@ -100,6 +109,8 @@ namespace Monopoly
                     e.Graphics.DrawString(stadTekst, naamFont, tekstBrush, stadLayout, sf);
                 }
 
+                // teken de speler(s) die op dit vakje staan
+
                 e.Graphics.ResetClip();
             }
 
@@ -108,7 +119,7 @@ namespace Monopoly
 
         // paint alle spelers.
 
-        private void DoPaintSpelers(PaintEventArgs e, MonopolyModel model, Rectangle rect)
+        private void DoPaintSpelers(PaintEventArgs e, MonopolyModel model, Rectangle rand)
         {
             Font spelerFont = new Font("Arial Narrow", 15.0f);
             SolidBrush spelerBrush = new SolidBrush(Color.Black);
@@ -118,22 +129,32 @@ namespace Monopoly
             sf.LineAlignment = StringAlignment.Near;
             sf.Alignment = StringAlignment.Near;
 
-            int ypos = rect.Top + rect.Height / 2;
-            int xpos = rect.Left + rect.Width / 2;
+            int ypos = rand.Top + rand.Height / 2;
+            int xpos = rand.Left + rand.Width / 2;
 
             for (int speler = 0; speler < model.Spelers.GetAantalSpelers(); ++speler)
             {
-                RectangleF naamRect = new RectangleF(xpos, ypos, rect.Width, 20);
-                RectangleF pionRect = new RectangleF(xpos - 30, ypos, 20, 20);
-                e.Graphics.DrawString(model.Spelers[speler].ToString(), spelerFont, spelerBrush, naamRect, sf);
+                Speler huidigeSpeler = model.Spelers[speler];
 
-                e.Graphics.FillEllipse(new SolidBrush(model.Spelers[speler].Kleur), pionRect);
+                RectangleF naamRect = new RectangleF(xpos, ypos, rand.Width, 20);
+                RectangleF pionRect = new RectangleF(xpos - 30, ypos, 20, 20);
+                e.Graphics.DrawString(huidigeSpeler.ToString(), spelerFont, spelerBrush, naamRect, sf);
+
+                e.Graphics.FillEllipse(new SolidBrush(huidigeSpeler.Kleur), pionRect);
                 e.Graphics.DrawEllipse(zwartePen, pionRect);
 
+                // paint pionnetje van speler
+                Rectangle vakjeSpeler = GetRectangleVoorVakje(rand, huidigeSpeler.Positie);
+                e.Graphics.FillEllipse(
+                    new SolidBrush(huidigeSpeler.Kleur),
+                    vakjeSpeler.Left + 2 + speler * pionGrootte,
+                    vakjeSpeler.Top + vakjeSpeler.Height - pionGrootte - 2, 
+                    (float)pionGrootte, (float)pionGrootte);
 
                 // step up speler positie
                 ypos -= 25;
             }
+
         }
 
         private void DoPaintDobbelstenen(PaintEventArgs e, MonopolyModel model, Rectangle rect)
@@ -178,9 +199,7 @@ namespace Monopoly
                 );
 
             DoPaintVakjes(e, model, rand);
-
             DoPaintSpelers(e, model, rand);
-
             DoPaintDobbelstenen(e, model, rand);
         }
     }
