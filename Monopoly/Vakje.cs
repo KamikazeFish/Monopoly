@@ -67,14 +67,16 @@ namespace Monopoly
         private VakType tp;
         private string straatNaam;
         private string stadNaam;
+        private int waarde;                             // hoeveel kost dit vakje? 0 betekent 'niet te koop', denk aan gevangenis
         private System.Drawing.Color kleur;
         private Actie landingsActie;
 
-        public Vakje(VakType tp, string straatNaam, string stadNaam, Color kleur)
+        public Vakje(VakType tp, string straatNaam, string stadNaam, int waarde, Color kleur)
         {
             this.tp = tp;
             this.straatNaam = straatNaam;
             this.stadNaam = stadNaam;
+            this.waarde = waarde;
             this.kleur = kleur;
             this.landingsActie = null;
         }
