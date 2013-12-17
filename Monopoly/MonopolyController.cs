@@ -75,7 +75,8 @@ namespace Monopoly
             model.Spelers.Add(new Speler("Ilja", beginSaldo, this.PickColor()));
 
             model.HuidigeSpelerMagGooien = true;
-
+            view.AddMessageToLog( "Nieuw spel gestart met " + model.Spelers.GetAantalSpelers() + " spelers.");
+            view.Refresh();
         }
 
         public void HuidigeSpelerkliktOpGooi()
@@ -91,13 +92,18 @@ namespace Monopoly
             model.VerplaatsHuidigeSpeler(gegooidTotaal);
 
             // haal de actie van het huidige vakje op.
-            model.Vakjes[ model.Spelers.HuidigeSpeler.Positie ].LandingsActie.VoerUit(model);
+            model.Vakjes[ model.Spelers.HuidigeSpeler.Positie ].LandingsActie.VoerUit( model );
 
-            // huidige speler mag opnieuw gooien indien hij duubbel gooide
+            // huidige speler mag opnieuw gooien indien hij dubbel gooide
             if (model.Steen1.LaatsteWaarde != model.Steen2.LaatsteWaarde)
             {
                 model.HuidigeSpelerMagGooien = false;
             }
+
+            view.AddMessageToLog("Speler " + model.Spelers.HuidigeSpeler.Naam + 
+                                 " gooit " + model.Steen1.LaatsteWaarde + " en " + model.Steen2.LaatsteWaarde + "  (=" + gegooidTotaal + ")");
+            view.AddMessageToLog("Speler " + model.Spelers.HuidigeSpeler.Naam + 
+                                 " land op vakje '" + model.Vakjes[model.Spelers.HuidigeSpeler.Positie].ToString() + "'" );
 
             // geef het view een schop
             view.Refresh();

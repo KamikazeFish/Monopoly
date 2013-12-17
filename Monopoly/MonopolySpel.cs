@@ -20,6 +20,7 @@ namespace Monopoly
 
             InitializeComponent();
 
+            view.SetLog(listBoxLog);
             model = new MonopolyModel();
             controller = new MonopolyController(model, view);
             controller.StartNewSpel();                      // todo: fix this
@@ -61,6 +62,7 @@ namespace Monopoly
             controller.HuidigeSpelerKliktOpEindeBeurt();
             EnableDisable();
         }
+
 
 
     }

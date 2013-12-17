@@ -19,6 +19,8 @@ namespace Monopoly
         private const int naamHoogte  = 8;
         private const int pionGrootte = 20;
 
+        private ListBox log;
+
         // vertaal spelvak-index naar x en y positie
         // van een vakje.
         private void GetXYByIndex(int index, ref int x, ref int y)
@@ -39,6 +41,19 @@ namespace Monopoly
             {
                 x = 10 - index; y = 10;
             }
+        }
+
+        public void SetLog( ListBox log)
+        {
+            this.log = log;
+        }
+
+        public void AddMessageToLog(string msg)
+        {
+            log.Items.Add(msg);
+            // scrool to lowest
+            int visibleItems = log.ClientSize.Height / log.ItemHeight;
+            log.TopIndex = Math.Max(log.Items.Count - visibleItems + 1, 0);
         }
 
         private Rectangle GetRectangleVoorVakje(Rectangle rand, int index)

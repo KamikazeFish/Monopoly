@@ -104,6 +104,14 @@ namespace Monopoly
                 return landingsActie;
             }
         }
+
+        public override String ToString()
+        {
+            if (stadNaam.Length > 0)
+                return straatNaam + " (" + stadNaam + ")";
+            else
+                return straatNaam;
+        }
     }
 
     /*public class Straat : Vakje
