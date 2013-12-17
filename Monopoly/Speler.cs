@@ -19,6 +19,7 @@ namespace Monopoly
             this.saldo = saldo;
             this.positie = positie;
             this.kleur = kleur;
+            this.kaarten = new List<Kaart>();
         }
 
         public string Naam

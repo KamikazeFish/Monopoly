@@ -197,18 +197,5 @@ namespace Monopoly
         }
     }
 
-    public class VerlaatDeGevangenisActie : Actie
-    {
-        public VerlaatDeGevangenisActie(string tekst)
-            : base(tekst)
-        {
-        }
-
-        public override void VoerUit(MonopolyModel model)
-        {
-
-        }
-    }
-
 
 }

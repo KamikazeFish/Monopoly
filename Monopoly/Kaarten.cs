@@ -77,7 +77,7 @@ namespace Monopoly
 
         public KansKaarten()
         {
-            VoegToe(new Kaart("Boete voor te snel rijden ƒ 15", -15));
+            /*VoegToe(new Kaart("Boete voor te snel rijden ƒ 15", -15));
             VoegToe(new BetaalOntvangKaart("Betaal schoolgeld ƒ 150", -150));
             VoegToe(new GaNaarKaart("Ga verder naar Barteljorisstraat. Indien u langs 'Start' komt, ontvangt u ƒ 200", new Vakje(Vakje.VakType.STRAAT, "Barteljorisstraat", "Haarlem", 140, Color.FromArgb(238, 68, 221)), true));
             VoegToe(new GaNaarKaart("Reis naar station 'West' en indien u langs 'Start' komt, ontvangt u ƒ 200", new Vakje(Vakje.VakType.STATION, "Station West", "", 200, Color.White), true));
@@ -93,7 +93,7 @@ namespace Monopoly
             VoegToe(new BetaalOntvangKaart("Aangehouden wegens dronkenschap ƒ 20 boete", -20));
             VoegToe(new GaNaarKaart("Ga verder naar Kalverstraat", new Vakje(Vakje.VakType.STRAAT, "Kalverstraat", "Amsterdam", 400, Color.FromArgb(51, 51, 255)), true));
             VoegToe(new BetaalOntvangKaart("U hebt een kruiswoordpuzzel gewonnen en ontvangt ƒ 100", +100));
-
+            */
             SchudKaarten();
         }
     }
@@ -121,7 +121,7 @@ namespace Monopoly
         // Betaal ƒ 10 boete of neem een Kanskaart
         //
         public AlgemeenFondsKaarten()
-        {
+        {/*
             VoegToe(new BetaalOntvangKaart("U erft ƒ 100", +100));
             VoegToe(new BetaalOntvangKaart("U ontvangt rente van 7% preferente aandelen ƒ 25", +25));
             VoegToe(new BetaalOntvangKaart("Een vergissing van de bank in uw voordeel, u ontvangt ƒ 200", +200));
@@ -137,7 +137,7 @@ namespace Monopoly
             VoegToe(new BetaalOntvangKaart("Lijfrente vervalt, u ontvangt ƒ 100", +100));
             VoegToe(new BetaalOntvangKaart("Betaal het hospitaal ƒ 100", +100));
             VoegToe(new GaNaarKaart("Ga verder naar 'Start'", new Vakje(Vakje.VakType.START, "Start", "", 0, Color.White), true));
-             // Betaal ƒ 10 boete of neem een Kanskaart
+            */ // Betaal ƒ 10 boete of neem een Kanskaart
 
             SchudKaarten();
         }
