@@ -70,15 +70,17 @@ namespace Monopoly
         private int waarde;                             // hoeveel kost dit vakje? 0 betekent 'niet te koop', denk aan gevangenis
         private System.Drawing.Color kleur;
         private Actie landingsActie;
+        private Speler eigenaar;
 
-        public Vakje(VakType tp, string straatNaam, string stadNaam, int waarde, Color kleur)
+        public Vakje(VakType tp, string straatNaam, string stadNaam, int waarde, Color kleur, Actie landingsActie)
         {
             this.tp = tp;
             this.straatNaam = straatNaam;
             this.stadNaam = stadNaam;
             this.waarde = waarde;
             this.kleur = kleur;
-            this.landingsActie = null;
+            this.landingsActie = landingsActie;
+            eigenaar = null; // In het begin is niemand eigenaar.
         }
 
         public string StraatNaam
@@ -103,6 +105,12 @@ namespace Monopoly
                 }
                 return landingsActie;
             }
+        }
+
+        public Speler Eigenaar
+        {
+            set { eigenaar = value; }
+            get { return eigenaar; }
         }
 
         public override String ToString()

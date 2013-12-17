@@ -7,22 +7,25 @@ namespace Monopoly
 {
     // een superklasse van de (kans, algemeen fonds) kaarten.
     //
-    public abstract class Kaart
+    public class Kaart
     {
         private String tekst;
+        private Actie actie;
+        private bool bewaren; // als deze true is wordt de kaart aan de huidige speler gegeven (default: false)
 
-        public Kaart(String tekst)
+        public Kaart(String tekst, Actie actie, bool bewaren = false)
         {
             this.tekst = tekst;
+            this.actie = actie;
+            this.bewaren = bewaren;
         }
 
-        public string Tekst
-        {
-            get { return tekst; }
-        }
-
+        public string Tekst { get { return tekst; } }
+        public Actie Actie { get { return actie; } }
+        public bool Bewaren { get { return bewaren; } }
     }
 
+    /* 
     // een financiele kaart: u ontvangt x of betaalt x (dan is x negatief)
     public class BetaalOntvangKaart : Kaart
     {
@@ -87,6 +90,6 @@ namespace Monopoly
         {
 
         }
-    }
+    }*/
 
 }

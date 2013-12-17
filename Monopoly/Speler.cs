@@ -11,6 +11,7 @@ namespace Monopoly
         private int saldo;          // hoeveel geld heeft deze speler?
         private int positie;        // wat is de huidige positie van de speler
         private System.Drawing.Color kleur;
+        private List<Kaart> kaarten; // lijst van kaarten in bezit (bv. get out of jail-kaart)
 
         public Speler(string naam, int saldo, System.Drawing.Color kleur, int positie = 0)
         {
@@ -41,6 +42,12 @@ namespace Monopoly
             set { positie = value; }
         }
 
+        public List<Kaart> Kaarten { get { return kaarten; } }
+
+        public void AddKaart(Kaart krt)
+        {
+            kaarten.Add(krt);
+        }
 
         public override string ToString()
         {

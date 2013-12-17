@@ -46,6 +46,52 @@ namespace Monopoly
         }
     }
 
+    public class PakKansKaartActie : Actie
+    {
+        public PakKansKaartActie(string tekst = " pakt een kanskaart.")
+            : base(tekst)
+        {
+
+        }
+
+        public override void VoerUit(MonopolyModel model)
+        {
+            Kaart kaart = model.KansKaarten.PakKaart();
+            if (kaart.Bewaren)
+            {
+                model.Spelers.HuidigeSpeler.AddKaart(kaart);
+            }
+            else
+            {
+                kaart.Actie.VoerUit(model);
+                model.KansKaarten.VoegToe(kaart);
+            }
+        }
+    }
+
+    public class PakAlgemeenFondsKaartActie : Actie
+    {
+        public PakAlgemeenFondsKaartActie(string tekst = " pakt een algemeenfondskaart.")
+            : base(tekst)
+        {
+
+        }
+
+        public override void VoerUit(MonopolyModel model)
+        {
+            Kaart kaart = model.AlgemeenFondsKaarten.PakKaart();
+            if (kaart.Bewaren)
+            {
+                model.Spelers.HuidigeSpeler.AddKaart(kaart);
+            }
+            else
+            {
+                kaart.Actie.VoerUit(model);
+                model.AlgemeenFondsKaarten.VoegToe(kaart);
+            }
+        }
+    }
+
     public class GooiActie : Actie
     {
         public GooiActie(string tekst = "De volgende speler mag gooien") : base(tekst)
@@ -147,6 +193,19 @@ namespace Monopoly
             {
                 this.actie2.VoerUit(model);
             }
+
+        }
+    }
+
+    public class VerlaatDeGevangenisActie : Actie
+    {
+        public VerlaatDeGevangenisActie(string tekst)
+            : base(tekst)
+        {
+        }
+
+        public override void VoerUit(MonopolyModel model)
+        {
 
         }
     }

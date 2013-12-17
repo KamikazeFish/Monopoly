@@ -43,6 +43,13 @@ namespace Monopoly
             kaarten = kaartenGeschud;
         }
 
+        public Kaart PakKaart()
+        {
+            Kaart eersteKaart = kaarten.First();
+            kaarten.Remove(eersteKaart);
+
+            return eersteKaart;
+        }
     }
   
     // Kanskaarten: een van de twee stapels kaarten in het spel.
@@ -70,7 +77,7 @@ namespace Monopoly
 
         public KansKaarten()
         {
-            VoegToe(new BetaalOntvangKaart("Boete voor te snel rijden ƒ 15", -15));
+            VoegToe(new Kaart("Boete voor te snel rijden ƒ 15", -15));
             VoegToe(new BetaalOntvangKaart("Betaal schoolgeld ƒ 150", -150));
             VoegToe(new GaNaarKaart("Ga verder naar Barteljorisstraat. Indien u langs 'Start' komt, ontvangt u ƒ 200", new Vakje(Vakje.VakType.STRAAT, "Barteljorisstraat", "Haarlem", 140, Color.FromArgb(238, 68, 221)), true));
             VoegToe(new GaNaarKaart("Reis naar station 'West' en indien u langs 'Start' komt, ontvangt u ƒ 200", new Vakje(Vakje.VakType.STATION, "Station West", "", 200, Color.White), true));

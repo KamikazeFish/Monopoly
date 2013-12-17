@@ -81,6 +81,12 @@ namespace Monopoly
 
         public void HuidigeSpelerkliktOpGooi()
         {
+            // Opmerkingen: 
+            /*
+             *  - Als een speler OVER start komt krijgt hij geld
+             *  - De actie van een vakje veranderd als iemand een vakje koopt
+             */
+
             // 1> gooi de stenen
             model.Steen1.Gooi();
             model.Steen2.Gooi();

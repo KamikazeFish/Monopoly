@@ -54,6 +54,9 @@ namespace Monopoly
             set { huidigeSpelerMagGooien = value; }
         }
 
+        public AlgemeenFondsKaarten AlgemeenFondsKaarten { get { return algemeenFondsKaarten; } }
+        public KansKaarten KansKaarten { get { return kansKaarten; } }
+
         // spelers code
 
         public Spelers Spelers
@@ -73,6 +76,5 @@ namespace Monopoly
                 spelers.HuidigeSpeler.Positie -= Vakjes.GetAantalVakjes();
             }
         }
-
     }
 }
