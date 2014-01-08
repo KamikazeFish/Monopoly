@@ -71,8 +71,10 @@ namespace Monopoly
         private System.Drawing.Color kleur;
         private Actie landingsActie;
         private Speler eigenaar;
+        private int aantalHuizen;                       // 5 huizen == 1 hotel
+        private int prijsPerHuis;
 
-        public Vakje(VakType tp, string straatNaam, string stadNaam, int waarde, Color kleur, Actie landingsActie)
+        public Vakje(VakType tp, string straatNaam, string stadNaam, int waarde, Color kleur, Actie landingsActie, int huizenPrijs = 0)
         {
             this.tp = tp;
             this.straatNaam = straatNaam;
@@ -81,7 +83,11 @@ namespace Monopoly
             this.kleur = kleur;
             this.landingsActie = landingsActie;
             eigenaar = null; // In het begin is niemand eigenaar.
+            aantalHuizen = 0;
+            prijsPerHuis = huizenPrijs;
         }
+
+        public VakType Vaktype { get { return this.tp; } }
 
         public string StraatNaam
         {
@@ -91,6 +97,7 @@ namespace Monopoly
         {
             get { return stadNaam; }
         }
+        public int Waarde { get { return waarde; } }
         public Color Kleur
         {
             get { return kleur; }
@@ -113,6 +120,19 @@ namespace Monopoly
             get { return eigenaar; }
         }
 
+        public int AantalHuizen { get { return aantalHuizen; } }
+        public int PrijsPerHuis { get { return prijsPerHuis; } }
+
+        public bool AddHuis()
+        {
+            if (tp == VakType.STRAAT && aantalHuizen < 5)
+            {
+                aantalHuizen++;
+                return true;
+            }
+            return false;
+        }
+
         public override String ToString()
         {
             if (stadNaam.Length > 0)
@@ -121,10 +141,4 @@ namespace Monopoly
                 return straatNaam;
         }
     }
-
-    /*public class Straat : Vakje
-    {
-
-    }*/
-
 }

@@ -67,6 +67,79 @@ namespace Monopoly
             return bord.Count;
         }
 
+        public Vakje GetVakjeMetStraatnaam(string straatnaam)
+        {
+            foreach (Vakje vakje in bord)
+            {
+                if (vakje.StraatNaam == straatnaam)
+                {
+                    return vakje;
+                }
+            }
+            return null;
+        }
+
+        public List<Vakje> GetVakjesVan(Speler speler)
+        {
+            List<Vakje> vakjes = new List<Vakje>();
+
+            foreach (Vakje vakje in bord)
+            {
+                if (vakje.Eigenaar == speler)
+                {
+                    vakjes.Add(vakje);
+                }
+            }
+
+            return vakjes;
+        }
+
+        public List<Vakje> GetStratenVolledigeStedenVan(Speler speler)
+        {
+            List<Vakje> spelerVakjes = GetVakjesVan(speler);
+            List<Vakje> tempSpelerVakjes = new List<Vakje>();
+
+            // Alleen de straat vakjes van de huidige speler
+            foreach (Vakje vakje in spelerVakjes)
+            {
+                if (vakje.Vaktype == Vakje.VakType.STRAAT)
+                {
+                    tempSpelerVakjes.Add(vakje);
+                }
+            }
+            spelerVakjes.Clear();
+            spelerVakjes.AddRange(tempSpelerVakjes);
+
+            if (tempSpelerVakjes.Count > 0)
+            {
+                // de andere straat vakjes in een lijst stoppen
+                List<Vakje> andereBordVakjes = new List<Vakje>();
+
+                foreach (Vakje vakje in bord)
+                {
+                    if (!spelerVakjes.Contains(vakje) && vakje.Vaktype == Vakje.VakType.STRAAT)
+                    {
+                        andereBordVakjes.Add(vakje);
+                    }
+                }
+
+                // Alle vakjes verwijderen uit de spelerVakjes waarvan de straat ook voorkomt in de andereBordVakjes (dus geen volledige straat is)
+                foreach (Vakje spelerVakje in tempSpelerVakjes)
+                {
+                    foreach (Vakje anderVakje in andereBordVakjes)
+                    {
+                        if (spelerVakje.StadNaam == anderVakje.StadNaam)
+                        {
+                            spelerVakjes.Remove(spelerVakje);
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return spelerVakjes;
+        }
+
         // overload operator []
         public Vakje this[int i]
         {

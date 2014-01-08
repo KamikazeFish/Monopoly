@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.buttonGooi = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.view = new Monopoly.MonopolyView();
+            this.buttonKoopHuidigeVakje = new System.Windows.Forms.Button();
+            this.buttonKoopHuisHotel = new System.Windows.Forms.Button();
+            this.buttonEindeBeurt = new System.Windows.Forms.Button();
             this.listBoxLog = new System.Windows.Forms.ListBox();
+            this.comboBoxVolledigeStraten = new System.Windows.Forms.ComboBox();
+            this.view = new Monopoly.MonopolyView();
             this.SuspendLayout();
             // 
             // buttonGooi
             // 
-            this.buttonGooi.Location = new System.Drawing.Point(36, 600);
+            this.buttonGooi.Location = new System.Drawing.Point(12, 600);
             this.buttonGooi.Name = "buttonGooi";
             this.buttonGooi.Size = new System.Drawing.Size(142, 23);
             this.buttonGooi.TabIndex = 1;
@@ -46,35 +47,52 @@
             this.buttonGooi.UseVisualStyleBackColor = true;
             this.buttonGooi.Click += new System.EventHandler(this.buttonGooi_Click);
             // 
-            // button2
+            // buttonKoopHuidigeVakje
             // 
-            this.button2.Location = new System.Drawing.Point(36, 629);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(142, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Koop huidige vakje";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.buttonKoopHuidigeVakje_Click);
+            this.buttonKoopHuidigeVakje.Location = new System.Drawing.Point(12, 629);
+            this.buttonKoopHuidigeVakje.Name = "buttonKoopHuidigeVakje";
+            this.buttonKoopHuidigeVakje.Size = new System.Drawing.Size(142, 23);
+            this.buttonKoopHuidigeVakje.TabIndex = 2;
+            this.buttonKoopHuidigeVakje.Text = "Koop huidige vakje";
+            this.buttonKoopHuidigeVakje.UseVisualStyleBackColor = true;
+            this.buttonKoopHuidigeVakje.Click += new System.EventHandler(this.buttonKoopHuidigeVakje_Click);
             // 
-            // button3
+            // buttonKoopHuisHotel
             // 
-            this.button3.Location = new System.Drawing.Point(36, 658);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(142, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Koop huis/hotel";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.buttonKoopHuisHotel_Click);
+            this.buttonKoopHuisHotel.Location = new System.Drawing.Point(12, 658);
+            this.buttonKoopHuisHotel.Name = "buttonKoopHuisHotel";
+            this.buttonKoopHuisHotel.Size = new System.Drawing.Size(96, 23);
+            this.buttonKoopHuisHotel.TabIndex = 3;
+            this.buttonKoopHuisHotel.Text = "Koop huis/hotel";
+            this.buttonKoopHuisHotel.UseVisualStyleBackColor = true;
+            this.buttonKoopHuisHotel.Click += new System.EventHandler(this.buttonKoopHuisHotel_Click);
             // 
-            // button4
+            // buttonEindeBeurt
             // 
-            this.button4.Location = new System.Drawing.Point(36, 687);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(142, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Einde beurt";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.buttonEindeBeurt_Click);
+            this.buttonEindeBeurt.Location = new System.Drawing.Point(12, 687);
+            this.buttonEindeBeurt.Name = "buttonEindeBeurt";
+            this.buttonEindeBeurt.Size = new System.Drawing.Size(142, 23);
+            this.buttonEindeBeurt.TabIndex = 4;
+            this.buttonEindeBeurt.Text = "Einde beurt";
+            this.buttonEindeBeurt.UseVisualStyleBackColor = true;
+            this.buttonEindeBeurt.Click += new System.EventHandler(this.buttonEindeBeurt_Click);
+            // 
+            // listBoxLog
+            // 
+            this.listBoxLog.FormattingEnabled = true;
+            this.listBoxLog.Location = new System.Drawing.Point(251, 600);
+            this.listBoxLog.Name = "listBoxLog";
+            this.listBoxLog.Size = new System.Drawing.Size(771, 108);
+            this.listBoxLog.TabIndex = 5;
+            // 
+            // comboBoxVolledigeStraten
+            // 
+            this.comboBoxVolledigeStraten.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxVolledigeStraten.FormattingEnabled = true;
+            this.comboBoxVolledigeStraten.Location = new System.Drawing.Point(115, 658);
+            this.comboBoxVolledigeStraten.Name = "comboBoxVolledigeStraten";
+            this.comboBoxVolledigeStraten.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxVolledigeStraten.TabIndex = 6;
             // 
             // view
             // 
@@ -86,23 +104,16 @@
             this.view.Text = "Speelbord";
             this.view.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaint);
             // 
-            // listBoxLog
-            // 
-            this.listBoxLog.FormattingEnabled = true;
-            this.listBoxLog.Location = new System.Drawing.Point(251, 600);
-            this.listBoxLog.Name = "listBoxLog";
-            this.listBoxLog.Size = new System.Drawing.Size(771, 108);
-            this.listBoxLog.TabIndex = 5;
-            // 
             // MonopolySpel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 735);
+            this.ClientSize = new System.Drawing.Size(1034, 729);
+            this.Controls.Add(this.comboBoxVolledigeStraten);
             this.Controls.Add(this.listBoxLog);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonEindeBeurt);
+            this.Controls.Add(this.buttonKoopHuisHotel);
+            this.Controls.Add(this.buttonKoopHuidigeVakje);
             this.Controls.Add(this.buttonGooi);
             this.Controls.Add(this.view);
             this.Name = "MonopolySpel";
@@ -114,10 +125,11 @@
         #endregion
 
         private System.Windows.Forms.Button buttonGooi;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonKoopHuidigeVakje;
+        private System.Windows.Forms.Button buttonKoopHuisHotel;
+        private System.Windows.Forms.Button buttonEindeBeurt;
         private System.Windows.Forms.ListBox listBoxLog;
+        private System.Windows.Forms.ComboBox comboBoxVolledigeStraten;
 
     }
 }

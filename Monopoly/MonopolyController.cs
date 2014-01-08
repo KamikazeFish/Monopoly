@@ -118,10 +118,48 @@ namespace Monopoly
 
         public void HuidigeSpelerKliktOpKoopHuidigVakje()
         {
+            Vakje huidigeVakje = model.Vakjes[model.Spelers.HuidigeSpeler.Positie];
+            if (huidigeVakje.Eigenaar == null)
+            {
+                if (model.Spelers.HuidigeSpeler.Saldo >= huidigeVakje.Waarde)
+                {
+                    if (model.Spelers.HuidigeSpeler.DoeUitgave(huidigeVakje.Waarde))
+                    {
+                        huidigeVakje.Eigenaar = model.Spelers.HuidigeSpeler;
+                        view.AddMessageToLog("Speler " + model.Spelers.HuidigeSpeler.Naam +
+                                             " koopt " + huidigeVakje.StraatNaam);
+                    }
+                }
+            }
         }
 
-        public void HuidigeSpelerKliktOpKoopHuisHotel()
+        public void HuidigeSpelerKliktOpKoopHuisHotel(string straatnaam)
         {
+            Vakje straat = model.Vakjes.GetVakjeMetStraatnaam(straatnaam);
+
+            if (model.Spelers.HuidigeSpeler.Saldo >= straat.PrijsPerHuis)
+            {
+                if (straat.AddHuis())
+                {
+                    model.Spelers.HuidigeSpeler.DoeUitgave(straat.PrijsPerHuis);
+                    string huisOfHotel = straat.AantalHuizen == 5 ? "1 hotel" : straat.AantalHuizen == 1 ? "1 huis" : straat.AantalHuizen + " huizen";
+                    view.AddMessageToLog("Speler " + model.Spelers.HuidigeSpeler.Naam +
+                                            " koopt 1 huis en heeft nu op " + straat.StraatNaam + " " + huisOfHotel);
+
+                }
+                else
+                {
+                    // !--- AANPASSEN geen viewcode in de controller ---! //
+                    if (straat.AantalHuizen == 5)
+                    {
+                        System.Windows.Forms.MessageBox.Show("De straat heeft al teveel huizen!");
+                    }
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show("Op de straat kunnen geen huizen gebouwd worden!");
+                    }
+                }
+            }
         }
 
         public void HuidigeSpelerKliktOpEindeBeurt()

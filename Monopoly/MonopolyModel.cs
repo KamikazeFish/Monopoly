@@ -53,7 +53,6 @@ namespace Monopoly
             get {return huidigeSpelerMagGooien;}
             set { huidigeSpelerMagGooien = value; }
         }
-
         public AlgemeenFondsKaarten AlgemeenFondsKaarten { get { return algemeenFondsKaarten; } }
         public KansKaarten KansKaarten { get { return kansKaarten; } }
 
@@ -75,6 +74,25 @@ namespace Monopoly
             {
                 spelers.HuidigeSpeler.Positie -= Vakjes.GetAantalVakjes();
             }
+        }
+
+        public bool HuidigVakjeIsKoopbaar() 
+        { // Is het vakje waar de huidige speler op staat van niemand?
+            Vakje huidigeVakje = bordVakjes[spelers.HuidigeSpeler.Positie];
+            return (huidigeVakje.Eigenaar == null &&
+                (huidigeVakje.Vaktype == Vakje.VakType.STRAAT || huidigeVakje.Vaktype == Vakje.VakType.STATION || huidigeVakje.Vaktype == Vakje.VakType.NUTSBEDRIJF ));
+        }
+
+        public List<string> GetStraatnamenVolledigeStedenHuidigeSpeler()
+        {
+            List<string> straatnamen = new List<string>();
+
+            foreach (Vakje vakje in Vakjes.GetStratenVolledigeStedenVan(spelers.HuidigeSpeler))
+	        {
+                straatnamen.Add(vakje.StraatNaam);
+	        }
+
+            return straatnamen;
         }
     }
 }
