@@ -129,6 +129,7 @@ namespace Monopoly
                         view.AddMessageToLog("Speler " + model.Spelers.HuidigeSpeler.Naam +
                                              " koopt " + huidigeVakje.StraatNaam);
                     }
+                    view.Refresh();
                 }
             }
         }

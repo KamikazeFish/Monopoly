@@ -90,6 +90,8 @@ namespace Monopoly
                 GetXYByIndex(index, ref x, ref y);
                 Rectangle vakjeOmtrek = GetRectangleVoorVakje(rand, index);
 
+                Vakje huidigVakje = model.Vakjes[index];
+
                 // vul het vakje in
                 e.Graphics.FillRectangle(vakjeBrush, vakjeOmtrek);
                 e.Graphics.DrawRectangle(vakjePen, vakjeOmtrek);
@@ -113,18 +115,36 @@ namespace Monopoly
 
 
                 RectangleF naamLayout = new RectangleF(vakjeOmtrek.Left, vakjeOmtrek.Top + naamOffset, vakjeOmtrek.Width, naamHoogte * 2);
-                string naamTekst = model.Vakjes[index].StraatNaam;
+                string naamTekst = huidigVakje.StraatNaam;
                 e.Graphics.DrawString(naamTekst, naamFont, tekstBrush, naamLayout, sf);
 
                 // teken stadnaam indien aanwezig
                 if (model.Vakjes[index].StadNaam.Length > 0)
                 {
                     RectangleF stadLayout = new RectangleF(vakjeOmtrek.Left, vakjeOmtrek.Top + stadOffset, vakjeOmtrek.Width, naamHoogte * 2);
-                    string stadTekst = "(" + model.Vakjes[index].StadNaam + ")";
+                    string stadTekst = "(" + huidigVakje.StadNaam + ")";
                     e.Graphics.DrawString(stadTekst, naamFont, tekstBrush, stadLayout, sf);
                 }
 
-                // teken de speler(s) die op dit vakje staan
+                // teken de eigenaar indien aanwezig
+                if (huidigVakje.Eigenaar != null)
+                {
+                    const int grootteEigenaarHoekje = 10;
+                    // maak een driehoekje onderaan in het vakje
+                    Point[] points = new Point[3];
+
+                    points[0].X = vakjeOmtrek.Right;
+                    points[0].Y = vakjeOmtrek.Bottom;
+
+                    points[1].X = vakjeOmtrek.Right;
+                    points[1].Y = vakjeOmtrek.Bottom - grootteEigenaarHoekje;
+
+                    points[2].X = vakjeOmtrek.Right - grootteEigenaarHoekje;
+                    points[2].Y = vakjeOmtrek.Bottom;
+
+                    SolidBrush spelerBrush = new SolidBrush(huidigVakje.Eigenaar.Kleur);
+                    e.Graphics.FillPolygon(spelerBrush, points, System.Drawing.Drawing2D.FillMode.Alternate);
+                }
 
                 e.Graphics.ResetClip();
             }
