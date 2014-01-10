@@ -93,6 +93,7 @@
             this.comboBoxVolledigeStraten.Name = "comboBoxVolledigeStraten";
             this.comboBoxVolledigeStraten.Size = new System.Drawing.Size(121, 21);
             this.comboBoxVolledigeStraten.TabIndex = 6;
+            this.comboBoxVolledigeStraten.TextChanged += new System.EventHandler(this.comboBoxVolledigeStraten_TextChanged);
             // 
             // view
             // 

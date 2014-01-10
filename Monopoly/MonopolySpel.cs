@@ -43,6 +43,9 @@ namespace Monopoly
             buttonEindeBeurt.Enabled = model.HuidigeSpelerMagGooien ? false : true;
             // Kan de huidige speler het vakje nog kopen?
             buttonKoopHuidigeVakje.Enabled = model.HuidigVakjeIsKoopbaar();
+
+            // Als er in de combobox geen straat is geactiveerd, mag je ook geen huis kunnen kopen.
+            buttonKoopHuisHotel.Enabled = (comboBoxVolledigeStraten.Text != string.Empty);
         }
 
         private void VulVolledigeStratenDropDown()
@@ -78,6 +81,11 @@ namespace Monopoly
             controller.HuidigeSpelerKliktOpEindeBeurt();
             EnableDisable();
             VulVolledigeStratenDropDown();
+        }
+
+        private void comboBoxVolledigeStraten_TextChanged(object sender, EventArgs e)
+        {
+            EnableDisable();
         }
 
 

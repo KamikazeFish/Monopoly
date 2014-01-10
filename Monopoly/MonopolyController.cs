@@ -136,28 +136,31 @@ namespace Monopoly
 
         public void HuidigeSpelerKliktOpKoopHuisHotel(string straatnaam)
         {
-            Vakje straat = model.Vakjes.GetVakjeMetStraatnaam(straatnaam);
-
-            if (model.Spelers.HuidigeSpeler.Saldo >= straat.PrijsPerHuis)
+            if (straatnaam != string.Empty)
             {
-                if (straat.AddHuis())
-                {
-                    model.Spelers.HuidigeSpeler.DoeUitgave(straat.PrijsPerHuis);
-                    string huisOfHotel = straat.AantalHuizen == 5 ? "1 hotel" : straat.AantalHuizen == 1 ? "1 huis" : straat.AantalHuizen + " huizen";
-                    view.AddMessageToLog("Speler " + model.Spelers.HuidigeSpeler.Naam +
-                                            " koopt 1 huis en heeft nu op " + straat.StraatNaam + " " + huisOfHotel);
+                Vakje straat = model.Vakjes.GetVakjeMetStraatnaam(straatnaam);
 
-                }
-                else
+                if (model.Spelers.HuidigeSpeler.Saldo >= straat.PrijsPerHuis)
                 {
-                    // !--- AANPASSEN geen viewcode in de controller ---! //
-                    if (straat.AantalHuizen == 5)
+                    if (straat.AddHuis())
                     {
-                        System.Windows.Forms.MessageBox.Show("De straat heeft al teveel huizen!");
+                        model.Spelers.HuidigeSpeler.DoeUitgave(straat.PrijsPerHuis);
+                        string huisOfHotel = straat.AantalHuizen == 5 ? "1 hotel" : straat.AantalHuizen == 1 ? "1 huis" : straat.AantalHuizen + " huizen";
+                        view.AddMessageToLog("Speler " + model.Spelers.HuidigeSpeler.Naam +
+                                                " koopt 1 huis en heeft nu op " + straat.StraatNaam + " " + huisOfHotel);
+
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show("Op de straat kunnen geen huizen gebouwd worden!");
+                        // !--- AANPASSEN geen viewcode in de controller ---! //
+                        if (straat.AantalHuizen == 5)
+                        {
+                            System.Windows.Forms.MessageBox.Show("De straat heeft al teveel huizen!");
+                        }
+                        else
+                        {
+                            System.Windows.Forms.MessageBox.Show("Op de straat kunnen geen huizen gebouwd worden!");
+                        }
                     }
                 }
             }
