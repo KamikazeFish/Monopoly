@@ -46,6 +46,8 @@ namespace Monopoly
 
             // Als er in de combobox geen straat is geactiveerd, mag je ook geen huis kunnen kopen.
             buttonKoopHuisHotel.Enabled = (comboBoxVolledigeStraten.Text != string.Empty);
+            // Als er geen straat is om een huis op te kopen, is de combobox niet nodig
+            comboBoxVolledigeStraten.Enabled = (comboBoxVolledigeStraten.Items.Count > 0);
         }
 
         private void VulVolledigeStratenDropDown()
