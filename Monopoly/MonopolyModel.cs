@@ -87,7 +87,9 @@ namespace Monopoly
         {
             List<string> straatnamen = new List<string>();
 
-            foreach (Vakje vakje in Vakjes.GetStratenVolledigeStedenVan(spelers.HuidigeSpeler))
+            List<Vakje> stedenHuidigeSpeler = Vakjes.GetStratenVolledigeStedenVan(spelers.HuidigeSpeler);
+
+            foreach (Vakje vakje in stedenHuidigeSpeler)
 	        {
                 straatnamen.Add(vakje.StraatNaam);
 	        }
