@@ -96,45 +96,33 @@ namespace Monopoly
 
         public List<Vakje> GetStratenVolledigeStedenVan(Speler speler)
         {
+            // stap 1. we maken een lijst met alle vakjes die gekocht zijn door de huidige speler. 
             List<Vakje> spelerVakjes = GetVakjesVan(speler);
-            List<Vakje> tempSpelerVakjes = new List<Vakje>();
 
-            // Alleen de straat vakjes van de huidige speler
-            foreach (Vakje vakje in spelerVakjes)
+            // stap 2. uit deze  lijst, verwijder alle vakjes waar we de stad niet van hebben.
+            int index = 0; 
+            while (index < spelerVakjes.Count)
             {
-                if (vakje.Vaktype == Vakje.VakType.STRAAT)
-                {
-                    tempSpelerVakjes.Add(vakje);
-                }
-            }
-            spelerVakjes.Clear();
-            spelerVakjes.AddRange(tempSpelerVakjes);
+                Vakje kandidaatVakje = spelerVakjes[index];
 
-            if (tempSpelerVakjes.Count > 0)
-            {
-                // de andere straat vakjes in een lijst stoppen
-                List<Vakje> andereBordVakjes = new List<Vakje>();
+                // is kandidaatVakje deel van een stad?
+                bool isStad = true;
 
-                foreach (Vakje vakje in bord)
+                foreach (Vakje bordVakje in bord)
                 {
-                    if (!spelerVakjes.Contains(vakje) && vakje.Vaktype == Vakje.VakType.STRAAT)
+                    if (bordVakje.Eigenaar != speler &&
+                        bordVakje.StadNaam == kandidaatVakje.StadNaam)
                     {
-                        andereBordVakjes.Add(vakje);
+                        // het bord bevat een vakje, dat niet van ons is, en dat een straatnaam heeft 
+                        // van kandidaatVakje. Dit betekent dat we de straat niet hebben!
+                        isStad = false;
                     }
                 }
 
-                // Alle vakjes verwijderen uit de spelerVakjes waarvan de straat ook voorkomt in de andereBordVakjes (dus geen volledige straat is)
-                foreach (Vakje spelerVakje in tempSpelerVakjes)
-                {
-                    foreach (Vakje anderVakje in andereBordVakjes)
-                    {
-                        if (spelerVakje.StadNaam == anderVakje.StadNaam)
-                        {
-                            spelerVakjes.Remove(spelerVakje);
-                            break;
-                        }
-                    }
-                }
+                if (isStad)
+                    index++;
+                else
+                    spelerVakjes.RemoveAt(index);
             }
 
             return spelerVakjes;
