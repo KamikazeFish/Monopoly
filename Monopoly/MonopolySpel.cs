@@ -26,7 +26,6 @@ namespace Monopoly
             controller.StartNewSpel();                      // todo: fix this
             
             EnableDisable(); // knoppen goed zetten voor de eerste beurt
-            VulVolledigeStratenDropDown();
         }
 
         private void OnPaint(object sender, PaintEventArgs e)
@@ -46,7 +45,9 @@ namespace Monopoly
 
             // Als er in de combobox geen straat is geactiveerd, mag je ook geen huis kunnen kopen.
             buttonKoopHuisHotel.Enabled = (comboBoxVolledigeStraten.Text != string.Empty);
+
             // Als er geen straat is om een huis op te kopen, is de combobox niet nodig
+            VulVolledigeStratenDropDown();
             comboBoxVolledigeStraten.Enabled = (comboBoxVolledigeStraten.Items.Count > 0);
         }
 
@@ -58,6 +59,8 @@ namespace Monopoly
                 comboBoxVolledigeStraten.Items.Add(straatnaam);
             }
         }
+
+        // alle button acties volgen hier:
 
         private void buttonGooi_Click(object sender, EventArgs e)
         {
@@ -82,15 +85,11 @@ namespace Monopoly
         {
             controller.HuidigeSpelerKliktOpEindeBeurt();
             EnableDisable();
-            VulVolledigeStratenDropDown();
         }
 
         private void comboBoxVolledigeStraten_TextChanged(object sender, EventArgs e)
         {
-            EnableDisable();
+            //EnableDisable();
         }
-
-
-
-    }
+   }
 }
