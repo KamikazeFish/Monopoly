@@ -35,6 +35,7 @@
             this.listBoxLog = new System.Windows.Forms.ListBox();
             this.comboBoxVolledigeStraten = new System.Windows.Forms.ComboBox();
             this.view = new Monopoly.MonopolyView();
+            this.labelBedragHuidigeVakje = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonGooi
@@ -105,11 +106,22 @@
             this.view.Text = "Speelbord";
             this.view.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaint);
             // 
+            // labelBedragHuidigeVakje
+            // 
+            this.labelBedragHuidigeVakje.AutoSize = true;
+            this.labelBedragHuidigeVakje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBedragHuidigeVakje.Location = new System.Drawing.Point(160, 632);
+            this.labelBedragHuidigeVakje.Name = "labelBedragHuidigeVakje";
+            this.labelBedragHuidigeVakje.Size = new System.Drawing.Size(13, 17);
+            this.labelBedragHuidigeVakje.TabIndex = 7;
+            this.labelBedragHuidigeVakje.Text = "-";
+            // 
             // MonopolySpel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 729);
+            this.Controls.Add(this.labelBedragHuidigeVakje);
             this.Controls.Add(this.comboBoxVolledigeStraten);
             this.Controls.Add(this.listBoxLog);
             this.Controls.Add(this.buttonEindeBeurt);
@@ -120,6 +132,7 @@
             this.Name = "MonopolySpel";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -131,6 +144,7 @@
         private System.Windows.Forms.Button buttonEindeBeurt;
         private System.Windows.Forms.ListBox listBoxLog;
         private System.Windows.Forms.ComboBox comboBoxVolledigeStraten;
+        private System.Windows.Forms.Label labelBedragHuidigeVakje;
 
     }
 }

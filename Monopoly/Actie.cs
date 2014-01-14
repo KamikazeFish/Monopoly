@@ -104,19 +104,6 @@ namespace Monopoly
         }
     }
 
-    public class KoopHuisActie : Actie
-    {
-        public KoopHuisActie(string tekst = "Speler koopt een huis") : base(tekst)
-        {
-
-        }
-
-        public override void VoerUit(MonopolyModel model) 
-        {
-
-        }
-    }
-
     public class BetaalOntvangActie : Actie
     {
         public BetaalOntvangActie(string tekst) : base(tekst)

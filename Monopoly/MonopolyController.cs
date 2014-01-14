@@ -155,7 +155,7 @@ namespace Monopoly
                         // !--- AANPASSEN geen viewcode in de controller ---! //
                         if (straat.AantalHuizen == 5)
                         {
-                            System.Windows.Forms.MessageBox.Show("De straat heeft al teveel huizen!");
+                            System.Windows.Forms.MessageBox.Show("De straat heeft al een hotel en kan niet meer uitgebreid worden.");
                         }
                         else
                         {

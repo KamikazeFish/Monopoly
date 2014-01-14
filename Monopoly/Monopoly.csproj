@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Actie.cs" />
     <Compile Include="Dobbelsteen.cs" />
+    <Compile Include="InvalidArrayLengthException.cs" />
     <Compile Include="MonopolySpel.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -73,8 +73,9 @@ namespace Monopoly
         private Speler eigenaar;
         private int aantalHuizen;                       // 5 huizen == 1 hotel
         private int prijsPerHuis;
+        private int[] tarieven;                         // de 6 prijzen: onbebouwd en 1 huis t/m hotel (Het aantal huizen is de index voor dit array)
 
-        public Vakje(VakType tp, string straatNaam, string stadNaam, int waarde, Color kleur, Actie landingsActie, int huizenPrijs = 0)
+        public Vakje(VakType tp, string straatNaam, string stadNaam, Color kleur, Actie landingsActie = null, int waarde = 0, int hypotheekwaarde = 0, int huizenPrijs = 0, int[] bezoekersTarieven = null)
         {
             this.tp = tp;
             this.straatNaam = straatNaam;
@@ -85,6 +86,18 @@ namespace Monopoly
             eigenaar = null; // In het begin is niemand eigenaar.
             aantalHuizen = 0;
             prijsPerHuis = huizenPrijs;
+
+            if ((bezoekersTarieven != null) && 
+                ((tp == VakType.STRAAT && bezoekersTarieven.Length != 6) ||
+                 (tp == VakType.STATION && bezoekersTarieven.Length != 4) ||
+                 (tp == VakType.NUTSBEDRIJF && bezoekersTarieven.Length != 2)))
+            {
+                throw new InvalidArrayLengthException("Verkeerd aantal bezoekerstarieven in het array gedefinieerd!"); // custom Exception
+            }
+            else
+            {
+                tarieven = bezoekersTarieven;
+            }
         }
 
         public VakType Vaktype { get { return this.tp; } }
@@ -131,6 +144,11 @@ namespace Monopoly
                 return true;
             }
             return false;
+        }
+
+        public int GetBezoekerPrijs()
+        {
+            return 0; // nog logica toevoegen
         }
 
         public override String ToString()
