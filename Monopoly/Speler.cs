@@ -83,7 +83,7 @@ namespace Monopoly
 
         public override string ToString()
         {
-            return Naam + " " + "( ƒ" + Saldo + " )";
+            return Naam + " " + "( ƒ" + Saldo + ",- )";
         }
     }
 }

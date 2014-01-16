@@ -43,7 +43,7 @@ namespace Monopoly
             // Kan de huidige speler het vakje nog kopen?
             buttonKoopHuidigeVakje.Enabled = model.HuidigVakjeIsKoopbaar();
             // Prijs van de straat laten zien in het label
-            labelBedragHuidigeVakje.Text = model.HuidigVakjeIsKoopbaar() ? "€" + model.Vakjes[model.Spelers.HuidigeSpeler.Positie].Waarde + ",-" : "";
+            labelBedragHuidigeVakje.Text = model.HuidigVakjeIsKoopbaar() ? "ƒ" + model.Vakjes[model.Spelers.HuidigeSpeler.Positie].Waarde + ",-" : "";
 
             // Als er in de combobox geen straat is geactiveerd, mag je ook geen huis kunnen kopen.
             buttonKoopHuisHotel.Enabled = (comboBoxVolledigeStraten.Text != string.Empty);
