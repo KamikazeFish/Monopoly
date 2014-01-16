@@ -32,13 +32,6 @@
       <DependentUpon>UseCaseDiagram.usecasediagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
-    <Content Include="Designmodel.classdiagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Designmodel.classdiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Designmodel.classdiagram</DependentUpon>
-    </Content>
     <Content Include="Domeinmodel.classdiagram">
       <SubType>Content</SubType>
     </Content>
