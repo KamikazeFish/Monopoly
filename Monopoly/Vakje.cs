@@ -101,20 +101,10 @@ namespace Monopoly
         }
 
         public VakType Vaktype { get { return this.tp; } }
-
-        public string StraatNaam
-        {
-            get { return straatNaam; }
-        }
-        public string StadNaam
-        {
-            get { return stadNaam; }
-        }
+        public string StraatNaam { get { return straatNaam; } }
+        public string StadNaam { get { return stadNaam; } }
         public int Waarde { get { return waarde; } }
-        public Color Kleur
-        {
-            get { return kleur; }
-        }
+        public Color Kleur { get { return kleur; } }
         public Actie LandingsActie
         {
             get
@@ -127,14 +117,10 @@ namespace Monopoly
             }
         }
 
-        public Speler Eigenaar
-        {
-            set { eigenaar = value; }
-            get { return eigenaar; }
-        }
-
+        public Speler Eigenaar { set { eigenaar = value; } get { return eigenaar; } }
         public int AantalHuizen { get { return aantalHuizen; } }
         public int PrijsPerHuis { get { return prijsPerHuis; } }
+        public int[] Tarieven { get { return tarieven; } }
 
         public bool AddHuis()
         {
@@ -146,12 +132,7 @@ namespace Monopoly
             return false;
         }
 
-        public int GetBezoekerPrijs()
-        {
-            return 0; // nog logica toevoegen
-        }
-
-        public override String ToString()
+         public override String ToString()
         {
             if (stadNaam.Length > 0)
                 return straatNaam + " (" + stadNaam + ")";

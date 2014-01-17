@@ -143,6 +143,119 @@ namespace Monopoly
             return spelerVakjes;
         }
 
+        public bool IsStraatVanVolledigeStad(Vakje huidigVakje)
+        {
+            int aantalStratenHuidigeStad = 0;
+            if( huidigVakje.Vaktype == Vakje.VakType.STRAAT) {
+                foreach (Vakje vakje in bord)
+                {
+                    if (huidigVakje.StadNaam != string.Empty && huidigVakje.StadNaam == vakje.StadNaam)
+                    {
+                        if (vakje.Eigenaar != huidigVakje.Eigenaar)
+                        {
+                            return false;
+                        }
+                        aantalStratenHuidigeStad++;
+                    }
+
+                    // nooit meer als 3 straten in 1 stad, dus ook geen zin om de loop door te laten gaan
+                    if (aantalStratenHuidigeStad >= 3) 
+                    {
+                        return true;
+                    }
+                }
+                return true;
+            }
+            return false;
+        }
+
+        public int GetAantalStationsVoor(Speler speler)
+        {
+            int aantalStations = 0;
+            int aantalStationsVanSpeler = 0;
+            foreach (Vakje vakje in bord)
+            {
+                if (vakje.Vaktype == Vakje.VakType.STATION)
+                {
+                    aantalStations++;
+                    if (vakje.Eigenaar == speler)
+                    {
+                        aantalStationsVanSpeler++;
+                    }
+                }
+                if (aantalStations == 4)
+                {
+                    break;
+                }
+            }
+            return aantalStationsVanSpeler;
+        }
+
+        public bool HeeftBeideNutsBedrijven(Speler speler)
+        {
+            int aantalNutsBedrijven = 0;
+            foreach (Vakje vakje in bord)
+            {
+                if (vakje.Vaktype == Vakje.VakType.NUTSBEDRIJF) 
+                {
+                    aantalNutsBedrijven++;
+                    if (vakje.Eigenaar != speler)
+                    {
+                        return false;
+                    }
+
+                    if (aantalNutsBedrijven >= 2)
+                    {
+                        break;
+                    }
+                }
+            }
+            return true;
+        }
+
+        public int GetBezoekerPrijs(int positie, Speler speler)
+        {
+            Vakje vakje = bord[positie];
+
+            if (vakje.Eigenaar != speler)
+            {
+                if (vakje.Vaktype == Vakje.VakType.STRAAT)
+                {
+                    if (vakje.AantalHuizen == 0)
+                    {
+                        if (IsStraatVanVolledigeStad(vakje))
+                        {
+                            return vakje.Tarieven[0] * 2;
+                        }
+                        else
+                        {
+                            return vakje.Tarieven[0];
+                        }
+                    }
+                    else
+                    {
+                        return vakje.Tarieven[vakje.AantalHuizen];
+                    }
+                }
+                else if (vakje.Vaktype == Vakje.VakType.STATION)
+                {
+                    return vakje.Tarieven[GetAantalStationsVoor(vakje.Eigenaar) - 1];
+                }
+                else if (vakje.Vaktype == Vakje.VakType.NUTSBEDRIJF) // aantal waarmee het aantal ogen vermenigvuldigd moet worden
+                {
+                    if (HeeftBeideNutsBedrijven(vakje.Eigenaar))
+                    {
+                        return vakje.Tarieven[1];
+                    }
+                    else
+                    {
+                        return vakje.Tarieven[0];
+                    }
+                }
+            }
+            return 0;
+        }
+
         // overload operator []
         public Vakje this[int i]
         {
