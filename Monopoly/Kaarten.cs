@@ -19,14 +19,14 @@ namespace Monopoly
             kaarten = new List<Kaart>();
         }
 
-        public void VoegToe(Kaart krt)
+        protected void VoegToe(Kaart krt)
         {
             kaarten.Add(krt);
         }
 
         // schud alle kaarten door elkaar, anders krijgen we
         // iedere keer dezelfde volgorde.
-        public void SchudKaarten()
+        protected void SchudKaarten()
         {
             Random rnd = new Random();
             List<Kaart> kaartenGeschud = new List<Kaart>();
