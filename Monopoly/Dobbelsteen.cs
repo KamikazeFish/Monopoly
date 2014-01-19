@@ -33,6 +33,7 @@ namespace Monopoly
         public int LaatsteWaarde
         {
             get { return laatsteWaarde; }
+            set { laatsteWaarde = value; }
         }
     }
 }

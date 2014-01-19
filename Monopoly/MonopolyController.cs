@@ -91,6 +91,18 @@ namespace Monopoly
             model.Steen1.Gooi();
             model.Steen2.Gooi();
 
+            // definieer dit in het project om te kunnen testen;
+            // Je vindt dit onder:
+            // Rechtsklik Monopoly( het project )
+            // properties->Build -> Conditional Compilation symbols.
+            // Vul daar in GOOI_ALTIJD_1 om de dobbelsteen op 1 te zetten
+#if GOOI_ALTIJD_1
+            model.Steen1.LaatsteWaarde = 1;
+            model.Steen2.LaatsteWaarde = 0;
+
+#endif
+
+
             // hoeveel is er gegooid?
             int gegooidTotaal = model.Steen1.LaatsteWaarde + model.Steen2.LaatsteWaarde;
 
