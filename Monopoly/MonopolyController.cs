@@ -151,7 +151,8 @@ namespace Monopoly
                     {
                         huidigeVakje.Eigenaar = model.Spelers.HuidigeSpeler;
                         view.AddMessageToLog("Speler " + model.Spelers.HuidigeSpeler.Naam +
-                                             " koopt " + huidigeVakje.StraatNaam);
+                                             " koopt " + huidigeVakje.StraatNaam +
+                                             " voor ƒ" + huidigeVakje.Waarde );
                     }
                     view.Refresh(); 
                 }
