@@ -50,10 +50,13 @@ namespace Monopoly
 
         public void AddMessageToLog(string msg)
         {
-            log.Items.Add(msg);
-            // scrool to lowest
-            int visibleItems = log.ClientSize.Height / log.ItemHeight;
-            log.TopIndex = Math.Max(log.Items.Count - visibleItems + 1, 0);
+            if (msg.Length > 0)
+            {
+                log.Items.Add(msg);
+                // scroll to lowest
+                int visibleItems = log.ClientSize.Height / log.ItemHeight;
+                log.TopIndex = Math.Max(log.Items.Count - visibleItems + 1, 0);
+            }
         }
 
         private Rectangle GetRectangleVoorVakje(Rectangle rand, int index)

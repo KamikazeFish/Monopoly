@@ -20,7 +20,7 @@ namespace Monopoly
             this.bewaren = bewaren;
         }
 
-        public string Tekst { get { return tekst; } }
+        public override string ToString() {return tekst;}
         public Actie Actie { get { return actie; } }
         public bool Bewaren { get { return bewaren; } }
     }

@@ -18,21 +18,21 @@ namespace Monopoly
             Add(new Vakje(Vakje.VakType.START, "Start", "", Color.White));
 
             Add(new Vakje(Vakje.VakType.STRAAT, "Dorpsstraat", "Ons Dorp", Color.FromArgb(0, 0, 153), null, 60, 30, 50, new int[] { 2, 10, 30, 90, 160, 250 }));
-            Add(new Vakje(Vakje.VakType.ALGEMEENFONDS, "Algemeen fonds", "", Color.White)); ;
+            Add(new Vakje(Vakje.VakType.ALGEMEENFONDS, "Algemeen fonds", "", Color.White, new PakAlgemeenFondsKaartActie())); ;
             Add(new Vakje(Vakje.VakType.STRAAT, "Brink", "Ons Dorp", Color.FromArgb(0, 0, 153), null, 60, 30, 50, new int[] { 4, 20, 60, 180, 320, 450 }));
             Add(new Vakje(Vakje.VakType.BELASTING, "Inkomstenbelasting", "", Color.White));
 
             Add(new Vakje(Vakje.VakType.STATION, "Station Zuid", "", Color.White, null, 200, 100, 0, new int[] { 25, 50, 100, 200 }));
 
             Add(new Vakje(Vakje.VakType.STRAAT, "Steenstraat", "Arnhem", Color.FromArgb(170, 204, 255), null, 100, 50, 50, new int[] { 6, 30, 90, 270, 400, 550 }));
-            Add(new Vakje(Vakje.VakType.KANS, "Kans", "",Color.White, new PakKansKaartActie()));
+            Add(new Vakje(Vakje.VakType.KANS, "Kans", "", Color.White, new PakKansKaartActie()));
             Add(new Vakje(Vakje.VakType.STRAAT, "Ketelstraat", "Arnhem", Color.FromArgb(170, 204, 255), null, 100, 50, 50, new int[] { 6, 30, 90, 270, 400, 550 }));
             Add(new Vakje(Vakje.VakType.STRAAT, "Velperplein", "Arnhem", Color.FromArgb(170, 204, 255), null, 120, 60, 50, new int[] { 8, 40, 100, 300, 450, 600 }));
 
-            Add(new Vakje(Vakje.VakType.GEVANGENIS, "Gevangenis", "",Color.White));
+            Add(new Vakje(Vakje.VakType.GEVANGENIS, "Gevangenis", "", Color.White));
 
             Add(new Vakje(Vakje.VakType.STRAAT, "Barteljorisstraat", "Haarlem", Color.FromArgb(238, 68, 221), null, 140, 70, 100, new int[] { 10, 50, 150, 450, 625, 750 }));
-            Add(new Vakje(Vakje.VakType.NUTSBEDRIJF, "Elektriciteitsbedrijf", "", Color.White, null, 150, 75, 0, new int[] { 4, 10 } ));
+            Add(new Vakje(Vakje.VakType.NUTSBEDRIJF, "Elektriciteitsbedrijf", "", Color.White, null, 150, 75, 0, new int[] { 4, 10 }));
             Add(new Vakje(Vakje.VakType.STRAAT, "Zijlweg", "Haarlem", Color.FromArgb(238, 68, 221), null, 140, 70, 100, new int[] { 10, 50, 150, 450, 625, 750 }));
             Add(new Vakje(Vakje.VakType.STRAAT, "Houtstraat", "Haarlem", Color.FromArgb(238, 68, 221), null, 160, 80, 100, new int[] { 12, 60, 180, 500, 700, 900 }));
 

@@ -106,22 +106,34 @@ namespace Monopoly
             // hoeveel is er gegooid?
             int gegooidTotaal = model.Steen1.LaatsteWaarde + model.Steen2.LaatsteWaarde;
 
+            // log de gooi
+            view.AddMessageToLog("Speler " + model.Spelers.HuidigeSpeler.Naam +
+                                 " gooit " + model.Steen1.LaatsteWaarde + " en " + model.Steen2.LaatsteWaarde + "  (=" + gegooidTotaal + ")");
+
             // verschuif de speler
             model.VerplaatsHuidigeSpeler(gegooidTotaal);
 
-            // haal de actie van het huidige vakje op.
-            model.Vakjes[ model.Spelers.HuidigeSpeler.Positie ].LandingsActie.VoerUit( model );
+            // log de verschuiving
+            view.AddMessageToLog("Speler " + model.Spelers.HuidigeSpeler.Naam +
+                                 " land op vakje '" + model.Vakjes[model.Spelers.HuidigeSpeler.Positie].ToString() + "'");
+
+            // haal de actie van het huidige vakje op en voer die uit.
+            Actie ac = model.Vakjes[ model.Spelers.HuidigeSpeler.Positie ].LandingsActie;
+            if (ac != null)
+            {
+                ac.VoerUit(model, view);
+            }
 
             // huidige speler mag opnieuw gooien indien hij dubbel gooide
             if (model.Steen1.LaatsteWaarde != model.Steen2.LaatsteWaarde)
             {
                 model.HuidigeSpelerMagGooien = false;
             }
-
-            view.AddMessageToLog("Speler " + model.Spelers.HuidigeSpeler.Naam + 
-                                 " gooit " + model.Steen1.LaatsteWaarde + " en " + model.Steen2.LaatsteWaarde + "  (=" + gegooidTotaal + ")");
-            view.AddMessageToLog("Speler " + model.Spelers.HuidigeSpeler.Naam + 
-                                 " land op vakje '" + model.Vakjes[model.Spelers.HuidigeSpeler.Positie].ToString() + "'" );
+            else
+            {
+                // speler mag nog een keer gooien
+                view.AddMessageToLog("Speler " + model.Spelers.HuidigeSpeler.Naam + " gooide dubbel en mag nog eens gooien.");
+            }
 
             // geef het view een schop
             view.Refresh();
