@@ -45,10 +45,10 @@ namespace Monopoly
 
         public Kaart PakKaart()
         {
-            Kaart eersteKaart = kaarten.First();
-            kaarten.Remove(eersteKaart);
+            //Kaart eersteKaart = kaarten.First();
+            //kaarten.Remove(eersteKaart);
 
-            return eersteKaart;
+            return null;// eersteKaart;
         }
     }
   
