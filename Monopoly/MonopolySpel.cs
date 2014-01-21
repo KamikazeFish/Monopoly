@@ -49,7 +49,6 @@ namespace Monopoly
             buttonKoopHuisHotel.Enabled = (comboBoxVolledigeStraten.Text != string.Empty);
 
             // Als er geen straat is om een huis op te kopen, is de combobox niet nodig
-            VulVolledigeStratenDropDown();
             comboBoxVolledigeStraten.Enabled = (comboBoxVolledigeStraten.Items.Count > 0);
         }
 
@@ -74,24 +73,27 @@ namespace Monopoly
         {
 
             controller.HuidigeSpelerKliktOpKoopHuidigVakje();
+            VulVolledigeStratenDropDown();
             EnableDisable();
         }
 
         private void buttonKoopHuisHotel_Click(object sender, EventArgs e)
         {
             controller.HuidigeSpelerKliktOpKoopHuisHotel(comboBoxVolledigeStraten.Text);
+            VulVolledigeStratenDropDown();
             EnableDisable();
         }
 
         private void buttonEindeBeurt_Click(object sender, EventArgs e)
         {
             controller.HuidigeSpelerKliktOpEindeBeurt();
+            VulVolledigeStratenDropDown();
             EnableDisable();
         }
 
         private void comboBoxVolledigeStraten_TextChanged(object sender, EventArgs e)
         {
-            //EnableDisable();
+            EnableDisable();
         }
    }
 }

@@ -202,6 +202,8 @@ namespace Monopoly
                     }
                 }
             }
+
+            view.Refresh();
         }
 
         public void HuidigeSpelerKliktOpEindeBeurt()

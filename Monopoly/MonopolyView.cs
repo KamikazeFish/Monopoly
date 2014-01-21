@@ -149,6 +149,31 @@ namespace Monopoly
                     e.Graphics.FillPolygon(spelerBrush, points, System.Drawing.Drawing2D.FillMode.Alternate);
                 }
 
+                // teken de huizen
+                if (huidigVakje.AantalHuizen == 5)
+                {
+                    SolidBrush redBrush = new SolidBrush(Color.Red);
+                    Rectangle vakjeHotel = new Rectangle(
+                        vakjeOmtrek.Left + 2,
+                        vakjeOmtrek.Top + 2,
+                        8,
+                        8);
+                    e.Graphics.FillRectangle(redBrush, vakjeHotel);
+                }
+                else
+                {
+                    SolidBrush greenBrush = new SolidBrush(Color.Green);
+                    for (int huisIndex = 0; huisIndex < huidigVakje.AantalHuizen; huisIndex++)
+                    {
+                        Rectangle vakjeHuis = new Rectangle(
+                            vakjeOmtrek.Left + 2 + huisIndex * 10,
+                            vakjeOmtrek.Top + 2,
+                            8,
+                            8);
+                        e.Graphics.FillRectangle(greenBrush, vakjeHuis);
+                    }
+                }
+
                 e.Graphics.ResetClip();
             }
 
