@@ -117,6 +117,17 @@ namespace Monopoly
             }
         }
 
+        public int LandingsKosten()
+        {
+            // deze functie retourneert de kosten bij het landen op een vakje
+            switch (tp) {
+            case VakType.STRAAT:  return Tarieven[AantalHuizen];
+            case VakType.STATION: return Tarieven[0];                   // todo: als alle stations in eigendom, verhogen
+            default:
+                return 0;
+            }
+        }
+
         public Speler Eigenaar { set { eigenaar = value; } get { return eigenaar; } }
         public int AantalHuizen { get { return aantalHuizen; } }
         public int PrijsPerHuis { get { return prijsPerHuis; } }

@@ -124,6 +124,19 @@ namespace Monopoly
                 ac.VoerUit(model, view);
             }
 
+            // is het vakje van een andere speler? betalen!
+            Vakje landingsVakje = model.Vakjes[model.Spelers.HuidigeSpeler.Positie];
+            if (landingsVakje.Eigenaar != null)
+            {
+                int kosten = landingsVakje.LandingsKosten();
+                model.Spelers.HuidigeSpeler.DoeUitgave(kosten);
+                landingsVakje.Eigenaar.KrijgInkomsten(kosten);
+
+                // en log die actie
+                view.AddMessageToLog("Speler '" + landingsVakje.Eigenaar.Naam + "' krijgt ƒ" + kosten + " van speler '" + model.Spelers.HuidigeSpeler.Naam + "'");
+            }
+
+
             // huidige speler mag opnieuw gooien indien hij dubbel gooide
             if (model.Steen1.LaatsteWaarde != model.Steen2.LaatsteWaarde)
             {
