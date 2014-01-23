@@ -128,7 +128,8 @@ namespace Monopoly
             Vakje landingsVakje = model.Vakjes[model.Spelers.HuidigeSpeler.Positie];
             if (landingsVakje.Eigenaar != null)
             {
-                int kosten = landingsVakje.LandingsKosten();
+
+                int kosten = model.Vakjes.GetBezoekerPrijs(model.Spelers.HuidigeSpeler);
                 model.Spelers.HuidigeSpeler.DoeUitgave(kosten);
                 landingsVakje.Eigenaar.KrijgInkomsten(kosten);
 

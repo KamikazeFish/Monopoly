@@ -213,9 +213,9 @@ namespace Monopoly
             return true;
         }
 
-        public int GetBezoekerPrijs(int positie, Speler speler)
+        public int GetBezoekerPrijs(Speler speler)
         {
-            Vakje vakje = bord[positie];
+            Vakje vakje = bord[speler.Positie];
 
             if (vakje.Eigenaar != speler)
             {
