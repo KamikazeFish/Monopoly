@@ -125,6 +125,27 @@ namespace Monopoly
         }
     }
 
+    // nutsbedrijf: 4x of 10x het aantal gegooide ogen aan huur
+    public class NutsBedrijfActie : Actie
+    {
+        public override void VoerUit(MonopolyModel model, MonopolyView view)
+        {
+            Vakje landingsVakje = model.Vakjes[model.Spelers.HuidigeSpeler.Positie];
+            if (landingsVakje.Eigenaar != null)
+            {
+                int gegooid = (model.Steen1.LaatsteWaarde + model.Steen2.LaatsteWaarde);
+                int kosten = model.Vakjes.GetBezoekerPrijs(model.Spelers.HuidigeSpeler);
+                int huur = gegooid * kosten;
+
+                model.Spelers.HuidigeSpeler.DoeUitgave(huur);
+                landingsVakje.Eigenaar.KrijgInkomsten(huur);
+
+                // en log die actie
+                view.AddMessageToLog("Speler '" + model.Spelers.HuidigeSpeler.Naam + "' gooide " + gegooid + " dus de huur is " + gegooid + " keer ƒ" + kosten + " = ƒ" + huur);
+                view.AddMessageToLog("Speler '" + landingsVakje.Eigenaar.Naam + "' krijgt ƒ" + huur + " van speler '" + model.Spelers.HuidigeSpeler.Naam + "'");
+            }
+        }
+    }
 
 
     //public class GooiActie : Actie

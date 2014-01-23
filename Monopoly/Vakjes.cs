@@ -32,7 +32,7 @@ namespace Monopoly
             Add(new Vakje(Vakje.VakType.GEVANGENIS, "Gevangenis", "", Color.White));
 
             Add(new Vakje(Vakje.VakType.STRAAT, "Barteljorisstraat", "Haarlem", Color.FromArgb(238, 68, 221), new LandingsActie(), 140, 70, 100, new int[] { 10, 50, 150, 450, 625, 750 }));
-            Add(new Vakje(Vakje.VakType.NUTSBEDRIJF, "Elektriciteitsbedrijf", "", Color.White, null, 150, 75, 0, new int[] { 4, 10 }));
+            Add(new Vakje(Vakje.VakType.NUTSBEDRIJF, "Elektriciteitsbedrijf", "", Color.White, new NutsBedrijfActie(), 150, 75, 0, new int[] { 4, 10 }));
             Add(new Vakje(Vakje.VakType.STRAAT, "Zijlweg", "Haarlem", Color.FromArgb(238, 68, 221), new LandingsActie(), 140, 70, 100, new int[] { 10, 50, 150, 450, 625, 750 }));
             Add(new Vakje(Vakje.VakType.STRAAT, "Houtstraat", "Haarlem", Color.FromArgb(238, 68, 221), new LandingsActie(), 160, 80, 100, new int[] { 12, 60, 180, 500, 700, 900 }));
 
@@ -54,7 +54,7 @@ namespace Monopoly
 
             Add(new Vakje(Vakje.VakType.STRAAT, "Spui", "'s-Gravenhage", Color.FromArgb(255, 255, 0), new LandingsActie(), 260, 130, 150, new int[] { 22, 110, 330, 800, 975, 1150 }));
             Add(new Vakje(Vakje.VakType.STRAAT, "Plein", "'s-Gravenhage", Color.FromArgb(255, 255, 0), new LandingsActie(), 260, 130, 150, new int[] { 22, 110, 330, 800, 975, 1150 }));
-            Add(new Vakje(Vakje.VakType.NUTSBEDRIJF, "Waterleiding", "", Color.White, null, 150, 75, 0, new int[] { 4, 10 }));
+            Add(new Vakje(Vakje.VakType.NUTSBEDRIJF, "Waterleiding", "", Color.White, new NutsBedrijfActie(), 150, 75, 0, new int[] { 4, 10 }));
             Add(new Vakje(Vakje.VakType.STRAAT, "Lange Poten", "'s-Gravenhage", Color.FromArgb(255, 255, 0), new LandingsActie(), 280, 140, 150, new int[] { 24, 120, 360, 850, 1025, 1200 }));
 
             Add(new Vakje(Vakje.VakType.NAARGEVANGENIS, "Naar de gevangenis", "", Color.White, null));
