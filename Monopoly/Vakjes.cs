@@ -15,7 +15,7 @@ namespace Monopoly
         public Vakjes()
         {
             bord = new List<Vakje>();
-            Add(new Vakje(Vakje.VakType.START, "Start", "", Color.White));
+            Add(new Vakje(Vakje.VakType.START, "Start", "", Color.White, new LegeActie()));
 
             Add(new Vakje(Vakje.VakType.STRAAT, "Dorpsstraat", "Ons Dorp", Color.FromArgb(0, 0, 153), new LandingsActie(), 60, 30, 50, new int[] { 2, 10, 30, 90, 160, 250 }));
             Add(new Vakje(Vakje.VakType.ALGEMEENFONDS, "Algemeen fonds", "", Color.White, new PakAlgemeenFondsKaartActie())); ;
@@ -43,7 +43,7 @@ namespace Monopoly
             Add(new Vakje(Vakje.VakType.STRAAT, "Biltstraat", "Utrecht", Color.FromArgb(255, 136, 0), new LandingsActie(), 180, 90, 100, new int[] { 14, 70, 200, 550, 750, 950 }));
             Add(new Vakje(Vakje.VakType.STRAAT, "Vreeburg", "Utrecht", Color.FromArgb(255, 136, 0), new LandingsActie(), 200, 100, 100, new int[] { 16, 80, 220, 600, 800, 1000 }));
 
-            Add(new Vakje(Vakje.VakType.VRIJPARKEREN, "Vrij parkeren", "", Color.White));
+            Add(new Vakje(Vakje.VakType.VRIJPARKEREN, "Vrij parkeren", "", Color.White, new LegeActie()));
 
             Add(new Vakje(Vakje.VakType.STRAAT, "A Kerkhof", "Groningen", Color.FromArgb(255, 0, 0), new LandingsActie(), 220, 110, 150, new int[] { 18, 90, 250, 700, 875, 1050 }));
             Add(new Vakje(Vakje.VakType.KANS, "Kans", "", Color.White, new PakKansKaartActie()));
