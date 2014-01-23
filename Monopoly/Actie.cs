@@ -147,6 +147,29 @@ namespace Monopoly
         }
     }
 
+    // speler betaal x per huis en x per hotel
+    public class BetaalOntvangPerHuisHotelActie : Actie
+    {
+        private int perHuis;
+        private int perHotel;
+
+        public BetaalOntvangPerHuisHotelActie(int perHuis, int perHotel)
+        {
+            this.perHuis = perHuis;
+            this.perHotel = perHotel;
+        }
+
+        public override void VoerUit(MonopolyModel model, MonopolyView view) 
+        {
+            int huizen = model.Vakjes.GetAantalHuizenVan(model.Spelers.HuidigeSpeler);
+            int hotels = model.Vakjes.GetAantalHotelsVan(model.Spelers.HuidigeSpeler);
+
+            int bedrag = huizen * perHuis + hotels * perHotel;
+            model.Spelers.HuidigeSpeler.DoeUitgave( bedrag );
+
+            view.AddMessageToLog("Speler '" + model.Spelers.HuidigeSpeler.Naam + " heeft " + huizen + " huizen en " + hotels + " hotels, dus betaalt ƒ" + bedrag);
+        }
+    }
 
     //public class GooiActie : Actie
     //{

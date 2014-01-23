@@ -109,6 +109,36 @@ namespace Monopoly
             return vakjes;
         }
 
+        // retourneer totaal aantal huizen van speler
+        public int GetAantalHuizenVan(Speler speler)
+        {
+            int huizen = 0;
+            foreach (Vakje vakje in bord)
+            {
+                if (vakje.Eigenaar == speler &&
+                    vakje.AantalHuizen < 5)             // bij 5 huizen is het een hotel, dus die tellen hier niet mee
+                {
+                    huizen += vakje.AantalHuizen;
+                }
+            }
+            return huizen;
+        }
+
+        // retourneer totaal aantal huizen van speler
+        public int GetAantalHotelsVan(Speler speler)
+        {
+            int hotels = 0;
+            foreach (Vakje vakje in bord)
+            {
+                if (vakje.Eigenaar == speler &&
+                    vakje.AantalHuizen == 5)             // bij 5 huizen is het een hotel, dus die tellen hier niet mee
+                {
+                    hotels++;
+                }
+            }
+            return hotels;
+        }
+
         public List<Vakje> GetStratenVolledigeStedenVan(Speler speler)
         {
             // stap 1. we maken een lijst met alle vakjes die gekocht zijn door de huidige speler. 

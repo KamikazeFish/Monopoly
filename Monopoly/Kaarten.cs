@@ -90,8 +90,8 @@ namespace Monopoly
             //VoegToe(new Kaart("Ga verder naar de Heerestraat. Indien u langs 'Start' komt ontvangt u ƒ 200", new Vakje(Vakje.VakType.STRAAT, "Heerestraat", "Groningen", 160, Color.FromArgb(238, 68, 221)), true));
             VoegToe(new Kaart("De bank betaalt u ƒ 50 dividend",                            new BetaalOntvangActie( +50)));
             //VoegToe(new Kaart("Verlaat de gevangenis zonder te betalen"));
-            //VoegToe(new Kaart("Repareer uw huizen. Betaal voor elk huis ƒ 25, betaal voor elk hotel ƒ 100", -25, -100));
-            //VoegToe(new Kaart("U wordt aangeslagen voor straatgeld. ƒ 40 per huis, ƒ 115 per hotel", -40, -115));
+            VoegToe(new Kaart("Repareer uw huizen. Betaal voor elk huis ƒ 25, betaal voor elk hotel ƒ 100", new BetaalOntvangPerHuisHotelActie(25, 100)));
+            VoegToe(new Kaart("U wordt aangeslagen voor straatgeld. ƒ 40 per huis, ƒ 115 per hotel", new BetaalOntvangPerHuisHotelActie(40, 115)));
             VoegToe(new Kaart("Uw bouwverzekering vervalt, u ontvangt ƒ 150",               new BetaalOntvangActie( +150)) );
             VoegToe(new Kaart("Aangehouden wegens dronkenschap ƒ 20 boete",                 new BetaalOntvangActie( -20)) );
             //VoegToe(new Kaart("Ga verder naar Kalverstraat", new Vakje(Vakje.VakType.STRAAT, "Kalverstraat", "Amsterdam", 400, Color.FromArgb(51, 51, 255)), true));
