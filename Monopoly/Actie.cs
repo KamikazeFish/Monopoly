@@ -102,6 +102,26 @@ namespace Monopoly
         }
     }
 
+    // speler land op een 'normaal' vakje.
+    public class LandingsActie : Actie
+    {
+        public override void VoerUit(MonopolyModel model, MonopolyView view)
+        {
+            // is het vakje van een andere speler? betalen!
+            Vakje landingsVakje = model.Vakjes[model.Spelers.HuidigeSpeler.Positie];
+            if (landingsVakje.Eigenaar != null)
+            {
+                int kosten = model.Vakjes.GetBezoekerPrijs(model.Spelers.HuidigeSpeler);
+                model.Spelers.HuidigeSpeler.DoeUitgave(kosten);
+                landingsVakje.Eigenaar.KrijgInkomsten(kosten);
+
+                // en log die actie
+                view.AddMessageToLog("Speler '" + landingsVakje.Eigenaar.Naam + "' krijgt ƒ" + kosten + " van speler '" + model.Spelers.HuidigeSpeler.Naam + "'");
+            }
+
+        }
+    }
+
 
 
     //public class GooiActie : Actie
