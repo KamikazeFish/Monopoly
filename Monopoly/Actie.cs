@@ -105,6 +105,26 @@ namespace Monopoly
         }
     }
 
+    // inkomstenbelasting is een apart geval, heeft eigen actie
+    public class BelastingActie: Actie
+    {
+        private string naam;
+        private int bedrag;
+
+        public BelastingActie(string naam, int bedrag)
+        {
+            this.naam = naam;
+            this.bedrag = bedrag;
+        }
+
+        public override void VoerUit(MonopolyModel model, MonopolyView view)
+        {
+            int bedrag = 200;
+            model.Spelers.HuidigeSpeler.KrijgInkomsten(-bedrag);
+            view.AddMessageToLog("Speler '" + model.Spelers.HuidigeSpeler.Naam + "' betaalt ƒ" + bedrag + " aan " + naam);
+        }
+    }
+
 
 
     //public class GooiActie : Actie

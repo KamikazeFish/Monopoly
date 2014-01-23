@@ -20,7 +20,7 @@ namespace Monopoly
             Add(new Vakje(Vakje.VakType.STRAAT, "Dorpsstraat", "Ons Dorp", Color.FromArgb(0, 0, 153), new LandingsActie(), 60, 30, 50, new int[] { 2, 10, 30, 90, 160, 250 }));
             Add(new Vakje(Vakje.VakType.ALGEMEENFONDS, "Algemeen fonds", "", Color.White, new PakAlgemeenFondsKaartActie())); ;
             Add(new Vakje(Vakje.VakType.STRAAT, "Brink", "Ons Dorp", Color.FromArgb(0, 0, 153), new LandingsActie(), 60, 30, 50, new int[] { 4, 20, 60, 180, 320, 450 }));
-            Add(new Vakje(Vakje.VakType.BELASTING, "Inkomstenbelasting", "", Color.White));
+            Add(new Vakje(Vakje.VakType.BELASTING, "Inkomstenbelasting", "", Color.White, new BelastingActie("inkomstenbelasting", 200)));
 
             Add(new Vakje(Vakje.VakType.STATION, "Station Zuid", "", Color.White, null, 200, 100, 0, new int[] { 25, 50, 100, 200 }));
 
@@ -68,7 +68,7 @@ namespace Monopoly
 
             Add(new Vakje(Vakje.VakType.KANS, "Kans", "", Color.White, new PakKansKaartActie()));
             Add(new Vakje(Vakje.VakType.STRAAT, "Leidschestraat", "Amsterdam", Color.FromArgb(51, 51, 255), new LandingsActie(), 350, 175, 200, new int[] { 35, 175, 500, 1100, 1300, 1500 }));
-            Add(new Vakje(Vakje.VakType.BELASTING, "Extra belasting", "", Color.White, null));
+            Add(new Vakje(Vakje.VakType.BELASTING, "Extra belasting", "", Color.White, new BelastingActie("extra belasting", 100)));
             Add(new Vakje(Vakje.VakType.STRAAT, "Kalverstraat", "Amsterdam", Color.FromArgb(51, 51, 255), new LandingsActie(), 400, 200, 200, new int[] { 50, 200, 600, 1400, 1700, 2000 }));
         }
 
