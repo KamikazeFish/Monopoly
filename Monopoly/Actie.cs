@@ -11,19 +11,11 @@ namespace Monopoly
      */
     public abstract class Actie
     {
-        public Actie()
-        {
-        }
-
         public abstract void VoerUit(MonopolyModel model, MonopolyView view);
     }
 
     public class LegeActie : Actie
     {
-        public LegeActie()
-        {
-        }
-
         public override void VoerUit(MonopolyModel model, MonopolyView view)
         {
             // niks te doen
@@ -57,11 +49,6 @@ namespace Monopoly
 
     public class PakKansKaartActie : Actie
     {
-        public PakKansKaartActie()
-        {
-
-        }
-
         public override void VoerUit(MonopolyModel model, MonopolyView view)
         {
             Kaart kaart = model.KansKaarten.PakKaart();
@@ -81,10 +68,6 @@ namespace Monopoly
 
     public class PakAlgemeenFondsKaartActie : Actie
     {
-        public PakAlgemeenFondsKaartActie()
-        {
-        }
-
         public override void VoerUit(MonopolyModel model, MonopolyView view)
         {
             Kaart kaart = model.AlgemeenFondsKaarten.PakKaart();
