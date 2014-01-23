@@ -171,6 +171,49 @@ namespace Monopoly
         }
     }
 
+    public class GaNaarActie : Actie
+    {
+        private string naam;
+        private bool geldVoorLangsStart;
+
+        public GaNaarActie(string naam, bool geldVoorLangsStart)
+        {
+            this.naam = naam;
+            this.geldVoorLangsStart = geldVoorLangsStart;
+        }
+
+        public override void VoerUit(MonopolyModel model, MonopolyView view) 
+        {
+            int notFound = 0;
+
+            do
+            {
+                model.VerplaatsHuidigeSpeler(1);
+                if (geldVoorLangsStart && model.Spelers.HuidigeSpeler.Positie == 0)
+                {
+                    // speler ging langs start, krijgt knaken.
+                    int bedrag = 200;
+                    model.Spelers.HuidigeSpeler.KrijgInkomsten(bedrag);
+
+                    view.AddMessageToLog("Speler '" + model.Spelers.HuidigeSpeler.Naam + " ging langs start en ontvangt ƒ" + bedrag);
+                }
+
+                // controleer op niet gevonden vakje.
+                notFound++;
+                if (notFound > model.Vakjes.GetAantalVakjes())
+                {
+                    throw new Exception("Vakje '" + naam + "' niet gevonden!");
+                }
+            } while (model.Vakjes[model.Spelers.HuidigeSpeler.Positie].StraatNaam != naam);
+
+            // vanuit deze actie, voer de landingsactie voor het vakje uit.
+            //
+            Actie ac = model.Vakjes[model.Spelers.HuidigeSpeler.Positie].LandingsActie;
+            if (ac != null)
+                ac.VoerUit(model, view);
+        }
+    }
+
     //public class GooiActie : Actie
     //{
     //    public GooiActie(string tekst = "De volgende speler mag gooien")
