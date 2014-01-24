@@ -17,15 +17,31 @@ namespace Monopoly
 
         public MonopolySpel()
         {
-
             InitializeComponent();
 
             view.SetLog(listBoxLog);
-            model = new MonopolyModel();
-            controller = new MonopolyController(model, view);
-            controller.StartNewSpel();                      // todo: fix this
-            
-            EnableDisable(); // knoppen goed zetten voor de eerste beurt
+            StartNieuwSpel();   
+        }
+
+        private void StartNieuwSpel()
+        {
+
+
+            NieuwSpel aantalSpelersDialoog = new NieuwSpel();
+            if (aantalSpelersDialoog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                // Log leeg gooien
+                listBoxLog.Items.Clear();
+
+                // De spelernamen uit het NieuwSpel form ophalen
+                List<string> spelersNamen = aantalSpelersDialoog.Spelers;
+
+                model = new MonopolyModel();
+                controller = new MonopolyController(model, view);
+                controller.InitialiseerSpel(spelersNamen);
+
+                EnableDisable(); // knoppen goed zetten voor de eerste beurt
+            }
         }
 
         private void OnPaint(object sender, PaintEventArgs e)

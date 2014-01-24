@@ -65,14 +65,14 @@ namespace Monopoly
 
         // business logic
 
-        public void StartNewSpel()
+        public void InitialiseerSpel(List<string> spelersNamen)
         {
-            // voorlopig voegen we hardcoded twee spelers toe...
-            // todo: een dialoog die de aantallen en namen vraagt.
-            //
             model.Spelers.Clear();
-            model.Spelers.Add(new Speler("Pieter", beginSaldo, this.PickColor()));
-            model.Spelers.Add(new Speler("Ilja", beginSaldo, this.PickColor()));
+
+            foreach (string spelerNaam in spelersNamen)
+            {
+                model.Spelers.Add(new Speler(spelerNaam, beginSaldo, this.PickColor()));
+            }
 
             model.HuidigeSpelerMagGooien = true;
             view.AddMessageToLog( "Nieuw spel gestart met " + model.Spelers.GetAantalSpelers() + " spelers.");

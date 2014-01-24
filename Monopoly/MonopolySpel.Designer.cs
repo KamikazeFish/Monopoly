@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonopolySpel));
             this.buttonGooi = new System.Windows.Forms.Button();
             this.buttonKoopHuidigeVakje = new System.Windows.Forms.Button();
             this.buttonKoopHuisHotel = new System.Windows.Forms.Button();
@@ -129,8 +130,9 @@
             this.Controls.Add(this.buttonKoopHuidigeVakje);
             this.Controls.Add(this.buttonGooi);
             this.Controls.Add(this.view);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MonopolySpel";
-            this.Text = "Form1";
+            this.Text = "Monopoly Spel";
             this.ResumeLayout(false);
             this.PerformLayout();
 
