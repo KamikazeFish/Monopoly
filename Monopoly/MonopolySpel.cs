@@ -109,5 +109,15 @@ namespace Monopoly
         {
             EnableDisable();
         }
+
+        private void sluitenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void nieuwSpelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StartNieuwSpel();
+        }
    }
 }
