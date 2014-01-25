@@ -25,8 +25,6 @@ namespace Monopoly
 
         private void StartNieuwSpel()
         {
-
-
             NieuwSpel aantalSpelersDialoog = new NieuwSpel();
             if (aantalSpelersDialoog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {

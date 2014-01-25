@@ -54,6 +54,11 @@ namespace Monopoly
                 buttonStartSpel.DialogResult = System.Windows.Forms.DialogResult.None;
                 labelError.Text = "Meer dan 4 namen ingevoerd!";
             }
+            else if (namen.Count < 2)
+            {
+                buttonStartSpel.DialogResult = System.Windows.Forms.DialogResult.None;
+                labelError.Text = "Minder dan 2 namen ingevoerd!";
+            }
             else
             {
                 buttonStartSpel.DialogResult = System.Windows.Forms.DialogResult.OK;
