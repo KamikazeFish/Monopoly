@@ -133,6 +133,7 @@
             // 
             // nieuwSpelToolStripMenuItem
             // 
+            this.nieuwSpelToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nieuwSpelToolStripMenuItem.Image")));
             this.nieuwSpelToolStripMenuItem.Name = "nieuwSpelToolStripMenuItem";
             this.nieuwSpelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nieuwSpelToolStripMenuItem.Text = "Nieuw Spel";
@@ -140,6 +141,7 @@
             // 
             // sluitenToolStripMenuItem
             // 
+            this.sluitenToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sluitenToolStripMenuItem.Image")));
             this.sluitenToolStripMenuItem.Name = "sluitenToolStripMenuItem";
             this.sluitenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sluitenToolStripMenuItem.Text = "Sluiten";
