@@ -55,9 +55,9 @@ namespace Monopoly
             // Zo ja, dan ook de einde beurt knop disablen
             buttonEindeBeurt.Enabled = model.HuidigeSpelerMagGooien ? false : true;
             // Kan de huidige speler het vakje nog kopen?
-            buttonKoopHuidigeVakje.Enabled = model.HuidigVakjeIsKoopbaar();
-            // Prijs van de straat laten zien in het label
-            labelBedragHuidigeVakje.Text = model.HuidigVakjeIsKoopbaar() ? "ƒ" + model.Vakjes[model.Spelers.HuidigeSpeler.Positie].Waarde + ",-" : "";
+            buttonKoopHuidigeVakje.Enabled = (model.HuidigVakjeIsKoopbaar() && model.NieuweBeurt == false);
+            // Prijs van de straat laten zien in het label, alleen als buttonKoopHuidigeVakje geactiveerd is
+            labelBedragHuidigeVakje.Text = buttonKoopHuidigeVakje.Enabled ? "ƒ" + model.Vakjes[model.Spelers.HuidigeSpeler.Positie].Waarde + ",-" : "";
 
             // Als er in de combobox geen straat is geactiveerd, mag je ook geen huis kunnen kopen.
             buttonKoopHuisHotel.Enabled = (comboBoxVolledigeStraten.Text != string.Empty);

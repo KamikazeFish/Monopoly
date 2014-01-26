@@ -81,6 +81,9 @@ namespace Monopoly
 
         public void HuidigeSpelerkliktOpGooi()
         {
+            // Als een speler gegooid heeft is het geen nieuweBeurt meer
+            model.NieuweBeurt = false;
+
             // Opmerkingen: 
             /*
              *  - Als een speler OVER start komt krijgt hij geld
@@ -110,8 +113,24 @@ namespace Monopoly
             view.AddMessageToLog("Speler " + model.Spelers.HuidigeSpeler.Naam +
                                  " gooit " + model.Steen1.LaatsteWaarde + " en " + model.Steen2.LaatsteWaarde + "  (=" + gegooidTotaal + ")");
 
+            // Wat is de oude positie?
+            int oudePositie = model.Spelers.HuidigeSpeler.Positie;
+
             // verschuif de speler
             model.VerplaatsHuidigeSpeler(gegooidTotaal);
+
+            // Nieuwe positie
+            int nieuwePositie = model.Spelers.HuidigeSpeler.Positie;
+
+            // speler ging langs start, krijgt knaken.
+            if ((nieuwePositie < oudePositie && gegooidTotaal > 0) || gegooidTotaal >= 40)
+            {
+                int bedrag = 200;
+                model.Spelers.HuidigeSpeler.KrijgInkomsten(bedrag);
+
+                view.AddMessageToLog("Speler '" + model.Spelers.HuidigeSpeler.Naam + " ging langs start en ontvangt ƒ" + bedrag);
+            }
+
 
             // log de verschuiving
             view.AddMessageToLog("Speler " + model.Spelers.HuidigeSpeler.Naam +
@@ -202,6 +221,7 @@ namespace Monopoly
 
             // reset 'speler mag gooien'
             model.HuidigeSpelerMagGooien = true;
+            model.NieuweBeurt = true;
 
             // ververs het view
             view.Refresh();

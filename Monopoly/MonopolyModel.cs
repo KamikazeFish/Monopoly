@@ -16,6 +16,8 @@ namespace Monopoly
         private Dobbelsteen steen2;
 
         private bool huidigeSpelerMagGooien;    // true als de huidige speler nog mag gooien, anders false
+        
+        private bool nieuweBeurt;               // Nodig omdat een speler zijn huidige vakje niet mag kopen als hij nog moet gooien
 
         private Vakjes bordVakjes;              // een aparte klasse die alle vakjes beheert.
 
@@ -50,8 +52,13 @@ namespace Monopoly
         }
         public bool HuidigeSpelerMagGooien 
         {
-            get {return huidigeSpelerMagGooien;}
+            get { return huidigeSpelerMagGooien; }
             set { huidigeSpelerMagGooien = value; }
+        }
+        public bool NieuweBeurt 
+        {
+            get { return nieuweBeurt; }
+            set { nieuweBeurt = value; }
         }
         public AlgemeenFondsKaarten AlgemeenFondsKaarten { get { return algemeenFondsKaarten; } }
         public KansKaarten KansKaarten { get { return kansKaarten; } }
