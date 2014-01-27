@@ -44,7 +44,15 @@ namespace Monopoly
 
         private void OnPaint(object sender, PaintEventArgs e)
         {
-           view.DoPaint(e, model);
+            try
+            {
+                view.DoPaint(e, model);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("De bank is berooft en al het geld is weg. Niemand kan meer winnen. Spel wordt beeindigd.\n\nIn english: \n" + ex.Message,"Fout",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                Close();
+            }
         }
 
         // zet alle knoppen aan of uit
