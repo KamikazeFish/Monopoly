@@ -46,7 +46,14 @@ namespace Monopoly
         {
             try
             {
-                view.DoPaint(e, model);
+                if (model != null)
+                {
+                    view.DoPaint(e, model);
+                }
+                else
+                {
+                    Close();
+                }
             }
             catch (Exception ex)
             {
