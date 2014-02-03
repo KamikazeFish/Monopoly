@@ -11,7 +11,7 @@ namespace Monopoly
 {
     public partial class MonopolySpel : Form
     {
-        public MonopolyModel model;
+        private MonopolyModel model;
         private MonopolyView view;
         private MonopolyController controller;
 
