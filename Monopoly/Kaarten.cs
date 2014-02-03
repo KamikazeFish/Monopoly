@@ -141,7 +141,7 @@ namespace Monopoly
             VoegToe(new Kaart("Ga verder naar 'Start'", new GaNaarActie("Start", true)));
             // Betaal ƒ 10 boete of neem een Kanskaart
 
-            //SchudKaarten();
+            SchudKaarten();
         }
     }
 }

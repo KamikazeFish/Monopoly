@@ -117,7 +117,6 @@
     <Content Include="favicon.ico" />
     <None Include="Resources\monopoly_1_click.jpg" />
     <None Include="Resources\monopoly_1.jpg" />
-    <Content Include="todo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
