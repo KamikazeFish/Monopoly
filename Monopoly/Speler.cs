@@ -13,6 +13,7 @@ namespace Monopoly
         private System.Drawing.Color kleur;
         private List<Kaart> kaarten; // lijst van kaarten in bezit (bv. get out of jail-kaart)
         private bool uitgeschakeld; // Doet de speler nog mee met het spel of heeft deze al verloren (bankroet)
+        private bool inDeGevangenis; // Zit de speler in de gevangenis
 
         public Speler(string naam, int saldo, System.Drawing.Color kleur, int positie = 0)
         {
@@ -22,6 +23,7 @@ namespace Monopoly
             this.kleur = kleur;
             this.kaarten = new List<Kaart>();
             uitgeschakeld = false;
+            inDeGevangenis = false;
         }
 
         public string Naam
@@ -47,6 +49,7 @@ namespace Monopoly
 
         public List<Kaart> Kaarten { get { return kaarten; } }
         public bool Uitgeschakeld { get { return uitgeschakeld; } }
+        public bool InDeGevangenis { get { return inDeGevangenis; } set { inDeGevangenis = value; } }
 
         public void AddKaart(Kaart krt)
         {

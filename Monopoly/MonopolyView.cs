@@ -20,6 +20,7 @@ namespace Monopoly
         private const int pionGrootte = 20;
 
         private ListBox log;
+        private KeuzeDialog keuzeDialog;
 
         // vertaal spelvak-index naar x en y positie
         // van een vakje.
@@ -46,6 +47,21 @@ namespace Monopoly
         public void SetLog( ListBox log)
         {
             this.log = log;
+        }
+
+        public void SetKeuzeDialog(KeuzeDialog keuzeDialog)
+        {
+            this.keuzeDialog = keuzeDialog;
+        }
+
+        public void AddKeuzeActie(OmschrijvingActie actie) 
+        {
+            keuzeDialog.AddActie(actie);
+        }
+
+        public void ShowKeuzeDialog()
+        {
+            keuzeDialog.Show();
         }
 
         public void AddMessageToLog(string msg)

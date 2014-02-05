@@ -57,7 +57,7 @@ namespace Monopoly
             Add(new Vakje(Vakje.VakType.NUTSBEDRIJF, "Waterleiding", "", Color.White, new NutsBedrijfActie(), 150, 75, 0, new int[] { 4, 10 }));
             Add(new Vakje(Vakje.VakType.STRAAT, "Lange Poten", "'s-Gravenhage", Color.FromArgb(255, 255, 0), new LandingsActie(), 280, 140, 150, new int[] { 24, 120, 360, 850, 1025, 1200 }));
 
-            Add(new Vakje(Vakje.VakType.NAARGEVANGENIS, "Naar de gevangenis", "", Color.White, null));
+            Add(new Vakje(Vakje.VakType.NAARGEVANGENIS, "Naar de gevangenis", "", Color.White, new GaNaarDeGevangenisActie()));
 
             Add(new Vakje(Vakje.VakType.STRAAT, "Hofplein", "Rotterdam", Color.FromArgb(0, 128, 0), new LandingsActie(), 300, 150, 200, new int[] { 26, 130, 390, 900, 1100, 1275 }));
             Add(new Vakje(Vakje.VakType.STRAAT, "Blaak", "Rotterdam", Color.FromArgb(0, 128, 0), new LandingsActie(), 300, 150, 200, new int[] { 26, 130, 390, 900, 1100, 1275 }));

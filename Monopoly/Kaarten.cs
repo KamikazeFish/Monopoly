@@ -85,11 +85,11 @@ namespace Monopoly
             VoegToe(new Kaart("Ga verder naar Barteljorisstraat. Indien u langs 'Start' komt, ontvangt u ƒ 200",    new GaNaarActie("Barteljorisstraat", true)));
             VoegToe(new Kaart("Reis naar station 'West' en indien u langs 'Start' komt, ontvangt u ƒ 200",          new GaNaarActie("Station West", true)));
             VoegToe(new Kaart("Ga verder naar 'Start'",                                                             new GaNaarActie("Start", true)));
-            //VoegToe(new Kaart("Ga drie plaatsen terug", 3, true, true));
-            //VoegToe(new Kaart("Ga direct naar de gevangenis. Ga niet langs 'Start'. U ontvangt geen ƒ 200", new Vakje(Vakje.VakType.GEVANGENIS, "Gevangenis", "", 0, Color.White), false));
+            VoegToe(new Kaart("Ga drie plaatsen terug",                                                             new Ga3PlaatsenTerugActie()));
+            VoegToe(new Kaart("Ga direct naar de gevangenis. Ga niet langs 'Start'. U ontvangt geen ƒ 200",         new GaNaarDeGevangenisActie()));
             VoegToe(new Kaart("Ga verder naar de Heerestraat. Indien u langs 'Start' komt ontvangt u ƒ 200",        new GaNaarActie("Heerestraat", true)));
             VoegToe(new Kaart("De bank betaalt u ƒ 50 dividend",                                                    new BetaalOntvangActie(+50)));
-            //VoegToe(new Kaart("Verlaat de gevangenis zonder te betalen"));
+            VoegToe(new Kaart("Verlaat de gevangenis zonder te betalen",                                            new GaUitDeGevangenisActie(), true));
             VoegToe(new Kaart("Repareer uw huizen. Betaal voor elk huis ƒ 25, betaal voor elk hotel ƒ 100",         new BetaalOntvangPerHuisHotelActie(25, 100)));
             VoegToe(new Kaart("U wordt aangeslagen voor straatgeld. ƒ 40 per huis, ƒ 115 per hotel",                new BetaalOntvangPerHuisHotelActie(40, 115)));
             VoegToe(new Kaart("Uw bouwverzekering vervalt, u ontvangt ƒ 150",                                       new BetaalOntvangActie(+150)));
@@ -128,18 +128,23 @@ namespace Monopoly
             VoegToe(new Kaart("U ontvangt rente van 7% preferente aandelen ƒ 25",                               new BetaalOntvangActie(+25)     ));
             VoegToe(new Kaart("Een vergissing van de bank in uw voordeel, u ontvangt ƒ 200",                    new BetaalOntvangActie(+200)    ));
             VoegToe(new Kaart("Ga terug naar Dorpsstraat (Ons Dorp)",                                           new GaNaarActie("Dorpsstraat", false)));
-            //VoegToe(new Kaart("Ga direct naar de gevangenis. Ga niet door 'Start', u ontvangt geen ƒ 200", new Vakje(Vakje.VakType.GEVANGENIS, "Gevangenis", "", 0, Color.White), true));
-            //VoegToe(new Kaart("U bent jarig en ontvangt van iedere speler ƒ 10", +10, BetaalOntvangKaart.Ontvanger.Tegenspelers));
+            VoegToe(new Kaart("Ga direct naar de gevangenis. Ga niet door 'Start', u ontvangt geen ƒ 200",      new GaNaarDeGevangenisActie()));
+            VoegToe(new Kaart("U bent jarig en ontvangt van iedere speler ƒ 10",                                new VerjaardagsActie())); 
             VoegToe(new Kaart("U hebt de tweede prijs in een schoonheidswedstrijd gewonnen en ontvangt ƒ 10",   new BetaalOntvangActie(+10)     ));
             VoegToe(new Kaart("Betaal uw doktersrekening ƒ 50",                                                 new BetaalOntvangActie(-50)     ));
             VoegToe(new Kaart("Betaal uw verzekeringspremie ƒ 50",                                              new BetaalOntvangActie(-50)     ));
             VoegToe(new Kaart("Door verkoop van effecten ontvangt u ƒ 50",                                      new BetaalOntvangActie(+50)     ));
-            //VoegToe(new Kaart("Verlaat de gevangenis zonder betalen"));
+            VoegToe(new Kaart("Verlaat de gevangenis zonder betalen",                                           new GaUitDeGevangenisActie(), true));
             VoegToe(new Kaart("Restitutie inkomstenbelasting, u ontvangt ƒ 20",                                 new BetaalOntvangActie(+20)     ));
             VoegToe(new Kaart("Lijfrente vervalt, u ontvangt ƒ 100",                                            new BetaalOntvangActie(+100)    ));
             VoegToe(new Kaart("Betaal het hospitaal ƒ 100",                                                     new BetaalOntvangActie(+100)    ));
-            VoegToe(new Kaart("Ga verder naar 'Start'", new GaNaarActie("Start", true)));
-            // Betaal ƒ 10 boete of neem een Kanskaart
+            VoegToe(new Kaart("Ga verder naar 'Start'",                                                         new GaNaarActie("Start", true)));
+            VoegToe(new Kaart("Betaal ƒ 10 boete of neem een Kanskaart",                                        new KeuzeActie(
+                                                                                                                    new List<OmschrijvingActie> { 
+                                                                                                                        new BetaalOntvangActie(-10, "Betaal 10 euro boete"), 
+                                                                                                                        new PakKansKaartActie("Pak een kanskaart") 
+                                                                                                                    }
+                                                                                                                )));
 
             SchudKaarten();
         }

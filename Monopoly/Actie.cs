@@ -14,6 +14,22 @@ namespace Monopoly
         public abstract void VoerUit(MonopolyModel model, MonopolyView view);
     }
 
+    // OmschrijvingsActie is een actie met een omschrijving zodat deze onder een KeuzeActie kan komen te hangen
+    public abstract class OmschrijvingActie : Actie
+    {
+        private string omschrijving;
+
+        public OmschrijvingActie(string omschrijving)
+        {
+            this.omschrijving = omschrijving;
+        }
+
+        public string Omschrijving { get { return omschrijving; } }
+
+        // Abstracte methode hoeft niet opnieuw gedefinieerd te worden
+        // public abstract void VoerUit(MonopolyModel model, MonopolyView view);
+    }
+
     public class LegeActie : Actie
     {
         public override void VoerUit(MonopolyModel model, MonopolyView view)
@@ -22,13 +38,13 @@ namespace Monopoly
         }
     }
 
-    public class BetaalOntvangActie : Actie
+    public class BetaalOntvangActie : OmschrijvingActie
     {
         // de huidige speler krijgt een bedrag of moet dit betalen.
         // bedrag kan dus ook negatief zijn
         private int bedrag;
 
-        public BetaalOntvangActie(int bedrag)
+        public BetaalOntvangActie(int bedrag, string omschrijving = "") : base(omschrijving)
         {
             this.bedrag = bedrag;
         }
@@ -47,8 +63,14 @@ namespace Monopoly
         }
     }
 
-    public class PakKansKaartActie : Actie
+    public class PakKansKaartActie : OmschrijvingActie
     {
+        public PakKansKaartActie(string omschrijving = "")
+            : base(omschrijving)
+        {
+
+        }
+
         public override void VoerUit(MonopolyModel model, MonopolyView view)
         {
             Kaart kaart = model.KansKaarten.PakKaart();
@@ -66,8 +88,13 @@ namespace Monopoly
         }
     }
 
-    public class PakAlgemeenFondsKaartActie : Actie
+    public class PakAlgemeenFondsKaartActie : OmschrijvingActie
     {
+        public PakAlgemeenFondsKaartActie(string omschrijving = "")
+            : base(omschrijving)
+        {
+
+        }
         public override void VoerUit(MonopolyModel model, MonopolyView view)
         {
             Kaart kaart = model.AlgemeenFondsKaarten.PakKaart();
@@ -214,4 +241,80 @@ namespace Monopoly
         }
     }
 
+    public class Ga3PlaatsenTerugActie : Actie
+    {
+        public override void VoerUit(MonopolyModel model, MonopolyView view)
+        {
+            model.VerplaatsHuidigeSpeler(-3);
+
+            Actie ac = model.Vakjes[model.Spelers.HuidigeSpeler.Positie].LandingsActie;
+            if (ac != null)
+                ac.VoerUit(model, view);
+
+            view.AddMessageToLog("Speler '" + model.Spelers.HuidigeSpeler.Naam + " moet 3 plaatsen terug.");
+        }
+    }
+
+    public class GaNaarDeGevangenisActie : Actie
+    {
+        public override void VoerUit(MonopolyModel model, MonopolyView view)
+        {
+            Speler huidigeSpeler = model.Spelers.HuidigeSpeler;
+            huidigeSpeler.InDeGevangenis = true;
+            huidigeSpeler.Positie = 10;
+
+            view.AddMessageToLog("Speler '" + huidigeSpeler.Naam + " moet naar de gevangenis.");
+        }
+    }
+
+    public class GaUitDeGevangenisActie : Actie
+    {
+        public override void VoerUit(MonopolyModel model, MonopolyView view)
+        {
+            Speler huidigeSpeler = model.Spelers.HuidigeSpeler;
+            huidigeSpeler.InDeGevangenis = false;
+            model.HuidigeSpelerMagGooien = true;
+
+            view.AddMessageToLog("Speler '" + huidigeSpeler.Naam + " heeft zijn zonden kunnen overdenken en mag vertrekken uit de gevangenis.");
+        }
+    }
+
+    public class VerjaardagsActie : Actie
+    {
+        public override void VoerUit(MonopolyModel model, MonopolyView view)
+        {
+            Speler huidigeSpeler = model.Spelers.HuidigeSpeler;
+            List<Speler> spelers = model.Spelers.GetSpelers();
+
+            foreach (Speler speler in spelers)
+            {
+                if (speler != huidigeSpeler)
+                {
+                    speler.DoeUitgave(10, true);
+                    huidigeSpeler.KrijgInkomsten(10);
+                }
+            }
+
+            view.AddMessageToLog("Speler '" + huidigeSpeler.Naam + " is jarig en krijgt van iedere speler ƒ10.");
+        }
+    }
+
+    public class KeuzeActie : Actie
+    {
+        private List<OmschrijvingActie> acties;
+
+        public KeuzeActie(List<OmschrijvingActie> acties)
+        {
+            this.acties = acties;
+        }
+
+        public override void VoerUit(MonopolyModel model, MonopolyView view)
+        {
+            foreach (OmschrijvingActie actie in acties)
+            {
+                view.AddKeuzeActie(actie);
+            }
+            view.ShowKeuzeDialog();
+        }
+    }
 }

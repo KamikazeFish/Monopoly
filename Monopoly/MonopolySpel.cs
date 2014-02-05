@@ -15,10 +15,13 @@ namespace Monopoly
         private MonopolyView view;
         private MonopolyController controller;
 
+        private KeuzeDialog keuzeDialog;
+
         public MonopolySpel()
         {
             InitializeComponent();
 
+            RefreshKeuzeDialog();
             view.SetLog(listBoxLog);
             StartNieuwSpel();   
         }
@@ -62,6 +65,49 @@ namespace Monopoly
             }
         }
 
+        private void RefreshKeuzeDialog(bool force = false)
+        {
+            if (keuzeDialog == null || force == true)
+            {
+                keuzeDialog = new KeuzeDialog();
+                keuzeDialog.FormClosing += new FormClosingEventHandler(keuzeDialog_FormClosing);
+                keuzeDialog.Shown += new EventHandler(keuzeDialog_Shown);
+
+                view.SetKeuzeDialog(keuzeDialog);
+            }
+        }
+
+        void keuzeDialog_Shown(object sender, EventArgs e)
+        {
+            DisableButtons();
+        }
+
+        void keuzeDialog_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // KeuzeDialog wordt gesloten, dus er is een actie die uitgevoerd moet worden
+            try
+            {
+                KeuzeDialog keuzeDialog = (KeuzeDialog)sender;
+
+                if (keuzeDialog.GekozenActie != null)
+                {
+                    view.AddMessageToLog("Speler '" + model.Spelers.HuidigeSpeler.Naam + "' kiest voor: " + keuzeDialog.GekozenActie.Omschrijving);
+                    keuzeDialog.GekozenActie.VoerUit(model, view);
+                }
+
+                this.Refresh();
+                EnableDisable();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Er is iets mis gegaan bij het uitvoeren van de actie!\n\n" + ex.Message);
+            }
+            finally
+            {
+                RefreshKeuzeDialog(true);
+            }
+        }
+
         // zet alle knoppen aan of uit
         private void EnableDisable()
         {
@@ -81,6 +127,16 @@ namespace Monopoly
             comboBoxVolledigeStraten.Enabled = (comboBoxVolledigeStraten.Items.Count > 0);
         }
 
+        private void DisableButtons()
+        {
+            // alle MonopolySpel buttons disablen
+            buttonGooi.Enabled = false;
+            buttonEindeBeurt.Enabled = false;
+            buttonKoopHuidigeVakje.Enabled = false;
+            buttonKoopHuisHotel.Enabled = false;
+            comboBoxVolledigeStraten.Enabled = false;
+        }
+
         private void VulVolledigeStratenDropDown()
         {
             comboBoxVolledigeStraten.Items.Clear();
@@ -96,6 +152,10 @@ namespace Monopoly
         {
             controller.HuidigeSpelerkliktOpGooi();
             EnableDisable();
+            
+            // Test KeuzeActie
+            /*Kaart kaart = model.AlgemeenFondsKaarten.PakKaart();
+            kaart.Actie.VoerUit(model, view);*/
         }
 
         private void buttonKoopHuidigeVakje_Click(object sender, EventArgs e)
@@ -115,9 +175,19 @@ namespace Monopoly
 
         private void buttonEindeBeurt_Click(object sender, EventArgs e)
         {
+            EindeBeurt();
+        }
+
+        private void EindeBeurt()
+        {
             controller.HuidigeSpelerKliktOpEindeBeurt();
             VulVolledigeStratenDropDown();
             EnableDisable();
+
+            if (model.Spelers.HuidigeSpeler.InDeGevangenis)
+            {
+                HuidigeSpelerZitInDeGevangenis();
+            }
         }
 
         private void comboBoxVolledigeStraten_TextChanged(object sender, EventArgs e)
@@ -133,6 +203,20 @@ namespace Monopoly
         private void nieuwSpelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StartNieuwSpel();
+        }
+
+        private void HuidigeSpelerZitInDeGevangenis()
+        {
+            //DisableButtons();
+            /*KeuzeActie keuzeActie = new KeuzeActie(
+                new List<OmschrijvingActie> { 
+                    
+                });*/
+
+            // Voor nu een speler meteen uit de gevangenis halen
+            model.Spelers.HuidigeSpeler.InDeGevangenis = false;
+
+            EindeBeurt();
         }
    }
 }

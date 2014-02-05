@@ -53,6 +53,12 @@
     <Compile Include="Actie.cs" />
     <Compile Include="Dobbelsteen.cs" />
     <Compile Include="InvalidArrayLengthException.cs" />
+    <Compile Include="KeuzeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KeuzeDialog.Designer.cs">
+      <DependentUpon>KeuzeDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="MonopolySpel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Spelers.cs" />
     <Compile Include="Vakje.cs" />
     <Compile Include="Vakjes.cs" />
+    <EmbeddedResource Include="KeuzeDialog.resx">
+      <DependentUpon>KeuzeDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MonopolySpel.resx">
       <DependentUpon>MonopolySpel.cs</DependentUpon>
     </EmbeddedResource>

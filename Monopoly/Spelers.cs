@@ -16,6 +16,11 @@ namespace Monopoly
             this.spelerIndex = 0;
         }
 
+        public List<Speler> GetSpelers()
+        {
+            return this.spelers;
+        }
+
         public int GetAantalSpelers()
         {
             return spelers.Count;
