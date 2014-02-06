@@ -229,7 +229,7 @@ namespace Monopoly
                 notFound++;
                 if (notFound > model.Vakjes.GetAantalVakjes())
                 {
-                    throw new Exception("Vakje '" + naamVakje + "' niet gevonden!");
+                    throw new Exception("Vakje '" + naamVakje + "' is niet gevonden!");
                 }
             } while (model.Vakjes[model.Spelers.HuidigeSpeler.Positie].StraatNaam != naamVakje);
 
